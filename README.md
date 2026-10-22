@@ -79,7 +79,7 @@
   Instalação
 
   1. Clone o repositório:
-  git clone https://github.com/seu-usuario/abrobaGPT.git
+  git clone [https://github.com/sr-gnosis/AbrobaGPT.git]
   cd abrobaGPT
   2. Instale as dependências:
   pip install -r requirements.txt
