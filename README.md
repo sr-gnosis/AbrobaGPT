@@ -59,15 +59,17 @@
   - Monitoramento: Barras de progresso e logs de saída em tempo real.
   - Chat Interativo: Interface de conversação com suporte a streaming de tokens.
 
-  📁 Estrutura do Projeto
+ ## 📁 Estrutura do Projeto
 
+  ```text
   ├── data/               # Scripts de download, preparação e arquivos de corpus
   ├── src/                # Core do projeto (modelo, tokenizer, inferência, avaliação)
   ├── training_logs/      # Logs de métricas e histórico de treinos
-  ├── evaluation_presets/# Conjuntos de perguntas para benchmarking
+  ├── evaluation_presets/ # Conjuntos de perguntas para benchmarking
   ├── web/                # Interface web complementar (estática)
   ├── main.py             # Ponto de entrada para a TUI
   └── train.py            # Script de execução do treinamento
+  ```
 
   🚀 Como Começar
 
@@ -79,7 +81,7 @@
   Instalação
 
   1. Clone o repositório:
-  git clone [https://github.com/sr-gnosis/AbrobaGPT.git]
+  git clone https://github.com/sr-gnosis/AbrobaGPT.git
   cd abrobaGPT
   2. Instale as dependências:
   pip install -r requirements.txt
