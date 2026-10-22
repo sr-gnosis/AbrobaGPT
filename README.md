@@ -10,7 +10,7 @@
   (TUI).
 
   <p align="center">
-    <img src="assets/starter.png" width="800" alt="Interface Principal do AbrobaGPT">
+    <img src="assets/starter.PNG" width="800" alt="Interface Principal do AbrobaGPT">
     <br>
     <i>Interface Principal (TUI) desenvolvida com Curses</i>
   </p>
@@ -38,7 +38,7 @@
   Uma interface de terminal rica que transforma a experiência de desenvolvimento:
 
   <p align="center">
-    <img src="assets/train.png" width="400" alt="Chat Interativo"> &nbsp;&nbsp; <img src="assets/test.PNG" width="400"
+    <img src="assets/train.PNG" width="400" alt="Chat Interativo"> &nbsp;&nbsp; <img src="assets/test.PNG" width="400"
   alt="Gráfico de Loss">
     <br>
     <i>Chat em tempo real e Visualização de métricas via Braille</i>
