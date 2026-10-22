@@ -1,0 +1,2505 @@
+{
+  "format_version": 1,
+  "created_at": "2026-10-22T21:41:05.980205+00:00",
+  "preset": {
+    "path": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\evaluation_presets\\qualidade_geracao.json",
+    "name": "Qualidade da geração",
+    "category": "qualidade_geracao"
+  },
+  "settings": {
+    "questions": 10,
+    "generations": 5,
+    "max_tokens": 80,
+    "greedy": false,
+    "temperature": 0.5,
+    "top_k": 20,
+    "repetition_penalty": 5.0,
+    "seed": null,
+    "validation_loss": true,
+    "allow_legacy_checkpoint": false
+  },
+  "questions": [
+    "quality-continuity",
+    "quality-instruction",
+    "quality-no-qa-copy"
+  ],
+  "limitations": [
+    "Pontuação geral é configurável e não mede inteligência geral.",
+    "Loss só é comparável quando usa o mesmo tokenizer e dados de validação ativos.",
+    "Referências aceitam regras por teste; não há comparação literal universal."
+  ],
+  "checkpoints": [
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_040000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O que é um dos principais instrumentos da pesquisa?\nOs sistemas operacionais são a base do método, mas não há nenhuma informação. É possível saber se existir em diferentes partes (como você pode fazer isso). Os músculos devem ser usados para o laboratório e também com uma lista de dados que podem estar sendo executados ou por meio da pesquisa",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.008264462809917356,
+                "ok": true,
+                "empty": false,
+                "word_count": 60,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.008264462809917356
+              }
+            },
+            {
+              "generation": 2,
+              "text": "a) O que é um método? b): Se você tiver em sua página, então não sei como para fazer comentários. d'água ou gráfico; - Para obter mais informações sobre quaisquer outros tipos de ferramenta podem ser utilizados e selecionadas na lista do laboratório: o que é um método? b) O Lector",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.08737864077669903,
+                "ok": true,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.08737864077669903
+              }
+            },
+            {
+              "generation": 3,
+              "text": "\"Acredito que a criança tem muita atenção, mas não pode ser um bom exemplo.\" O primeiro passo é fazer parte do texto para se entender como você precisa saber qual forexe? Se estiver comigo ou visto nos ensina (ou conhecido), por sua vez em relação à imagem de Deus e ao seu coração que ele faz na hora da vida",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 60,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“Os fatos são usados para a formação da sua empresa”, mas também com as pesquisas que se tornaram mais conhecidas. O autor criticava, ainda em primeiro lugar do ano passado pela revisão das novas ciências de comunicação socialista (MDP) e o desenvolvimento pessoal dos países desenvolvidos por meio deste trabalho na área centralizada no mundo inteiro da Universidade",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“A Ciência do Trabalho é um desafio para a criação da nossa própria vida.”\nResposta : Porque, segundo os pesquisadores que atuam na área dos processos produtivos em todo mundo (não há qualquer tempo) de forma coerente ao mesmo período das atividades físicas e psicológica específicos como o uso do conhecimento científico ou físico-químido",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 54,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O ponto principal da chave é a de um padronizado e o barco do seu corpo na corrida que faz com os cabelos para tentar desaparecer ao mesmo tempo em vez das mãos; mas também as frases curtas são feitas por uma floresta, sem nome. Os galhos devem ser usados como um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ela estava na parte branca do género que tinha sido o único pai de um sonhou por meio da sua carne e a mãe foi chamada para os outros; então é muito mais fácil ver com ele! Tudo sei assim como eu não tive nenhuma experiência. Ela me fez uma grande frase, mas nem sempre era",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "No entanto a maior parte dos países americanos (em que o país não tenha sido dado nenhuma) no Brasil e é muito mais importante na Europa para os Estados Unidos da América Latina em 2016\", afirmou Shanner Cunhaki Jefferson Soares; \"Sao se estivesse visto, por exemplo.\" O ponto de",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "O que é o belo exemplo da costa de Berlim? Ainda assim: Encontrar a lâmina dos pés e não se sabe como ele está em mãos ou naquele momento! Melhor sua frases curtas sobre uma floresta, sem dúvida alguma coisa. Mas o belo exemplo da costa é um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.07216494845360824,
+                "ok": false,
+                "empty": false,
+                "word_count": 48,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 7.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.07216494845360824
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ainda que a vontade de um canteiro é o mais importante do centro da cidade e dos seus pés em sua casa para as pessoas morreram na região onde se encontravam os dois primeiros dias no local (1930-1980), com suas frases curtas, sem título. Enchávamos que a partir de hoje um c",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.009523809523809525,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.009523809523809525
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": true,
+                "word_count": 0,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "E, portanto a linguagem de um determinado tipo pode ser feita com o mesmo modo como não são as cores do seu corpo e para quem deseja se verificar em uma ou mais elementos diferentes da mesma forma: Apresentar os efeitos colaterais dos corpos; O que você quer saber é sobrecarregar, a linguagem de um determinado tipo. As características",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.07692307692307693,
+                "ok": true,
+                "empty": false,
+                "word_count": 59,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.07692307692307693
+              }
+            },
+            {
+              "generation": 3,
+              "text": "",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": true,
+                "word_count": 0,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "A partir de um dia, o paciente pode ter problemas com a doença em qualquer pessoa e não se preocupar para evitar esse problema”, disse ele Flávio Vieira (PSDB). “Este tratamento tem como objetivo garantir uma resposta mais eficiente no atendimento médico da população que está sendo feito na próxima semana. O medicamento é um dos casos de doenças vasc",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 60,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Aqui, o uso do sistema de transmissão da SBD para a instalação das informações pessoais e exibirá um serviço mais eficiente no seu computador; O Windows XPLEX® pode ser usado como ferramenta específica ou simplesmente utilizada pelo usuário. Para obter o nome do sistema HTMOK, você",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.01098901098901099,
+                "ok": true,
+                "empty": false,
+                "word_count": 46,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.01098901098901099
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.5333333333333333,
+        "repetition_rate": 0.017682929965074805,
+        "diversity": 0.9333333333333332,
+        "validation_loss": 3.064545154571533,
+        "validation_note": null,
+        "overall_score": 0.5506808938385721
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_039500.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Texto do livro sobre a importância da obra, que é um tema em questão. O projeto foi desenvolvido pelo jornal Folhapress Smartphones (1998) por Johnson Bourceakiye de Sousa Lourenço e Juan Califórcio do Pacto Internacional da Universidade Federal Paulista, no",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 40,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ela foi publicada em 1912, na Revista Publica. O livro não sei como um dos livros da literatura originalmente conhecido que está sendo escrito por Lawborldsky (Link) ou outro bicho de \"Parte\" e uma mensagem para a história do filme com o título, mas sim muito mais",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 47,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“Ele não sei” (Medicina, 1943). O que é a Ciência da Saúde. Ela está em busca do tratamento com osteoartrite? Todos eles estão relacionados ao ambiente físico ou emocionalmente oxigênio e seu corpo de sangue para ajudar as pessoas mais altas doses; “Eles são capazdes,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 45,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Evite a pintura. Características do sistema com um computador para que se encontra em contato conosco, mas não é possível fazer parte da linha fixa de micro-biodiesel ou outros elementos semelhantes ao processo e também o seu uso correto pode ser usado por meio dos programas. Características do sistema com um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0673076923076923,
+                "ok": true,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 7.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0673076923076923
+              }
+            },
+            {
+              "generation": 5,
+              "text": "\"Acho que os sonhos da mãe, não ficam semelhantes.\" Tags : Metodologia do Nomem é a sua principal fonte de pesquisa sobre as mudanças climáticas das células-troncoras e o sistema imunológico (Continue) para que os sonhos da mãe sejam",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.09090909090909091,
+                "ok": true,
+                "empty": false,
+                "word_count": 39,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 7.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.09090909090909091
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A cidade de São Paulo foi criada em 1945 e com um total destes dois pilares do mundo que se encontra no século XVI da África Leste Metropolitana dos Estados Unidos (PT). Na região metroviária o rio Pacífico, a Coreia de São Paulo foi fundada em 1947 e com um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.08080808080808081,
+                "ok": false,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 8.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.08080808080808081
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Em seguida o número de casos confirmados pelos Estados Unidos e a BBC em 2012 é considerada um dos principais faturados que se destacam no Brasil como parte do mundo para manter sua economia brasileira ou aumentar seus investimentos na indústria mundial da América Latina (Foto: Correio)\nResposta : O Papa Francisco foi o primeiro maior produtor",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Durante a sua criação e reforma do projeto de lei para o governo estadual são os preços da cidade na região metropolitana que se destacam no país como um dos principais mercados emergentes das regiões Norte-Americana (Novoeste), onde as cidades norte, em Londrina. Ainda segundo a associação do projeto de lei para",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.06666666666666667,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 7.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.06666666666666667
+              }
+            },
+            {
+              "generation": 4,
+              "text": "A palavra é o que se refere ao ponto de vista do amor e da natureza cristã: “A verdadeira história no mundo está a sermos um lugar para nós mesmos”. Ou seja na sua missão! Postado por David Teixeira às 05/05, 2019 Autor(es): Jorge Bruno de Car",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Afinal do que o mundo é a chave da linguagem e de outras palavra-chaves baiana (mais um dos mais importantes). Tenho certeza disso: Simple Methods - Deixar os seus olhos para serem escritos por Jesus, mas também com as suas próprias vidas. Afinal que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 44,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Nós não falamos aqui, mas vamos ter uma boa experiência de você e empurrar o nosso mundo para nós mesmos”, afirma Jerusalém Gilmar Mendes (PT). “Os nossos direitos são os principais benefícios da nossa vida útima que se tratando do seu desejo.” Ela é um dos maiores desafios na educação, a",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Todos os casos de doença não podem ser úteis, mas também para a saúde e até mesmo o tratamento da infecção do vírus ou melanoma em câncer no sangue; Veja mais sobre as hipóteses: Createdral (Doenças urinárias), bebidas alcoólicas. Os pacientes que podem caus",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 44,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ou seja, a fórmula de um sistema não pode ser usada para o tratamento e os efeitos colaterais do solo ou da pele podem causar problemas graves como: Podem usar as células em uma lagoa? Teste-se que você deve ter cuidado com ele. Aprender a fazer isso, mas também é necessário ser",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Neste caso, o usuário pode ser feito com um smartphone de dados e não apenas os outros arquivos do arquivo . O Site da Internet Experiments permite a visualização dos aplicativos XML para instalar este tipo em uma rede social através das aplicações mais comunas. No entanto é possível identificar o nome que você pode criar um sm",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 57,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Para saber mais sobre o assunto, você pode realizar uma linguagem de sinalização para cada um dos itens do produto ou serviço da sua empresa: Aprender a usar este site onde está em contato com as informações pessoais e exibe-se os dados relevantes no seu computador. Para saber mais sobre o assunto, você pode fazer uma linguagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.12173913043478261,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 14.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.12173913043478261
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.6666666666666666,
+        "repetition_rate": 0.02849537740842089,
+        "diversity": 1.0,
+        "validation_loss": 3.0565789341926575,
+        "validation_note": null,
+        "overall_score": 0.5790590267220702
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_039000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“A música é um dos mais importantes do mundo.” O livro foi publicado em 1972 pela revistas científicas da Universidade Católoga, que se tornou a primeira vez na edição de 1980 (Confederação Brasileira das Indústrias e Comunicações) para o Brasil no ano passado: “A música é um dos mais",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.09278350515463918,
+                "ok": true,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.09278350515463918
+              }
+            },
+            {
+              "generation": 2,
+              "text": "a) O que é um livro? (Links ; Livro em inglês). bienal, dr. fonesto ou gênero comentário de texto semelhante ao dono da cientista Dilma Rousseff e o professor Belém Castelo Souza: A introdução é que a litera",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 37,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "\"Sempre a gente não me engraçou.\" O livro é um dos principais livros da história do texto que, com certeza se traduziu para este ano em Moscastião (1989), foi publicado pelo jornal Juliano Flávio Botelho e o seu filho de Alexandre Salles na edição 180",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 45,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "a) O que é um dos mais importantes, mas não há dúvida sobre este tema. Ela tem como fazer parte da pesquisa do Livro Clube Psicológico (PDF), pois os estudos são muito utilizados em ciências de múltiplas crianças e adolescentes ou por elas; b) O que é um dos mais importantes,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.10891089108910891,
+                "ok": true,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 11.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.10891089108910891
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“Acho que você não pode ter um pouco mais.” O módulo do SharePoint é a primeira vez da empresa, mas ainda assim se tratava para ser explicado como \"Segurança\", porque isso significa cientista e com o seu laboratório? Ainda segundo os dados pessoais: “Disponível que você não",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.031914893617021274,
+                "ok": true,
+                "empty": false,
+                "word_count": 47,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.031914893617021274
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Em um ano de 1921 foi lançado o primeiro-ministro da Federação Portuguesa do Brasil (Foto: Batalharel) e a presidente Dilma Rosário Gomezinho Vicente Pacheción Lúcia Simões em Mato Castelo, no dia 21 de junho. O evento foi realizado entre os dias",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Com a chave de um barco no mesmo lugar do leste da região e com o ventilador que foi feito pela primeira vez em sua cidade para as mãos das Forças Armadas (Brasil) – Rockswagen Musichi, Canadá. O rosto de um barco no Lou",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.058823529411764705,
+                "ok": false,
+                "empty": false,
+                "word_count": 43,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.058823529411764705
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Aqui a brincadeira de um filme e o cantor que se encontra na letra da mola do santo; as palavrações são muito importantes para os quais vêm sendo construídos em casa ou no coração: “Eu tenho medo?” (João 20,5). A brincadeira de um filme",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.07777777777777778,
+                "ok": false,
+                "empty": false,
+                "word_count": 45,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 7.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.07777777777777778
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ainda não se sabe de que a maioria dos casos é o fato do crime e da dignidade sexual (que significa “digite”), mas também com relação ao seu tempo para os outros seres humanos? Ou seja: ele pode ser um tipo muito interessante na sua vida, porque tem uma frases curtas. Mas não se sabe nem é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.03389830508474576,
+                "ok": false,
+                "empty": false,
+                "word_count": 59,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 4.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.03389830508474576
+              }
+            },
+            {
+              "generation": 5,
+              "text": "No entanto os dois cientistas são usados com o nome de Cabo Verde e a música do povo da cidade que se encontra na região norte-americana para ser vendida no sábado (21), em Florença Rodrigues por Gilmar Monteiro. O primeiro cientista foi encontrado como um dos mais importantes",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ainda assim, o pai dele não está tão difícil: “Acho bem a minha vida e eu vier para ver mais sobre os outros nomes”, diz Luciana Benedes (PSDB-SP). O POVERNETOR GRÁTICO é um dos grandes desafios da história do mundo. Ainda assim,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.011627906976744186,
+                "ok": true,
+                "empty": false,
+                "word_count": 43,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.011627906976744186
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Aqui está pressionando um novo sistema de telemóvel, mas o seu computador pode ser usado para verificar se a imagem for utilizada e os seus cálculos com uma função mais simples do usuário podem ter sido tomados como forma limitada por tabelas ou outros elementos. O software é um dispositivo de segurança que permite",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 54,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ou seja, a migração de um teste da fábrica não tem sido usada para verificar se o problema do sono pode ser utilizado no caso das pessoas com maior frequência e em outros casos (em vez dos sintomas), como também são as principais causas que podem ocorrer por mudanças na saúde. No entanto, é importante ressaltar a importância da",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 59,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Afinal, o céu de arte pode ser uma doença doce e também um pouco mais frequente: a infecção da pele (como os folículos) ou seca não está ligada à pintura na massa no sangue -musculite em torno dos alimentos. Afinal, o céu de arte",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.08045977011494253,
+                "ok": true,
+                "empty": false,
+                "word_count": 44,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 7.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.08045977011494253
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Aqui, o céu de cordeiro pode ser considerado um dos principais fatores da pele do corpo humano e não mais raramente em todos os campos mentais: a sensação sanguínea ou asteroides? O sistema imunológico deve gerar barreiras geleiras, como o céu de cordeiro",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.058823529411764705,
+                "ok": true,
+                "empty": false,
+                "word_count": 43,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.058823529411764705
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.6666666666666666,
+        "repetition_rate": 0.037001340575900606,
+        "diversity": 1.0,
+        "validation_loss": 3.0541669726371765,
+        "validation_note": null,
+        "overall_score": 0.5777831322469482
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_038500.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O que é um tema?\nA Ciência da Competição - Wikipédia, a enciclopedia do Livro Técnico. Um livro não foi publicado por Mário Dias de Souza (1875) pela Universidade Federal dos Pinhais e pelo Instituto Nacional das Comunicações em São Paulo – ABCTEC/",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "a) O que é usado para os alunos? (Podendo ser feito, em seguida), ou seja ela se tornará um problema com as melhores condições do aluno. Digite-se da sua própria maneira de usar todas essas informações pessoais sobre o laboratório e na forma coerente no ambiente; b) O que é usado para os alunos? (P",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.09734513274336283,
+                "ok": true,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 11.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.09734513274336283
+              }
+            },
+            {
+              "generation": 3,
+              "text": "\"Acesso em textos\" (Figura 1). O método é usado para a realização do projeto. Teste da pesquisa, que ocorre entre os dias atuais de forma coerente ao longo dos anos ou até mesmo quando o laboratório pode ser utilizado como um processo específico e/ou seja por meio desta página: \"A cientista abri",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "O que é a tese do autor? Monitoramento da pesquisa sobre as métricas, na qual os alunos são conhecidos por seus estudos. Em um estudo realizado em quatro grupos com mais de 300 anos foram avaliados como “Tempo”, \"Se você não sabia o quanto antes se pode verificar para que a tese do autor seja labora",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.044642857142857144,
+                "ok": true,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.044642857142857144
+              }
+            },
+            {
+              "generation": 5,
+              "text": "\"Apesar das pessoas, os homens que não se sentem bem vivos do mundo\", diz. O texto sugeriu a possibilidade da morte na história como um homem inteiro para todos nós é possível escrever alguns dos personagens de Berlim (e Deus) e uma mulher em sua própria família: \"Acredito o seu filho, que não há nada",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.009174311926605505,
+                "ok": true,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.009174311926605505
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O que se refere a um conjunto de pinturas e o seu nome é “semelhante” (Marca Aqui)? Portanto: Se você não conseguir fazer as caixas para os seus membros da comunidade; Existiu-se em uma frases curtas sobre esse tipo, que se refere a um número de pinturas e",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.10309278350515463,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 10.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.10309278350515463
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ainda que a baixa renda do trabalho em relação aos resultados obtidos no período de 2004 não é apenas um ano antes e o número total das observam-se mais cedo para os próximos meses (mais sete anos), mas também por conta da crise econômica brasileira – como parte dos investimentos nacionais, principalmente nos setores produtivos. Ou seja: a indústria",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 59,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "O bojoeiro de Arruda (1943) é um dos principais motivos para o Brasil e a Flórida do Sul que se refere à sua altura da madrante no Estado das Minas Gerais - ABCTPNA-IRS, em São Paulo. O Bojoeiro de Arruda (194",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.06172839506172839,
+                "ok": false,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.06172839506172839
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Para o fim da barragem em que as águas de vidros do solo são mais caras e tocadas no povo brasileiro (com a maior parte dos casos), os machos rodoviários não têm sido danificados para se tornar uma pior situação, mas também um problema. A frase é que as águas de",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.04950495049504951,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.04950495049504951
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ainda assim que a produção de biodiesel foi muito importante em um dos primeiros lugares da cidade do Ceará (PRT) e o seu maior interesse no desenvolvimento urbano-americana para as regiões sulfas – onde há mais tempo os países desenvolvidos, como Borbau. Na primeira fase de trabalho foram encontrados a produção bio",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.009708737864077669,
+                "ok": false,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.009708737864077669
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Você não sabe se você está no caminho em relação à sua vida, mas pode ser um problema de saúde ou para manter a família e fazer uma escola? E qual o seu objetivo na hora da educação infantil com as pessoas mais próximas do mundo Aqui estão presentes nos nossos dias antes que os médicos têm problemas. É importante ter cuidado por isso mesmo quando você não",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.007352941176470588,
+                "ok": false,
+                "empty": false,
+                "word_count": 68,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.007352941176470588
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Apresenta-se também a uma mistura de gás natural (como o feixe) para evitar um câncer, e com maior quantidade do sangue no corpo humano em relação aos demais campos mais comuns ao sistema sanguínea ou da película; brevemente por causa das condições que ocorrem. A mistura de g",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.010309278350515464,
+                "ok": true,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.010309278350515464
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Se você estiver usando o seu site ou email, ele não poderá acessar a sua conta de forma mais rápida e com um dispositivo para criar uma versão maior do Windows XPS (em inglês). Você pode usar no Microsoft ONG Explorary Aplication Service. Se você estiver usando o seu site ou email, ele não",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.17592592592592593,
+                "ok": true,
+                "empty": false,
+                "word_count": 54,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 19.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.17592592592592593
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Dessa forma, você pode usar um tipo de chave para o seu computador e outros tipos específicos do sistema ou da sua conta com a mesma pessoa em uma rede móvel (como não tenha sido usado como smartphone). A primeira coisar que ela funcione no processo é utilizando-se, então você pode usar um tipo de cha",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.07964601769911504,
+                "ok": true,
+                "empty": false,
+                "word_count": 57,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.07964601769911504
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Para obter mais informações sobre a possibilidade de um novo usuário, o BySQL Server Service não pode ser usado em qualquer lugar ou com outros dispositivos do seu sistema como no Windows XP e seus diretores da sua conta corrente para os usuários que desejam fornecer. O broup é uma ferramenta simples de softicidade,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 54,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.6,
+        "repetition_rate": 0.043228755459390845,
+        "diversity": 1.0,
+        "validation_loss": 3.060173273086548,
+        "validation_note": null,
+        "overall_score": 0.5635156866810913
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_038000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“A teoria é a melhor do que você.” O Livro (Estruturação) tem como base as informações sobre os elementos da pesquisa, mas sim através dos métodos de avaliação; <UNK> No entanto se fosse possível para o trabalho em um estudo realizado na área e no laboratório apresentado pelo pesquisador a partir do qual ele é uma ferramenta que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "\"Embora as palavras do texto, é possível fazer um script que pode ser feito com a memória.\" (Hoje ou Mystones) {\\displays} O cientista abriu o laboratório e apresentou uma mensagem de \"Continue\", no qual foi selecionado na página: http",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 39,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“Mais que você tem um olhar para a sua casa, mas também não sabemos.” O Lourenço é composto por várias palavras do livro Santo Antônio Alves (Lei de Melo), em 1958; o senhor dos livros foi publicado na revista Igara Católica da Bahia,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 43,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "O que é a imagem do botão? Formulário. Se você não sei, eu faço um fórum para fazer isso! Não basta dizer algo sobre como toca as palavras de texto da imprensa (Law Story & Walter) Você pode ver o laboratório que será feito com a imagem do botão \"A",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.050505050505050504,
+                "ok": true,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.050505050505050504
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Características do tipo PDF, que foi publicada em 1974. O livro é a primeira vez por um filme da série Global Dynamics (Watch) para traduzir os dados de maneira coerente com o cientista inglês e mostrou como uma mensagem se mostra sobre as ideias do texto: Características dos tipos P",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "No entanto a primeira vez que o país teve de sete anos e um ano depois foi levado ao ponto mais bruto do século XIX em 1894 para ter sido visto na cidade da Costa Rica dos Espíritos (1967), quando era convidada com as suas obras. O primeiro, o segundo turno de 1917 e a",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "O pai do barco de um show por volta da costa é que o leite não estava em casa e ele acabou com seu tempo ou até mesmo depois a mãe se encaixará para os seus olhos! Não sabemos como eu tenho uma frase, nem sempre me perguntei. Eu lembrou quando vocês dele eram",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 54,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ainda assim que a linguagem é o maior número de chapas e tem sido possível em termos diferentes (mais) para os seus alunos no mercado português - ou seja: 1 – O Mundo do Festival Internacional da Londonópolis foi um dos maiores desafios na construção, com uma frase curta sobre o seu público. A",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "No entanto o sinal de que a dica é um tipo da barra em torno do rosto e por isso ocorreu com as células mais pobres para se deslocarem ao longo dos anos; no início das frases curtas sobre uma floresta, sem sentido. O argumento foi apresentado como “Almer” de",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "A bola de madeira e a glória da costa do Panamá – são o que mais precisa para os péssaros das árvore (média) no mundo todo”, diz Buenos Viçoso: “Editar um pouco comentado, mas não é muito bom.” Os caminhos de made",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": true,
+                "word_count": 0,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ou seja, não se pode fazer o tratamento de febris ou manchas para a pessoa e mesmo assim você está lá no seu componente físico com sua pele? Não basta usar esse medicamento como um médico em caso do corpo humano (ou especialista). Além disso é possível verificar que os medicamentos tenham mais cuidado, mas não se pode fazer",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0423728813559322,
+                "ok": true,
+                "empty": false,
+                "word_count": 59,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0423728813559322
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Clique aqui para verificar a mente de um céu, mas não sei como vestido! Ora uma coisa do seu nome e o próprio símbolo da pessoa?\nResposta: A palavras-chave mencionada no texto pode ser usado com mais frequência.\n\nPergunta : Por que as pessoas acreditam em relação ao céu",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": true,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "O uso de um sistema pode ser usado para melhorar a saúde dos pacientes, principalmente no momento da cirurgia do paciente e o tratamento com diabetes tipo 2 ou mais comumente em crianças durante todo esse período? A doença está presente na medicina pelo médico (como os sintomas), quando se encontramos ingeridos. O uso de um sistema pode ser usado para manter a",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.11904761904761904,
+                "ok": false,
+                "empty": false,
+                "word_count": 63,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 15.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.11904761904761904
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Aqui, você pode usar uma lista de arquivos para abrir o arquivo com a senha e os parâmetros do sistema (em inglês) ou figuras abaixo são necessárias em um campo da caixa semelhante ao mesmo tempo disponível no brevemente pelo seu servidor antes que ele possa ser usado. OBSERVE PLANAK",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.4666666666666667,
+        "repetition_rate": 0.014128370060573449,
+        "diversity": 1.0,
+        "validation_loss": 3.0633023977279663,
+        "validation_note": null,
+        "overall_score": 0.5412140778242474
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\best_model.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“Olhamos na frasco, com a velocidade do corpo para que esteja em casa. Se você não tiver um olhar ou se sentir?”. Como eu acreditava sobre essa realidade é possível fazer isso porque ela pode ser usada como algo de forma coerente e inesperada”, disse o pesquisador, “Muitos anos",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“No dia, eu soube que a gente tem um olhar para fazer algo.” Postado por Marcelo Costa às 15h57\nResposta : Porque os professores são vistos como 'Codigo' de maneira coerente e não serve apenas no quadro do canteiro, mas o laboratório se torna mais fácil em",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 46,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "\"Para que serve para a criança, ele é capaz do seu corpo.\" (Fotografia/Saúde) - O autor não sei dizer como um microbioma diferente de sua capacidade em torno da ciência ou na febre oxigênia? Foram realizados estudos sobre as crianças que apresentam a doença, mas",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 45,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“A figura é um dos mais importantes que se trata.” (Partebral). Postado por Samsung em 07/06 às 21h41min\nResposta : A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A figura é um dos mais importantes que se trata de forma",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.19540229885057472,
+                "ok": true,
+                "empty": false,
+                "word_count": 43,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.19540229885057472
+              }
+            },
+            {
+              "generation": 5,
+              "text": "\"Simplesmente a boca\", na qual ela é um dos principais motivos. O que se trata do teórico, mas também não pode ser tão interessante para vocês (ou como isso significa). Mas quando esse problema foi possível em seu trabalho com o paciente? A cientista abriu as dores de cabeça e os sintomas foram descober",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 54,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A partir de um ano que o Brasil se tornou mais difícil e é a primeira vista do mundo: “Os cursos têm sido muito importantes como os alunos da Cidade”, disse Lauren Galvãozi Filho (PSDB), em entrevista à Agência Nacional dos Negócios de Futebol. \"A gente, por outro lado",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "A exposição é feita por um grupo de ônibus ou café e quebra o arroz (não se não viesse). Ou seja: a larga do teste pode ser descartada com os olhos para ter mais chance em termos como, nos quais as florestas são fáceis. A linha dos ôn",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 48,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "O Papa Francisco é o mais barato da história do Brasil e foi a primeira que estava em um país de origem internacional na Europa (Foi) no sul-americano para os EUA; depois das velhas americanas eram as grandes frases curtas sobre uma floresta, mas não se pode fazer com isso. Durante o período foram encont",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "O que é um dos elementos mais importantes do mundo e da história de Deus? Aqui a partir das últimas décadas no século XIX como o Espírito Santo (Alemanha) ouviu os crentes em sua vida na Igorância: \"Embora não há razão.\" O que se tem pelo menos um livro do mundo,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0196078431372549,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 2.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0196078431372549
+              }
+            },
+            {
+              "generation": 5,
+              "text": "O que o céu está no centro de seu marido é um fenômeno mais abrangente da cidade e do mundo em sua história? A música tem como objetivo se tornar as pessoas com a Terra das Baixadas (1960), para os quais estão na frente, nos primeiros anos. O céu está no centro de seu marido até",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.11607142857142858,
+                "ok": false,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 13.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.11607142857142858
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Podemos verificar a diferença entre o comportamento e as pessoas, mas não se sabe como você pode ter uma resposta para os usuários do seu médico ou de seus pacientes? Se eles querem usar esse medicamento com um paciente na sua maioria das vezes após ele estar em contato direto ao mesmo tempo que deseja. Para ajudar no tratamento a quem está trabalhando nas mãos e isso",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 67,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Portanto, o tratamento de fisioterapia pode ser utilizado para proteger a vacina contra as doenças e não causar problemas com os sintomas; mas também deve estar associado à doença ou no sangue na célula da pele (superplexos). Além disso é possível avaliar se o paciente está relacionado ao uso de fisiote",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Portanto, não há dúvida sobre o caso do paciente e a explicação de pacientes com DDC para fazer uso da doença ou pelo menos seis meses antes dos testes cirúrgicos; Antes disso você pode usar um medicamento em tratamento completo quando está prescrito no laboratório. Para evitar que os sintomas sejam gravados, não é possível ident",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Para evitar a gravidade, você pode usar o sono para ajudar em uma determinada região do céu de cobre e no tratamento com seu médico cardiopatológico ou mesmo quando ele não tem acesso à sua família nos seus pacientes; Utilize um brevemente por trás da película. Se a gravidade for realizada, você pode fazer o s",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.018018018018018018,
+                "ok": true,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 2.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.018018018018018018
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Aqui, a maioria dos casos de doença pode ser encontrada no tratamento da fibra costuma separar o sangue e evitar um contato com os pacientes não vacinados ou adulterados durante as graves problemas psicológicos em relação à epidemia infecciosa. Aqui, a maioria dos casos de doença pode ser encontrada no",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.1919191919191919,
+                "ok": true,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 19.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1919191919191919
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.6,
+        "repetition_rate": 0.03606791869976454,
+        "diversity": 1.0,
+        "validation_loss": 3.0678917169570923,
+        "validation_note": null,
+        "overall_score": 0.5645898121950353
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_020700.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "a) O que é um texto? Baseado em Ciência, na qual os mosquitos da literatura são fundamentais para se transformarmos. Seja abaixo do livro \"B\" ou 'Continue de Localização'; A cientista abriu o laboratório: a) O texto é um exemplo que você pode ser uma",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.022222222222222223,
+                "ok": true,
+                "empty": false,
+                "word_count": 45,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 2.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.022222222222222223
+              }
+            },
+            {
+              "generation": 2,
+              "text": "a) O que é um mestre. Certificado da corte, ou seja ele mesmo em torno do espaço para quem está presente com sua própria consciência; b). Foram realizados estudos de alerta sobre os resultados dos pacientes na formação das células e nas condições clínicas dramáticas (como a laboratório) que se refere ao uso da",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 54,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "a) um teste, mas que se encontrava com os níveis da imagem. O módulo é feito por meio do espírito; brincar as coisas como firmes de texto ou sorticismo para verificar o tempo em si mesmo e não na mesma coisa (ou seja) quando a cientista abriu um teste, mas",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.030303030303030304,
+                "ok": true,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.030303030303030304
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Mesmo com a seletragem, na mão direita do corpo. O primeiro passo é que os dois elementos são capazemente travados pelo seu lado (ou um francês). Os quatro telhores das células foram usadas por exemplo de laboratório e estímulo: Mesmo com a seletragem, na mão direita",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.11956521739130435,
+                "ok": true,
+                "empty": false,
+                "word_count": 46,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 11.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.11956521739130435
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Os pés da imagem que os seus filhos foram usados em um único videoconferência, a auto-inflamatória do corpo. O microcárdio pode ser aplicado para se utilizar de maneira coerente ao longo dos anos e o tempo é feito por meio das cores da imagem que os filhos sejam usados em uma",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.05825242718446602,
+                "ok": true,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 6.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.05825242718446602
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O que se refere a um dos maiores eixos de largura ou cantor em sua obra: como também o seu primeiro símbolo (flarei) é aquele lugar da palavrada “mais” do Senhorado? Ela sabia-se, não era só para que ele foi felizmente uma coisa. Mas a verdade",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 47,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "As sérições de cálcio são feitas por um largo ou amarelado e para o outro lado do solo que não se trata em algum lugar naqueles quadros (pela primeira vez ao povo). No entanto é necessário ter sido uma floresta com os fãs, mas simultaneamente. O nome está presente nos Estados Unidos",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "O livro se tornou o exemplo de um mestrado em História da Universidade do Piauí (Americana) a partir das pesquisas que vivemos na cultura e pela escola é composto por quatro anos: “Que Deus não tem como referência para uma linguagem, mas simbólica.” Ela também está presente no livro de História da",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.009708737864077669,
+                "ok": false,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.009708737864077669
+              }
+            },
+            {
+              "generation": 4,
+              "text": "O nome da lâmpada para o seu lado está na rua do cromossomo e de um grande movimento é a primeira vez que os muros são muito mais baratos como: “Em diariamente com as frases curtas” (Minnami), ele foi criado no Canadá, em uma das maiores lâm",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 47,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "É um dos maiores cientistas que os homens e mulheres estão em casa com o país para a Europa se tornaram mais vulnerável do mundo no Brasil”, diz Bruno Akillini (PSB), disse à Força Saintsche, de acordo depois da segunda-feira. O presidente Lula afirmou que os homens e",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.05154639175257732,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.05154639175257732
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Todas as pessoas não podem ser usadas, mas a gente pode ajudar o uso de uma pessoa e um meio ambiente com os melhores resultados”, disse Schennaldski-João/Shelmith na Rússia em relação ao tratamento da doença para que ela possa chegar. O estudo foi desenvolvido pela pesquisa do Hospital Alfrence",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Modelo de Passoras, com as células e o corpo físico não pode ser útil para a realização do tratamento médico ou doença em pacientes da saúde (HSA). A hipertensão inflamatória seca no paciente/açúcar vascular que causam uma diabetes tipo urinária. Os sintomas podem ocorrer na mental,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 47,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Aqui na chave, o sinal de sediar um diabo da tela e a velocidade do manto ou uma pessoa com algum tipo íntimo em sua vida no mundo lhes forçando seu próprio olhar para fazer isso? Ou seja: é mais fácil que você quer saber. Quando não fará o sinal de cada vez",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.02830188679245283,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.02830188679245283
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Para fazer um tratamento, a doença pode ser venezuelana e o paciente não querem usar este tipo de enfermagem em pacientes com diabetes ou vírus no sangue na pele infecciosa (ou microbiologia), mas também podem causar danos físicos nos dias mais recentes. O tratamento é realizado por causa do médico que pode ser trat",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.009345794392523364,
+                "ok": true,
+                "empty": false,
+                "word_count": 54,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.009345794392523364
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Isso significa o desgaste, porque a maioria das pessoas não tem dificuldades para fazer uma vida de um mundo intenso e feliz em sua própria família: “De formatarmos viver com Deus” (Guerra da Costa). Ainda assim como os outros são cantos. E se o que é Jesus Cristo, a Igreja tem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.6666666666666666,
+        "repetition_rate": 0.021949713860176936,
+        "diversity": 1.0,
+        "validation_loss": 3.31370347738266,
+        "validation_note": null,
+        "overall_score": 0.5800408762543068
+      }
+    }
+  ],
+  "recommended_checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_020700.pt"
+}

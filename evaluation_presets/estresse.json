@@ -1,0 +1,8 @@
+{
+  "name": "Teste de estresse", "category": "estresse",
+  "tests": [
+    {"id":"stress-steps","category":"estresse","prompt":"Siga três etapas: 1) cite um planeta, 2) cite sua estrela, 3) escreva uma frase curta sobre órbitas. Preserve a numeração.","criteria":{"must_include":["1","2","3"],"min_words":15,"max_words":90,"forbid":["Pergunta:","Resposta:"]}},
+    {"id":"stress-consistency","category":"estresse","prompt":"Leia este contexto: Ana escolheu chá, Bruno escolheu café e Carla escolheu suco. Em seguida responda: quem escolheu café e quem escolheu suco?","criteria":{"must_include":["Bruno","Carla"],"min_words":4,"max_words":40}},
+    {"id":"stress-list","category":"estresse","prompt":"Crie uma lista numerada de quatro passos para lavar as mãos. Não repita passos.","criteria":{"must_include":["1","2","3","4"],"min_words":12,"max_words":100,"forbid":["Pergunta:","Resposta:"]}}
+  ]
+}

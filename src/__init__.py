@@ -1,0 +1,2 @@
+"""Módulos centrais do AbrobaGPT."""
+

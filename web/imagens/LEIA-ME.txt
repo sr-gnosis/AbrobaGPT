@@ -1,0 +1,15 @@
+Coloque aqui as fotos, com estes nomes exatos (JPG):
+
+galaxia.jpg       -> inicio (galaxia espiral, fundo preto)
+buraco-negro.jpg  -> secao "Todo detalhe tem pulso" (fundo preto)
+nebulosa.jpg      -> card AURA
+planeta.jpg       -> card KIIN
+estrela.jpg       -> card LUMEN
+horizonte.jpg     -> faixa larga (campo de estrelas / paisagem cosmica)
+
+Dicas:
+- galaxia.jpg e buraco-negro.jpg: quadradas e com fundo preto funcionam melhor
+  (o fundo preto some sozinho).
+- Se um arquivo nao existir, o site usa a arte em CSS no lugar.
+- Comprima as imagens (ate ~300 KB cada, 1600 px de largura) para o site carregar rapido.
+- Guarde o credito de cada foto (NASA, ESA/Webb etc.) e coloque no rodape, se a licenca exigir.

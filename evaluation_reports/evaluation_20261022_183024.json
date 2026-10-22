@@ -1,0 +1,2505 @@
+{
+  "format_version": 1,
+  "created_at": "2026-10-22T21:30:24.328151+00:00",
+  "preset": {
+    "path": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\evaluation_presets\\qualidade_geracao.json",
+    "name": "Qualidade da geração",
+    "category": "qualidade_geracao"
+  },
+  "settings": {
+    "questions": 10,
+    "generations": 5,
+    "max_tokens": 80,
+    "greedy": true,
+    "temperature": 0.5,
+    "top_k": 20,
+    "repetition_penalty": 5.0,
+    "seed": null,
+    "validation_loss": true,
+    "allow_legacy_checkpoint": false
+  },
+  "questions": [
+    "quality-continuity",
+    "quality-instruction",
+    "quality-no-qa-copy"
+  ],
+  "limitations": [
+    "Pontuação geral é configurável e não mede inteligência geral.",
+    "Loss só é comparável quando usa o mesmo tokenizer e dados de validação ativos.",
+    "Referências aceitam regras por teste; não há comparação literal universal."
+  ],
+  "checkpoints": [
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_040000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os olhos.” O texto diz ainda sobre as questões relacionadas ao tema da pesquisa do livro \"Os alunos estão em contato direto para todos nós\", disse o professor de Letras e pesquisadores na Universidade Federal Fluminense (UFF), que tem como objetivo avaliar a importância",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os olhos.” O texto diz ainda sobre as questões relacionadas ao tema da pesquisa do livro \"Os alunos estão em contato direto para todos nós\", disse o professor de Letras e pesquisadores na Universidade Federal Fluminense (UFF), que tem como objetivo avaliar a importância",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os olhos.” O texto diz ainda sobre as questões relacionadas ao tema da pesquisa do livro \"Os alunos estão em contato direto para todos nós\", disse o professor de Letras e pesquisadores na Universidade Federal Fluminense (UFF), que tem como objetivo avaliar a importância",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os olhos.” O texto diz ainda sobre as questões relacionadas ao tema da pesquisa do livro \"Os alunos estão em contato direto para todos nós\", disse o professor de Letras e pesquisadores na Universidade Federal Fluminense (UFF), que tem como objetivo avaliar a importância",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os olhos.” O texto diz ainda sobre as questões relacionadas ao tema da pesquisa do livro \"Os alunos estão em contato direto para todos nós\", disse o professor de Letras e pesquisadores na Universidade Federal Fluminense (UFF), que tem como objetivo avaliar a importância",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A partir de então o primeiro dia do ano passado foi a primeira vez que os dois primeiros dias se tornaram mais velhos e as suas principais cidades da cidade paralisada por um período histórico em 1954 (1960-1989). O segundo mês é uma das maiores frases curtas sobre sua floresta, com o primeiro dia de hoje.",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.02654867256637168,
+                "ok": false,
+                "empty": false,
+                "word_count": 57,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.02654867256637168
+              }
+            },
+            {
+              "generation": 2,
+              "text": "A partir de então o primeiro dia do ano passado foi a primeira vez que os dois primeiros dias se tornaram mais velhos e as suas principais cidades da cidade paralisada por um período histórico em 1954 (1960-1989). O segundo mês é uma das maiores frases curtas sobre sua floresta, com o primeiro dia de hoje.",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.02654867256637168,
+                "ok": false,
+                "empty": false,
+                "word_count": 57,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.02654867256637168
+              }
+            },
+            {
+              "generation": 3,
+              "text": "A partir de então o primeiro dia do ano passado foi a primeira vez que os dois primeiros dias se tornaram mais velhos e as suas principais cidades da cidade paralisada por um período histórico em 1954 (1960-1989). O segundo mês é uma das maiores frases curtas sobre sua floresta, com o primeiro dia de hoje.",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.02654867256637168,
+                "ok": false,
+                "empty": false,
+                "word_count": 57,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.02654867256637168
+              }
+            },
+            {
+              "generation": 4,
+              "text": "A partir de então o primeiro dia do ano passado foi a primeira vez que os dois primeiros dias se tornaram mais velhos e as suas principais cidades da cidade paralisada por um período histórico em 1954 (1960-1989). O segundo mês é uma das maiores frases curtas sobre sua floresta, com o primeiro dia de hoje.",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.02654867256637168,
+                "ok": false,
+                "empty": false,
+                "word_count": 57,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.02654867256637168
+              }
+            },
+            {
+              "generation": 5,
+              "text": "A partir de então o primeiro dia do ano passado foi a primeira vez que os dois primeiros dias se tornaram mais velhos e as suas principais cidades da cidade paralisada por um período histórico em 1954 (1960-1989). O segundo mês é uma das maiores frases curtas sobre sua floresta, com o primeiro dia de hoje.",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.02654867256637168,
+                "ok": false,
+                "empty": false,
+                "word_count": 57,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.02654867256637168
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ou seja, o seu médico pode ser feito com a ajuda de um paciente ou mesmo tratamento para evitar problemas graves e não se sinta mais doente; mas também podem causar danos ao diagnóstico da doença?\nResposta: A cirurgia deve estar associada à hipertensão inflamatória.\n\nPergunta(Fotoxicologia é recomendada",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": true,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ou seja, o seu médico pode ser feito com a ajuda de um paciente ou mesmo tratamento para evitar problemas graves e não se sinta mais doente; mas também podem causar danos ao diagnóstico da doença?\nResposta: A cirurgia deve estar associada à hipertensão inflamatória.\n\nPergunta(Fotoxicologia é recomendada",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": true,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ou seja, o seu médico pode ser feito com a ajuda de um paciente ou mesmo tratamento para evitar problemas graves e não se sinta mais doente; mas também podem causar danos ao diagnóstico da doença?\nResposta: A cirurgia deve estar associada à hipertensão inflamatória.\n\nPergunta(Fotoxicologia é recomendada",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": true,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ou seja, o seu médico pode ser feito com a ajuda de um paciente ou mesmo tratamento para evitar problemas graves e não se sinta mais doente; mas também podem causar danos ao diagnóstico da doença?\nResposta: A cirurgia deve estar associada à hipertensão inflamatória.\n\nPergunta(Fotoxicologia é recomendada",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": true,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ou seja, o seu médico pode ser feito com a ajuda de um paciente ou mesmo tratamento para evitar problemas graves e não se sinta mais doente; mas também podem causar danos ao diagnóstico da doença?\nResposta: A cirurgia deve estar associada à hipertensão inflamatória.\n\nPergunta(Fotoxicologia é recomendada",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 49,
+                "abrupt": true,
+                "forbidden_pattern": true,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.3333333333333333,
+        "repetition_rate": 0.008849557522123892,
+        "diversity": 0.20000000000000004,
+        "validation_loss": 3.064545154571533,
+        "validation_note": null,
+        "overall_score": 0.4753392330383481
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_039500.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“Acho que a criança está em casa, mas não é um problema.” O LIGE tem como objetivo fazer isso?\nResposta : Criar os olhos para as crianças com deficiência visual de forma coerente ou independentemente da doença e doenças cardiovasculares (continue) que a criança está em casa,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.09782608695652174,
+                "ok": true,
+                "empty": false,
+                "word_count": 46,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.09782608695652174
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“Acho que a criança está em casa, mas não é um problema.” O LIGE tem como objetivo fazer isso?\nResposta : Criar os olhos para as crianças com deficiência visual de forma coerente ou independentemente da doença e doenças cardiovasculares (continue) que a criança está em casa,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.09782608695652174,
+                "ok": true,
+                "empty": false,
+                "word_count": 46,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.09782608695652174
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“Acho que a criança está em casa, mas não é um problema.” O LIGE tem como objetivo fazer isso?\nResposta : Criar os olhos para as crianças com deficiência visual de forma coerente ou independentemente da doença e doenças cardiovasculares (continue) que a criança está em casa,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.09782608695652174,
+                "ok": true,
+                "empty": false,
+                "word_count": 46,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.09782608695652174
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“Acho que a criança está em casa, mas não é um problema.” O LIGE tem como objetivo fazer isso?\nResposta : Criar os olhos para as crianças com deficiência visual de forma coerente ou independentemente da doença e doenças cardiovasculares (continue) que a criança está em casa,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.09782608695652174,
+                "ok": true,
+                "empty": false,
+                "word_count": 46,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.09782608695652174
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“Acho que a criança está em casa, mas não é um problema.” O LIGE tem como objetivo fazer isso?\nResposta : Criar os olhos para as crianças com deficiência visual de forma coerente ou independentemente da doença e doenças cardiovasculares (continue) que a criança está em casa,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.09782608695652174,
+                "ok": true,
+                "empty": false,
+                "word_count": 46,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.09782608695652174
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ainda que a cidade de São Paulo não se encontra em um país onde o Brasil está sendo construído no centro da região e na Europa é mais conhecido como \"Alemanha\", mas também com os países do mundo todo (não há muitos anos) são as regiões brasileiras para uma floresta. A frase caiu de cerca a quatro vezes em um país",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.024793388429752067,
+                "ok": false,
+                "empty": false,
+                "word_count": 61,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.024793388429752067
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ainda que a cidade de São Paulo não se encontra em um país onde o Brasil está sendo construído no centro da região e na Europa é mais conhecido como \"Alemanha\", mas também com os países do mundo todo (não há muitos anos) são as regiões brasileiras para uma floresta. A frase caiu de cerca a quatro vezes em um país",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.024793388429752067,
+                "ok": false,
+                "empty": false,
+                "word_count": 61,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.024793388429752067
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ainda que a cidade de São Paulo não se encontra em um país onde o Brasil está sendo construído no centro da região e na Europa é mais conhecido como \"Alemanha\", mas também com os países do mundo todo (não há muitos anos) são as regiões brasileiras para uma floresta. A frase caiu de cerca a quatro vezes em um país",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.024793388429752067,
+                "ok": false,
+                "empty": false,
+                "word_count": 61,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.024793388429752067
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ainda que a cidade de São Paulo não se encontra em um país onde o Brasil está sendo construído no centro da região e na Europa é mais conhecido como \"Alemanha\", mas também com os países do mundo todo (não há muitos anos) são as regiões brasileiras para uma floresta. A frase caiu de cerca a quatro vezes em um país",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.024793388429752067,
+                "ok": false,
+                "empty": false,
+                "word_count": 61,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.024793388429752067
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ainda que a cidade de São Paulo não se encontra em um país onde o Brasil está sendo construído no centro da região e na Europa é mais conhecido como \"Alemanha\", mas também com os países do mundo todo (não há muitos anos) são as regiões brasileiras para uma floresta. A frase caiu de cerca a quatro vezes em um país",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.024793388429752067,
+                "ok": false,
+                "empty": false,
+                "word_count": 61,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 3.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.024793388429752067
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ou seja, o seu computador pode ser usado para fazer a sua conta de dados e não se responsabilizar em um ambiente mais rápido do mundo todo ou mesmo com uma rede socialmente diferente da empresa (como você está usando os seus clientes). Antes disso vamos verificar que as pessoas podem usar este tipo, como o seu computador pode ser usado",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0743801652892562,
+                "ok": false,
+                "empty": false,
+                "word_count": 61,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0743801652892562
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ou seja, o seu computador pode ser usado para fazer a sua conta de dados e não se responsabilizar em um ambiente mais rápido do mundo todo ou mesmo com uma rede socialmente diferente da empresa (como você está usando os seus clientes). Antes disso vamos verificar que as pessoas podem usar este tipo, como o seu computador pode ser usado",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0743801652892562,
+                "ok": false,
+                "empty": false,
+                "word_count": 61,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0743801652892562
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ou seja, o seu computador pode ser usado para fazer a sua conta de dados e não se responsabilizar em um ambiente mais rápido do mundo todo ou mesmo com uma rede socialmente diferente da empresa (como você está usando os seus clientes). Antes disso vamos verificar que as pessoas podem usar este tipo, como o seu computador pode ser usado",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0743801652892562,
+                "ok": false,
+                "empty": false,
+                "word_count": 61,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0743801652892562
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ou seja, o seu computador pode ser usado para fazer a sua conta de dados e não se responsabilizar em um ambiente mais rápido do mundo todo ou mesmo com uma rede socialmente diferente da empresa (como você está usando os seus clientes). Antes disso vamos verificar que as pessoas podem usar este tipo, como o seu computador pode ser usado",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0743801652892562,
+                "ok": false,
+                "empty": false,
+                "word_count": 61,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0743801652892562
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ou seja, o seu computador pode ser usado para fazer a sua conta de dados e não se responsabilizar em um ambiente mais rápido do mundo todo ou mesmo com uma rede socialmente diferente da empresa (como você está usando os seus clientes). Antes disso vamos verificar que as pessoas podem usar este tipo, como o seu computador pode ser usado",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0743801652892562,
+                "ok": false,
+                "empty": false,
+                "word_count": 61,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0743801652892562
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.3333333333333333,
+        "repetition_rate": 0.06566654689184334,
+        "diversity": 0.20000000000000004,
+        "validation_loss": 3.0565789341926575,
+        "validation_note": null,
+        "overall_score": 0.46681668463289017
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_039000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“Acho que a música é um dos principais fatores da vida, mas não se pode ser considerada como algo mais importante.” O estudo foi publicado em 1954 pela Universidade de São Paulo (USP) para discutir o laboratório e mostrou uma pesquisa sobre os aspectos do cérebro que a música é um dos fatores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.08571428571428572,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.08571428571428572
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“Acho que a música é um dos principais fatores da vida, mas não se pode ser considerada como algo mais importante.” O estudo foi publicado em 1954 pela Universidade de São Paulo (USP) para discutir o laboratório e mostrou uma pesquisa sobre os aspectos do cérebro que a música é um dos fatores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.08571428571428572,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.08571428571428572
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“Acho que a música é um dos principais fatores da vida, mas não se pode ser considerada como algo mais importante.” O estudo foi publicado em 1954 pela Universidade de São Paulo (USP) para discutir o laboratório e mostrou uma pesquisa sobre os aspectos do cérebro que a música é um dos fatores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.08571428571428572,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.08571428571428572
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“Acho que a música é um dos principais fatores da vida, mas não se pode ser considerada como algo mais importante.” O estudo foi publicado em 1954 pela Universidade de São Paulo (USP) para discutir o laboratório e mostrou uma pesquisa sobre os aspectos do cérebro que a música é um dos fatores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.08571428571428572,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.08571428571428572
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“Acho que a música é um dos principais fatores da vida, mas não se pode ser considerada como algo mais importante.” O estudo foi publicado em 1954 pela Universidade de São Paulo (USP) para discutir o laboratório e mostrou uma pesquisa sobre os aspectos do cérebro que a música é um dos fatores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.08571428571428572,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 9.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.08571428571428572
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ainda assim que a cena de um barco na cidade é o mais importante do mundo e com os seus pais para as pessoas se tornarem cada vez maiores da região central dos anos 80 (dezembro) em Portugal: “Além disso não há nenhuma frase, mas também uma floresta que tem sido a única chuva.” A c",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ainda assim que a cena de um barco na cidade é o mais importante do mundo e com os seus pais para as pessoas se tornarem cada vez maiores da região central dos anos 80 (dezembro) em Portugal: “Além disso não há nenhuma frase, mas também uma floresta que tem sido a única chuva.” A c",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ainda assim que a cena de um barco na cidade é o mais importante do mundo e com os seus pais para as pessoas se tornarem cada vez maiores da região central dos anos 80 (dezembro) em Portugal: “Além disso não há nenhuma frase, mas também uma floresta que tem sido a única chuva.” A c",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ainda assim que a cena de um barco na cidade é o mais importante do mundo e com os seus pais para as pessoas se tornarem cada vez maiores da região central dos anos 80 (dezembro) em Portugal: “Além disso não há nenhuma frase, mas também uma floresta que tem sido a única chuva.” A c",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ainda assim que a cena de um barco na cidade é o mais importante do mundo e com os seus pais para as pessoas se tornarem cada vez maiores da região central dos anos 80 (dezembro) em Portugal: “Além disso não há nenhuma frase, mas também uma floresta que tem sido a única chuva.” A c",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Aqui, você pode usar o seu nome de um arquivo para verificar se a mensagem não for feita com uma página do Service e clicar em \"Social\" ou 'Clicker' (em inglês). O exemplo da lista dos arquivos no Windows XP é usado como ferramenta que permite visualizar o nome de um arquivo. A",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.04716981132075472,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.04716981132075472
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Aqui, você pode usar o seu nome de um arquivo para verificar se a mensagem não for feita com uma página do Service e clicar em \"Social\" ou 'Clicker' (em inglês). O exemplo da lista dos arquivos no Windows XP é usado como ferramenta que permite visualizar o nome de um arquivo. A",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.04716981132075472,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.04716981132075472
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Aqui, você pode usar o seu nome de um arquivo para verificar se a mensagem não for feita com uma página do Service e clicar em \"Social\" ou 'Clicker' (em inglês). O exemplo da lista dos arquivos no Windows XP é usado como ferramenta que permite visualizar o nome de um arquivo. A",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.04716981132075472,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.04716981132075472
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Aqui, você pode usar o seu nome de um arquivo para verificar se a mensagem não for feita com uma página do Service e clicar em \"Social\" ou 'Clicker' (em inglês). O exemplo da lista dos arquivos no Windows XP é usado como ferramenta que permite visualizar o nome de um arquivo. A",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.04716981132075472,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.04716981132075472
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Aqui, você pode usar o seu nome de um arquivo para verificar se a mensagem não for feita com uma página do Service e clicar em \"Social\" ou 'Clicker' (em inglês). O exemplo da lista dos arquivos no Windows XP é usado como ferramenta que permite visualizar o nome de um arquivo. A",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.04716981132075472,
+                "ok": true,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.04716981132075472
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.6666666666666666,
+        "repetition_rate": 0.04429469901168014,
+        "diversity": 0.20000000000000004,
+        "validation_loss": 3.0541669726371765,
+        "validation_note": null,
+        "overall_score": 0.5366891284815813
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_038500.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os alunos.” O professor da Universidade Federal do Rio Grande (UFRGS) apresentou como tema principal desta pesquisa sobre as questões relacionadas à saúde pública em relação ao ambiente de trabalho e o desenvolvimento das atividades sociais no Brasil: “Acho que a criança não é um problema,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.1092436974789916,
+                "ok": true,
+                "empty": false,
+                "word_count": 60,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 13.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1092436974789916
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os alunos.” O professor da Universidade Federal do Rio Grande (UFRGS) apresentou como tema principal desta pesquisa sobre as questões relacionadas à saúde pública em relação ao ambiente de trabalho e o desenvolvimento das atividades sociais no Brasil: “Acho que a criança não é um problema,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.1092436974789916,
+                "ok": true,
+                "empty": false,
+                "word_count": 60,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 13.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1092436974789916
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os alunos.” O professor da Universidade Federal do Rio Grande (UFRGS) apresentou como tema principal desta pesquisa sobre as questões relacionadas à saúde pública em relação ao ambiente de trabalho e o desenvolvimento das atividades sociais no Brasil: “Acho que a criança não é um problema,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.1092436974789916,
+                "ok": true,
+                "empty": false,
+                "word_count": 60,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 13.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1092436974789916
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os alunos.” O professor da Universidade Federal do Rio Grande (UFRGS) apresentou como tema principal desta pesquisa sobre as questões relacionadas à saúde pública em relação ao ambiente de trabalho e o desenvolvimento das atividades sociais no Brasil: “Acho que a criança não é um problema,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.1092436974789916,
+                "ok": true,
+                "empty": false,
+                "word_count": 60,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 13.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1092436974789916
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os alunos.” O professor da Universidade Federal do Rio Grande (UFRGS) apresentou como tema principal desta pesquisa sobre as questões relacionadas à saúde pública em relação ao ambiente de trabalho e o desenvolvimento das atividades sociais no Brasil: “Acho que a criança não é um problema,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.1092436974789916,
+                "ok": true,
+                "empty": false,
+                "word_count": 60,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 13.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1092436974789916
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A partir de agora o primeiro dia do evento foi a primeira vez que os alunos da Universidade Federal dos Campos foram escolhidos por um período empate e comemorando as suas atividades no Brasil (Foto: Divulgação)\nResposta : O objetivo principal é avaliar uma floresta, semelhante à frase curtas sobre a produção de c",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "A partir de agora o primeiro dia do evento foi a primeira vez que os alunos da Universidade Federal dos Campos foram escolhidos por um período empate e comemorando as suas atividades no Brasil (Foto: Divulgação)\nResposta : O objetivo principal é avaliar uma floresta, semelhante à frase curtas sobre a produção de c",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "A partir de agora o primeiro dia do evento foi a primeira vez que os alunos da Universidade Federal dos Campos foram escolhidos por um período empate e comemorando as suas atividades no Brasil (Foto: Divulgação)\nResposta : O objetivo principal é avaliar uma floresta, semelhante à frase curtas sobre a produção de c",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "A partir de agora o primeiro dia do evento foi a primeira vez que os alunos da Universidade Federal dos Campos foram escolhidos por um período empate e comemorando as suas atividades no Brasil (Foto: Divulgação)\nResposta : O objetivo principal é avaliar uma floresta, semelhante à frase curtas sobre a produção de c",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "A partir de agora o primeiro dia do evento foi a primeira vez que os alunos da Universidade Federal dos Campos foram escolhidos por um período empate e comemorando as suas atividades no Brasil (Foto: Divulgação)\nResposta : O objetivo principal é avaliar uma floresta, semelhante à frase curtas sobre a produção de c",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Aqui, você pode usar o seu computador para fazer uma mensagem de erro e não sequer um usuário ou qualquer outro dispositivo do sistema da sua conta (como a pessoa) no caso dos usuários podem ser usados em sites específicos como: O Site Database é criado por meio das suas informações pessoais, incluindo o Google. Aqui",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Aqui, você pode usar o seu computador para fazer uma mensagem de erro e não sequer um usuário ou qualquer outro dispositivo do sistema da sua conta (como a pessoa) no caso dos usuários podem ser usados em sites específicos como: O Site Database é criado por meio das suas informações pessoais, incluindo o Google. Aqui",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Aqui, você pode usar o seu computador para fazer uma mensagem de erro e não sequer um usuário ou qualquer outro dispositivo do sistema da sua conta (como a pessoa) no caso dos usuários podem ser usados em sites específicos como: O Site Database é criado por meio das suas informações pessoais, incluindo o Google. Aqui",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Aqui, você pode usar o seu computador para fazer uma mensagem de erro e não sequer um usuário ou qualquer outro dispositivo do sistema da sua conta (como a pessoa) no caso dos usuários podem ser usados em sites específicos como: O Site Database é criado por meio das suas informações pessoais, incluindo o Google. Aqui",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Aqui, você pode usar o seu computador para fazer uma mensagem de erro e não sequer um usuário ou qualquer outro dispositivo do sistema da sua conta (como a pessoa) no caso dos usuários podem ser usados em sites específicos como: O Site Database é criado por meio das suas informações pessoais, incluindo o Google. Aqui",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 56,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.6666666666666666,
+        "repetition_rate": 0.036414565826330535,
+        "diversity": 0.20000000000000004,
+        "validation_loss": 3.060173273086548,
+        "validation_note": null,
+        "overall_score": 0.5378711484593838
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_038000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os olhos.” O estudo foi realizado em 1889 por Daniel Souza (2004) pela Universidade de São Paulo para discutir as questões relacionadas à saúde e o desenvolvimento da doença no Brasil: “Acho que a criança não é um problema, mas também",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.1559633027522936,
+                "ok": true,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1559633027522936
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os olhos.” O estudo foi realizado em 1889 por Daniel Souza (2004) pela Universidade de São Paulo para discutir as questões relacionadas à saúde e o desenvolvimento da doença no Brasil: “Acho que a criança não é um problema, mas também",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.1559633027522936,
+                "ok": true,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1559633027522936
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os olhos.” O estudo foi realizado em 1889 por Daniel Souza (2004) pela Universidade de São Paulo para discutir as questões relacionadas à saúde e o desenvolvimento da doença no Brasil: “Acho que a criança não é um problema, mas também",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.1559633027522936,
+                "ok": true,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1559633027522936
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os olhos.” O estudo foi realizado em 1889 por Daniel Souza (2004) pela Universidade de São Paulo para discutir as questões relacionadas à saúde e o desenvolvimento da doença no Brasil: “Acho que a criança não é um problema, mas também",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.1559633027522936,
+                "ok": true,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1559633027522936
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“Acho que a criança não é um problema, mas também pode ser feito com os olhos.” O estudo foi realizado em 1889 por Daniel Souza (2004) pela Universidade de São Paulo para discutir as questões relacionadas à saúde e o desenvolvimento da doença no Brasil: “Acho que a criança não é um problema, mas também",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.1559633027522936,
+                "ok": true,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1559633027522936
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ainda assim que a cidade de São Paulo não se encontra em um país onde o Brasil tem sido mais barato e comemorado por todo mundo (a maioria dos países) é muito bem maior do planeta para os brasileiros no ano passado). O governo federal também está sendo considerado como uma das maiores cidades da região. Ainda assim, a cidade de São Paulo não se encontra em",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.11940298507462686,
+                "ok": false,
+                "empty": false,
+                "word_count": 67,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 16.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.11940298507462686
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ainda assim que a cidade de São Paulo não se encontra em um país onde o Brasil tem sido mais barato e comemorado por todo mundo (a maioria dos países) é muito bem maior do planeta para os brasileiros no ano passado). O governo federal também está sendo considerado como uma das maiores cidades da região. Ainda assim, a cidade de São Paulo não se encontra em",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.11940298507462686,
+                "ok": false,
+                "empty": false,
+                "word_count": 67,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 16.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.11940298507462686
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ainda assim que a cidade de São Paulo não se encontra em um país onde o Brasil tem sido mais barato e comemorado por todo mundo (a maioria dos países) é muito bem maior do planeta para os brasileiros no ano passado). O governo federal também está sendo considerado como uma das maiores cidades da região. Ainda assim, a cidade de São Paulo não se encontra em",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.11940298507462686,
+                "ok": false,
+                "empty": false,
+                "word_count": 67,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 16.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.11940298507462686
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ainda assim que a cidade de São Paulo não se encontra em um país onde o Brasil tem sido mais barato e comemorado por todo mundo (a maioria dos países) é muito bem maior do planeta para os brasileiros no ano passado). O governo federal também está sendo considerado como uma das maiores cidades da região. Ainda assim, a cidade de São Paulo não se encontra em",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.11940298507462686,
+                "ok": false,
+                "empty": false,
+                "word_count": 67,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 16.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.11940298507462686
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ainda assim que a cidade de São Paulo não se encontra em um país onde o Brasil tem sido mais barato e comemorado por todo mundo (a maioria dos países) é muito bem maior do planeta para os brasileiros no ano passado). O governo federal também está sendo considerado como uma das maiores cidades da região. Ainda assim, a cidade de São Paulo não se encontra em",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.11940298507462686,
+                "ok": false,
+                "empty": false,
+                "word_count": 67,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 16.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.11940298507462686
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ou seja, o seu médico pode ser feito com um tratamento de februjose ou uma doença infecciosa e não se sintam mais doentes em pacientes da mesma forma como a pessoa está relacionada ao paciente (cfrm). A cirurgia deve estar associada à hipertensão. O que é o médico? É importante ressaltar, pois",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ou seja, o seu médico pode ser feito com um tratamento de februjose ou uma doença infecciosa e não se sintam mais doentes em pacientes da mesma forma como a pessoa está relacionada ao paciente (cfrm). A cirurgia deve estar associada à hipertensão. O que é o médico? É importante ressaltar, pois",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ou seja, o seu médico pode ser feito com um tratamento de februjose ou uma doença infecciosa e não se sintam mais doentes em pacientes da mesma forma como a pessoa está relacionada ao paciente (cfrm). A cirurgia deve estar associada à hipertensão. O que é o médico? É importante ressaltar, pois",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ou seja, o seu médico pode ser feito com um tratamento de februjose ou uma doença infecciosa e não se sintam mais doentes em pacientes da mesma forma como a pessoa está relacionada ao paciente (cfrm). A cirurgia deve estar associada à hipertensão. O que é o médico? É importante ressaltar, pois",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ou seja, o seu médico pode ser feito com um tratamento de februjose ou uma doença infecciosa e não se sintam mais doentes em pacientes da mesma forma como a pessoa está relacionada ao paciente (cfrm). A cirurgia deve estar associada à hipertensão. O que é o médico? É importante ressaltar, pois",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.6666666666666666,
+        "repetition_rate": 0.09178876260897348,
+        "diversity": 0.20000000000000004,
+        "validation_loss": 3.0633023977279663,
+        "validation_note": null,
+        "overall_score": 0.5295650189419873
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\best_model.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“Acho que a criança não é um problema, mas também pode ser usada para fazer isso.” O autor do livro foi publicado em 1954 por Daniel Schwartzer (1968), na qual o laboratório de pesquisa científica e tecnológicas da Universidade Federal Paulistana Borges é um dos principais temas que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.010526315789473684,
+                "ok": true,
+                "empty": false,
+                "word_count": 48,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.010526315789473684
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“Acho que a criança não é um problema, mas também pode ser usada para fazer isso.” O autor do livro foi publicado em 1954 por Daniel Schwartzer (1968), na qual o laboratório de pesquisa científica e tecnológicas da Universidade Federal Paulistana Borges é um dos principais temas que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.010526315789473684,
+                "ok": true,
+                "empty": false,
+                "word_count": 48,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.010526315789473684
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“Acho que a criança não é um problema, mas também pode ser usada para fazer isso.” O autor do livro foi publicado em 1954 por Daniel Schwartzer (1968), na qual o laboratório de pesquisa científica e tecnológicas da Universidade Federal Paulistana Borges é um dos principais temas que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.010526315789473684,
+                "ok": true,
+                "empty": false,
+                "word_count": 48,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.010526315789473684
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“Acho que a criança não é um problema, mas também pode ser usada para fazer isso.” O autor do livro foi publicado em 1954 por Daniel Schwartzer (1968), na qual o laboratório de pesquisa científica e tecnológicas da Universidade Federal Paulistana Borges é um dos principais temas que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.010526315789473684,
+                "ok": true,
+                "empty": false,
+                "word_count": 48,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.010526315789473684
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“Acho que a criança não é um problema, mas também pode ser usada para fazer isso.” O autor do livro foi publicado em 1954 por Daniel Schwartzer (1968), na qual o laboratório de pesquisa científica e tecnológicas da Universidade Federal Paulistana Borges é um dos principais temas que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.010526315789473684,
+                "ok": true,
+                "empty": false,
+                "word_count": 48,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.010526315789473684
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ainda assim que a cena de um barco na cidade é muito mais fácil e menos dobro da região onde o peixe se encontra em casa para os seus vizinhos (o povo) ouviros com as frases curtas sobre uma floresta, semelhante ao mar. A cena de um barco na cidade é",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.12871287128712872,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 13.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.12871287128712872
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ainda assim que a cena de um barco na cidade é muito mais fácil e menos dobro da região onde o peixe se encontra em casa para os seus vizinhos (o povo) ouviros com as frases curtas sobre uma floresta, semelhante ao mar. A cena de um barco na cidade é",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.12871287128712872,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 13.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.12871287128712872
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ainda assim que a cena de um barco na cidade é muito mais fácil e menos dobro da região onde o peixe se encontra em casa para os seus vizinhos (o povo) ouviros com as frases curtas sobre uma floresta, semelhante ao mar. A cena de um barco na cidade é",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.12871287128712872,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 13.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.12871287128712872
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ainda assim que a cena de um barco na cidade é muito mais fácil e menos dobro da região onde o peixe se encontra em casa para os seus vizinhos (o povo) ouviros com as frases curtas sobre uma floresta, semelhante ao mar. A cena de um barco na cidade é",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.12871287128712872,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 13.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.12871287128712872
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ainda assim que a cena de um barco na cidade é muito mais fácil e menos dobro da região onde o peixe se encontra em casa para os seus vizinhos (o povo) ouviros com as frases curtas sobre uma floresta, semelhante ao mar. A cena de um barco na cidade é",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.12871287128712872,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 13.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.12871287128712872
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Aqui, você pode usar o seu nome de um filtro para verificar se a sua mensagem não está em contato com os seus usuários e quaisquer outros sites ou serviços? Ou seja: Você deve fazer uma resposta ao usuário do menino da página (por exemplo) no caso dos dados pessoais que deseja realizar. Se você pode usar o seu nome de um filtro para",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.1328125,
+                "ok": false,
+                "empty": false,
+                "word_count": 64,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1328125
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Aqui, você pode usar o seu nome de um filtro para verificar se a sua mensagem não está em contato com os seus usuários e quaisquer outros sites ou serviços? Ou seja: Você deve fazer uma resposta ao usuário do menino da página (por exemplo) no caso dos dados pessoais que deseja realizar. Se você pode usar o seu nome de um filtro para",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.1328125,
+                "ok": false,
+                "empty": false,
+                "word_count": 64,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1328125
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Aqui, você pode usar o seu nome de um filtro para verificar se a sua mensagem não está em contato com os seus usuários e quaisquer outros sites ou serviços? Ou seja: Você deve fazer uma resposta ao usuário do menino da página (por exemplo) no caso dos dados pessoais que deseja realizar. Se você pode usar o seu nome de um filtro para",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.1328125,
+                "ok": false,
+                "empty": false,
+                "word_count": 64,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1328125
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Aqui, você pode usar o seu nome de um filtro para verificar se a sua mensagem não está em contato com os seus usuários e quaisquer outros sites ou serviços? Ou seja: Você deve fazer uma resposta ao usuário do menino da página (por exemplo) no caso dos dados pessoais que deseja realizar. Se você pode usar o seu nome de um filtro para",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.1328125,
+                "ok": false,
+                "empty": false,
+                "word_count": 64,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1328125
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Aqui, você pode usar o seu nome de um filtro para verificar se a sua mensagem não está em contato com os seus usuários e quaisquer outros sites ou serviços? Ou seja: Você deve fazer uma resposta ao usuário do menino da página (por exemplo) no caso dos dados pessoais que deseja realizar. Se você pode usar o seu nome de um filtro para",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.1328125,
+                "ok": false,
+                "empty": false,
+                "word_count": 64,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.1328125
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.3333333333333333,
+        "repetition_rate": 0.0906838956922008,
+        "diversity": 0.20000000000000004,
+        "validation_loss": 3.0678917169570923,
+        "validation_note": null,
+        "overall_score": 0.4630640823128365
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_020700.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "a) O que é um dos elementos da imagem. Os objetos são os valores do texto, mas também se pode ser usado para verificar as características das palavras; b). As ideias de luz podem estar relacionadas com todos esses tipos ou grupos (continue e laboratório); cientistas em relação ao mesmo tempo: a) O que é o caso da",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.04310344827586207,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.04310344827586207
+              }
+            },
+            {
+              "generation": 2,
+              "text": "a) O que é um dos elementos da imagem. Os objetos são os valores do texto, mas também se pode ser usado para verificar as características das palavras; b). As ideias de luz podem estar relacionadas com todos esses tipos ou grupos (continue e laboratório); cientistas em relação ao mesmo tempo: a) O que é o caso da",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.04310344827586207,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.04310344827586207
+              }
+            },
+            {
+              "generation": 3,
+              "text": "a) O que é um dos elementos da imagem. Os objetos são os valores do texto, mas também se pode ser usado para verificar as características das palavras; b). As ideias de luz podem estar relacionadas com todos esses tipos ou grupos (continue e laboratório); cientistas em relação ao mesmo tempo: a) O que é o caso da",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.04310344827586207,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.04310344827586207
+              }
+            },
+            {
+              "generation": 4,
+              "text": "a) O que é um dos elementos da imagem. Os objetos são os valores do texto, mas também se pode ser usado para verificar as características das palavras; b). As ideias de luz podem estar relacionadas com todos esses tipos ou grupos (continue e laboratório); cientistas em relação ao mesmo tempo: a) O que é o caso da",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.04310344827586207,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.04310344827586207
+              }
+            },
+            {
+              "generation": 5,
+              "text": "a) O que é um dos elementos da imagem. Os objetos são os valores do texto, mas também se pode ser usado para verificar as características das palavras; b). As ideias de luz podem estar relacionadas com todos esses tipos ou grupos (continue e laboratório); cientistas em relação ao mesmo tempo: a) O que é o caso da",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.04310344827586207,
+                "ok": true,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.04310344827586207
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ainda assim como a linguagem de um barco e o que se encontra em sua obra para os seus pais: “Além da Liga do Mundo” (Seus) é muito importante na vida dos homens; mas também não há nada mais sobre as pessoas com Deus, pois ele tem uma frases curtas. A linguagem de um b",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.045871559633027525,
+                "ok": false,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.045871559633027525
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ainda assim como a linguagem de um barco e o que se encontra em sua obra para os seus pais: “Além da Liga do Mundo” (Seus) é muito importante na vida dos homens; mas também não há nada mais sobre as pessoas com Deus, pois ele tem uma frases curtas. A linguagem de um b",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.045871559633027525,
+                "ok": false,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.045871559633027525
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ainda assim como a linguagem de um barco e o que se encontra em sua obra para os seus pais: “Além da Liga do Mundo” (Seus) é muito importante na vida dos homens; mas também não há nada mais sobre as pessoas com Deus, pois ele tem uma frases curtas. A linguagem de um b",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.045871559633027525,
+                "ok": false,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.045871559633027525
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ainda assim como a linguagem de um barco e o que se encontra em sua obra para os seus pais: “Além da Liga do Mundo” (Seus) é muito importante na vida dos homens; mas também não há nada mais sobre as pessoas com Deus, pois ele tem uma frases curtas. A linguagem de um b",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.045871559633027525,
+                "ok": false,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.045871559633027525
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ainda assim como a linguagem de um barco e o que se encontra em sua obra para os seus pais: “Além da Liga do Mundo” (Seus) é muito importante na vida dos homens; mas também não há nada mais sobre as pessoas com Deus, pois ele tem uma frases curtas. A linguagem de um b",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.045871559633027525,
+                "ok": false,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 5.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.045871559633027525
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ou seja, o fato de ser um dos mais importantes para a sua vida e da humanidade? A verdadeira coisa não se pode fazer com os seus próprios interesses do mundo! Ela também tem uma visão muito grande: “Achoque aqui em si mesmo” (ou eu) que é preciso saber como você quer dizer. Mas, por isso o seu amor de Deus está",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 62,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ou seja, o fato de ser um dos mais importantes para a sua vida e da humanidade? A verdadeira coisa não se pode fazer com os seus próprios interesses do mundo! Ela também tem uma visão muito grande: “Achoque aqui em si mesmo” (ou eu) que é preciso saber como você quer dizer. Mas, por isso o seu amor de Deus está",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 62,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ou seja, o fato de ser um dos mais importantes para a sua vida e da humanidade? A verdadeira coisa não se pode fazer com os seus próprios interesses do mundo! Ela também tem uma visão muito grande: “Achoque aqui em si mesmo” (ou eu) que é preciso saber como você quer dizer. Mas, por isso o seu amor de Deus está",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 62,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ou seja, o fato de ser um dos mais importantes para a sua vida e da humanidade? A verdadeira coisa não se pode fazer com os seus próprios interesses do mundo! Ela também tem uma visão muito grande: “Achoque aqui em si mesmo” (ou eu) que é preciso saber como você quer dizer. Mas, por isso o seu amor de Deus está",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 62,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ou seja, o fato de ser um dos mais importantes para a sua vida e da humanidade? A verdadeira coisa não se pode fazer com os seus próprios interesses do mundo! Ela também tem uma visão muito grande: “Achoque aqui em si mesmo” (ou eu) que é preciso saber como você quer dizer. Mas, por isso o seu amor de Deus está",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 62,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.3333333333333333,
+        "repetition_rate": 0.029658335969629863,
+        "diversity": 0.20000000000000004,
+        "validation_loss": 3.31370347738266,
+        "validation_note": null,
+        "overall_score": 0.47221791627122217
+      }
+    }
+  ],
+  "recommended_checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_038500.pt"
+}

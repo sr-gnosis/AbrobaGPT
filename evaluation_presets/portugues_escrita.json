@@ -1,0 +1,8 @@
+{
+  "name": "Português e escrita", "category": "portugues_escrita",
+  "tests": [
+    {"id":"pt-corrigir","category":"portugues_escrita","prompt":"Reescreva corretamente: agente vamos se encontrar amanha","reference":"A gente vai se encontrar amanhã.","criteria":{"reference_mode":"keywords","must_include":["amanhã"],"min_words":4,"max_words":15}},
+    {"id":"pt-resumo","category":"portugues_escrita","prompt":"Resuma em uma frase: A energia solar usa a luz do Sol para produzir eletricidade e reduz a dependência de combustíveis fósseis.","criteria":{"must_include":["solar"],"min_words":6,"max_words":30}},
+    {"id":"pt-formato","category":"portugues_escrita","prompt":"Dê exatamente três cores primárias separadas por vírgulas.","criteria":{"format_regex":"(?i)[^,]+,\\s*[^,]+,\\s*[^,]+","min_words":3,"max_words":6}}
+  ]
+}

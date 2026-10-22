@@ -1,0 +1,8 @@
+{
+  "name": "Qualidade da geração", "category": "qualidade_geracao",
+  "tests": [
+    {"id":"quality-continuity","category":"qualidade_geracao","prompt":"Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:","criteria":{"min_words":8,"max_words":100,"forbid":["Pergunta:","Resposta:","###"]}},
+    {"id":"quality-instruction","category":"qualidade_geracao","prompt":"Escreva duas frases curtas sobre uma floresta, sem título.","criteria":{"min_words":6,"max_words":40,"forbid":["Título:","###","Pergunta:"]}},
+    {"id":"quality-no-qa-copy","category":"qualidade_geracao","prompt":"Explique brevemente por que dormir é importante.","criteria":{"min_words":8,"max_words":60,"forbid":["Pergunta:","Resposta:","###PERGUNTA"]}}
+  ]
+}

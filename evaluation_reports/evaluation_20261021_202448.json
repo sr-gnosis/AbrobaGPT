@@ -1,0 +1,754 @@
+{
+  "format_version": 1,
+  "created_at": "2026-10-21T23:24:48.317724+00:00",
+  "preset": {
+    "path": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\evaluation_presets\\conhecimento_geral.json",
+    "name": "Conhecimento geral",
+    "category": "conhecimento_geral"
+  },
+  "settings": {
+    "questions": 10,
+    "generations": 1,
+    "max_tokens": 80,
+    "greedy": false,
+    "temperature": 0.5,
+    "top_k": null,
+    "repetition_penalty": 1.0,
+    "seed": null,
+    "validation_loss": false,
+    "allow_legacy_checkpoint": false
+  },
+  "questions": [
+    "general-capital-brasil",
+    "general-agua",
+    "general-ai"
+  ],
+  "limitations": [
+    "Pontuação geral é configurável e não mede inteligência geral.",
+    "Loss só é comparável quando usa o mesmo tokenizer e dados de validação ativos.",
+    "Referências aceitam regras por teste; não há comparação literal universal."
+  ],
+  "checkpoints": [
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_020700.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "general-capital-brasil",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a capital do Brasil?",
+          "reference": "Brasília",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "Brasília"
+            ],
+            "min_words": 1,
+            "max_words": 20
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Imbas do Brasil - Atualizado em 07/11/2011 às 17:58 O presidente da República Dilma Rousseff, disse nesta quinta-feira (2), que o presidente da República Dilma Rousseff, afirmou que o governo Bolsonaro tem o país a ser colocado na capital do país. O",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.11235955056179775,
+                "ok": false,
+                "empty": false,
+                "word_count": 45,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 10.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.11235955056179775
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-agua",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a fórmula química da água? Responda apenas com a fórmula.",
+          "reference": "H2O",
+          "criteria": {
+            "reference_mode": "exact",
+            "format_regex": "H2O",
+            "min_words": 1,
+            "max_words": 1
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O processo de fórmula química é um instrumento de fórmula química. Porque, a fórmula química é um instrumento de fórmula química, que se encontra no fórmula química. O processo de fórmula química é um instrumento de fórmula química. A fórmula",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.48148148148148145,
+                "ok": false,
+                "empty": false,
+                "word_count": 40,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 37.0,
+                "repetition_duplicate_sentences": 1.0,
+                "repetition_rate": 0.48148148148148145
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-ai",
+          "category": "conhecimento_geral",
+          "prompt": "Em uma frase, explique o que é aprendizado de máquina.",
+          "reference": "método em que modelos aprendem padrões a partir de dados",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "dados"
+            ],
+            "min_words": 5,
+            "max_words": 40
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Uma ciência que pode ser utilizada para o seu braço. A pele é uma velocidade que tem um micro-laboratório de ciência e e a sua capacidade de gerar uma ciência. Esta síndrome é um micro-laboratório de ciência e micro-laboratório de ciência. A",
+              "metrics": {
+                "reference": 0.14285714285714285,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.16483516483516483,
+                "ok": false,
+                "empty": false,
+                "word_count": 45,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 15.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.16483516483516483
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.047619047619047616,
+        "instruction_following": 0.0,
+        "structural_quality": 0.0,
+        "repetition_rate": 0.252892065626148,
+        "diversity": 1.0,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.17873285682274448
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_020500.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "general-capital-brasil",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a capital do Brasil?",
+          "reference": "Brasília",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "Brasília"
+            ],
+            "min_words": 1,
+            "max_words": 20
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Saiba mais sobre a capital do Brasil em Minas Gerais - Época de Minas Gerais - Encontro de Minas Gerais - Encontro de Minas Gerais - Encontro de Minas Gerais - Encontro de Minas Gerais - Encontro de Minas Gerais - Encontro de",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.5714285714285714,
+                "ok": false,
+                "empty": false,
+                "word_count": 36,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 40.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5714285714285714
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-agua",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a fórmula química da água? Responda apenas com a fórmula.",
+          "reference": "H2O",
+          "criteria": {
+            "reference_mode": "exact",
+            "format_regex": "H2O",
+            "min_words": 1,
+            "max_words": 1
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A fórmula química é a fórmula química, a fórmula química e a fórmula química. As fórmulas químicas são exibidas para uso de fórmulas químicas. O fórmula química é a fórmula química e a fórmula química. O",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.3698630136986301,
+                "ok": false,
+                "empty": false,
+                "word_count": 36,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 27.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.3698630136986301
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-ai",
+          "category": "conhecimento_geral",
+          "prompt": "Em uma frase, explique o que é aprendizado de máquina.",
+          "reference": "método em que modelos aprendem padrões a partir de dados",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "dados"
+            ],
+            "min_words": 5,
+            "max_words": 40
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A primeira frase é uma forma de frase, que é muito comum na sua carga. É possível verificar a sua frase. O que é o que é um sistema de desenvolvimento. O que é o sistema de desenvolvimento de software? O que é um sistema de software? A interface de software é um sistema",
+              "metrics": {
+                "reference": 0.14285714285714285,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.23423423423423423,
+                "ok": false,
+                "empty": false,
+                "word_count": 54,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 26.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.23423423423423423
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.047619047619047616,
+        "instruction_following": 0.0,
+        "structural_quality": 0.0,
+        "repetition_rate": 0.39184193978714527,
+        "diversity": 1.0,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.15789037569859488
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_020000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "general-capital-brasil",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a capital do Brasil?",
+          "reference": "Brasília",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "Brasília"
+            ],
+            "min_words": 1,
+            "max_words": 20
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Revista de Convenção de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de Projetos de",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.8921568627450981,
+                "ok": false,
+                "empty": false,
+                "word_count": 52,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 91.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8921568627450981
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-agua",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a fórmula química da água? Responda apenas com a fórmula.",
+          "reference": "H2O",
+          "criteria": {
+            "reference_mode": "exact",
+            "format_regex": "H2O",
+            "min_words": 1,
+            "max_words": 1
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A fórmula está disponível para a fórmula de água. A fórmula química é um órgão responsável por fórmula de água, que tem como objetivo analisar os laboratórios de água e o fósforo da água. A fórmula química é um órgão responsável por fórmulas de água e gord",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.2553191489361702,
+                "ok": false,
+                "empty": false,
+                "word_count": 47,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 24.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.2553191489361702
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-ai",
+          "category": "conhecimento_geral",
+          "prompt": "Em uma frase, explique o que é aprendizado de máquina.",
+          "reference": "método em que modelos aprendem padrões a partir de dados",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "dados"
+            ],
+            "min_words": 5,
+            "max_words": 40
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A Data de Visualidade foi realizada no dia 22 de fevereiro, na quarta-feira, dia 14 de novembro. A Data de Visualidade foi feita em novembro, no dia 24 de maio e no dia 24 de novembro, no dia 22 de dezembro. Os locais de videocidade da Data de Visualidade foram incluídos na segunda-feira",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.21818181818181817,
+                "ok": false,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 24.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.21818181818181817
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 0.0,
+        "structural_quality": 0.0,
+        "repetition_rate": 0.4552192766210288,
+        "diversity": 1.0,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.13171710850684568
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_019500.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "general-capital-brasil",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a capital do Brasil?",
+          "reference": "Brasília",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "Brasília"
+            ],
+            "min_words": 1,
+            "max_words": 20
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O que é a capital do Brasil? - Breno News Brasil | Rural do Brasil | Breno News Brasil | Breno News Brasil O que é a capital do Brasil? A capital do Brasil é a capital do Brasil é a capital do Brasil. A capital do Brasil é a capital do Brasil. A capital do Brasil tem como principal objetivo a",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.6016949152542372,
+                "ok": false,
+                "empty": false,
+                "word_count": 58,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 71.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6016949152542372
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-agua",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a fórmula química da água? Responda apenas com a fórmula.",
+          "reference": "H2O",
+          "criteria": {
+            "reference_mode": "exact",
+            "format_regex": "H2O",
+            "min_words": 1,
+            "max_words": 1
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Mas, não é só um problema de saúde, mas, um problema de saúde, mas o que a vida pode ser o suficiente para a saúde. A fórmula química é que os homens não têm uma fórmula química. A fórmula química é um problema que a fórmula química é o que a fórmula química",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.25471698113207547,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 27.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.25471698113207547
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-ai",
+          "category": "conhecimento_geral",
+          "prompt": "Em uma frase, explique o que é aprendizado de máquina.",
+          "reference": "método em que modelos aprendem padrões a partir de dados",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "dados"
+            ],
+            "min_words": 5,
+            "max_words": 40
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ela é a boa é a nossa própria. A verdadeira é o que é, mas não é, mas, mas não é um futuro. A verdadeira é que os seres humanos não têm. A verdadeira é que se possa vir. Quando o seu próprio software não é um exemplo disso que não é. A verdadeira é que as pessoas vão, mas o que é",
+              "metrics": {
+                "reference": 0.14285714285714285,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.20155038759689922,
+                "ok": false,
+                "empty": false,
+                "word_count": 63,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 26.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.20155038759689922
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.047619047619047616,
+        "instruction_following": 0.0,
+        "structural_quality": 0.0,
+        "repetition_rate": 0.3526540946610706,
+        "diversity": 1.0,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.16376855246750607
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_019000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "general-capital-brasil",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a capital do Brasil?",
+          "reference": "Brasília",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "Brasília"
+            ],
+            "min_words": 1,
+            "max_words": 20
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Regalize os custos de compra de produtos e serviços de compra de produtos e serviços de serviços de serviços e serviços de serviços que usam serviços de serviços, serviços de serviços e serviços de serviços de serviços e serviços, serviços e serviços de serviços. A partir de uma empresa, a empresa responsável pela empresa responsável pela gestão de serviços e serviços de serviços, serviços e serviços de serviços de",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.5328467153284672,
+                "ok": false,
+                "empty": false,
+                "word_count": 69,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 73.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5328467153284672
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-agua",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a fórmula química da água? Responda apenas com a fórmula.",
+          "reference": "H2O",
+          "criteria": {
+            "reference_mode": "exact",
+            "format_regex": "H2O",
+            "min_words": 1,
+            "max_words": 1
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Por exemplo, o diagnóstico de fórmula química é realizado em um sistema de fórmula química, com o objetivo de ler o diagnóstico do que é possível ser feito. O diagnóstico de fórmula química é a fórmula química e a fórmula química. A f",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.19767441860465115,
+                "ok": false,
+                "empty": false,
+                "word_count": 43,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 17.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.19767441860465115
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-ai",
+          "category": "conhecimento_geral",
+          "prompt": "Em uma frase, explique o que é aprendizado de máquina.",
+          "reference": "método em que modelos aprendem padrões a partir de dados",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "dados"
+            ],
+            "min_words": 5,
+            "max_words": 40
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A partir de um diagnóstico, o melhor desempenho dos usuários, pois o cliente finalmente venha a ser utilizado para o seu uso. O que é um profissional de segurança de máquina e como você pode ser utilizado para o seu site, você pode fazer com que você pode fazer com que você precisa saber como você pode usar as ferramentas de segurança. O que",
+              "metrics": {
+                "reference": 0.2857142857142857,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.171875,
+                "ok": false,
+                "empty": false,
+                "word_count": 64,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 22.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.171875
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.09523809523809523,
+        "instruction_following": 0.0,
+        "structural_quality": 0.0,
+        "repetition_rate": 0.30079871131103947,
+        "diversity": 1.0,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.1882135266366774
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_018500.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "general-capital-brasil",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a capital do Brasil?",
+          "reference": "Brasília",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "Brasília"
+            ],
+            "min_words": 1,
+            "max_words": 20
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Além de Portugal é um dos maiores acionistas, o que é o que é o Brasil. Os países são os países que têm um crescimento de R$ 20 bilhões. O que é o país é mais importante para o Brasil? E como é o Brasil? O que é a capital do Brasil? O Brasil é o Brasil? O Brasil é o Brasil? O Brasil é o",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.31386861313868614,
+                "ok": false,
+                "empty": false,
+                "word_count": 66,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 41.0,
+                "repetition_duplicate_sentences": 1.0,
+                "repetition_rate": 0.31386861313868614
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-agua",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a fórmula química da água? Responda apenas com a fórmula.",
+          "reference": "H2O",
+          "criteria": {
+            "reference_mode": "exact",
+            "format_regex": "H2O",
+            "min_words": 1,
+            "max_words": 1
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O que é o uso de fórmula tem sido o melhor, pois é a célula de lixo, ou seja, não é um célula, é um lixo de fórmula, ou seja, uma fórmula química. O que é o que é o caso é o célula. É o que é o célula",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.24,
+                "ok": false,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 24.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.24
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-ai",
+          "category": "conhecimento_geral",
+          "prompt": "Em uma frase, explique o que é aprendizado de máquina.",
+          "reference": "método em que modelos aprendem padrões a partir de dados",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "dados"
+            ],
+            "min_words": 5,
+            "max_words": 40
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O que pode ser feito em uma câmera, e a sua câmera é um ambiente de câmera. Se você precisa ser uma câmera, você pode ser capaz de visualizar o seu produto, você pode ser um ambiente de câmeras. Você pode ter uma câmera, como um produto, você pode ser um produto que pode ser um produto de câm",
+              "metrics": {
+                "reference": 0.14285714285714285,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.211864406779661,
+                "ok": false,
+                "empty": false,
+                "word_count": 59,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 25.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.211864406779661
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.047619047619047616,
+        "instruction_following": 0.0,
+        "structural_quality": 0.0,
+        "repetition_rate": 0.2552443399727824,
+        "diversity": 1.0,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.1783800156707493
+      }
+    }
+  ],
+  "recommended_checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_019000.pt"
+}

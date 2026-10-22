@@ -1,0 +1,8 @@
+{
+  "name": "Conhecimento geral", "category": "conhecimento_geral",
+  "tests": [
+    {"id":"general-capital-brasil","category":"conhecimento_geral","prompt":"Qual é a capital do Brasil?","reference":"Brasília","criteria":{"reference_mode":"keywords","must_include":["Brasília"],"min_words":1,"max_words":20}},
+    {"id":"general-agua","category":"conhecimento_geral","prompt":"Qual é a fórmula química da água? Responda apenas com a fórmula.","reference":"H2O","criteria":{"reference_mode":"exact","format_regex":"H2O","min_words":1,"max_words":1}},
+    {"id":"general-ai","category":"conhecimento_geral","prompt":"Em uma frase, explique o que é aprendizado de máquina.","reference":"método em que modelos aprendem padrões a partir de dados","criteria":{"reference_mode":"keywords","must_include":["dados"],"min_words":5,"max_words":40}}
+  ]
+}

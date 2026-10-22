@@ -1,0 +1,406 @@
+{
+  "format_version": 1,
+  "created_at": "2026-10-21T14:56:53.592570+00:00",
+  "preset": {
+    "path": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\evaluation_presets\\conhecimento_geral.json",
+    "name": "Conhecimento geral",
+    "category": "conhecimento_geral"
+  },
+  "settings": {
+    "questions": 3,
+    "generations": 1,
+    "max_tokens": 80,
+    "greedy": false,
+    "temperature": 0.75,
+    "top_k": null,
+    "repetition_penalty": 1.0,
+    "seed": null,
+    "validation_loss": true,
+    "allow_legacy_checkpoint": false
+  },
+  "questions": [
+    "general-capital-brasil",
+    "general-agua",
+    "general-ai"
+  ],
+  "limitations": [
+    "Pontuação geral é configurável e não mede inteligência geral.",
+    "Loss só é comparável quando usa o mesmo tokenizer e dados de validação ativos.",
+    "Referências aceitam regras por teste; não há comparação literal universal."
+  ],
+  "checkpoints": [
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_001000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "general-capital-brasil",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a capital do Brasil?",
+          "reference": "Brasília",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "Brasília"
+            ],
+            "min_words": 1,
+            "max_words": 20
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "De acordo comvista, waryr a um estudo. TLW, firlogs, também é necessário a vida não não há meio de jovensado. Apressão da vobre e a sua nova um badleia, não adem, assim como a de mulher se trabalha entre a more, já, o posto. O que não em",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 48,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-agua",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a fórmula química da água? Responda apenas com a fórmula.",
+          "reference": "H2O",
+          "criteria": {
+            "reference_mode": "exact",
+            "format_regex": "H2O",
+            "min_words": 1,
+            "max_words": 1
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A coração. A minha nível de manutenção de 182. 5, a 3.HER, RR, 9. Alex. O isto os aplicadas as furais de um ponto de transde da Neram. Se o leitiviz DRENDA. 22.8. DESILRI,3. POL. Paulo de",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 40,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-ai",
+          "category": "conhecimento_geral",
+          "prompt": "Em uma frase, explique o que é aprendizado de máquina.",
+          "reference": "método em que modelos aprendem padrões a partir de dados",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "dados"
+            ],
+            "min_words": 5,
+            "max_words": 40
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Dou, o interior de “la pode ser?\nResposta: A remobreu estultivo deve ser rapenstamente, pois de pi encontrar com a fazer por exemplo, mas?\nResposta: Os naros de Tabela microm, todos, ele percebos e não faz, o texto.",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 38,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 0.0,
+        "structural_quality": 0.3333333333333333,
+        "repetition_rate": 0.0,
+        "diversity": 1.0,
+        "validation_loss": 4.761567711830139,
+        "validation_note": null,
+        "overall_score": 0.26666666666666666
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\best_model.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "general-capital-brasil",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a capital do Brasil?",
+          "reference": "Brasília",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "Brasília"
+            ],
+            "min_words": 1,
+            "max_words": 20
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Consistência informaria: competição do futuro do apoio será necessário estaritantes do Conselho Federal para o CNJSI, de importância da União, de Informação das pessoas, que o programa de processos de futuro da Guelizou-o, na versão dos pativa e o sistema, que o dia,gem, no Brasil, com o nomeação. O trabalho transporte é",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.009345794392523364,
+                "ok": false,
+                "empty": false,
+                "word_count": 54,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.009345794392523364
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-agua",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a fórmula química da água? Responda apenas com a fórmula.",
+          "reference": "H2O",
+          "criteria": {
+            "reference_mode": "exact",
+            "format_regex": "H2O",
+            "min_words": 1,
+            "max_words": 1
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A votação de na drocontro da mesa que o governo de uma babriquência, busca ser rápida de quem a tudo, é o modo confro, em fazer seu métodos. A sho importa de tailismo que, no seu Brasil e está usado de um quarto consideradas. A agro no homem não se oferecendo",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-ai",
+          "category": "conhecimento_geral",
+          "prompt": "Em uma frase, explique o que é aprendizado de máquina.",
+          "reference": "método em que modelos aprendem padrões a partir de dados",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "dados"
+            ],
+            "min_words": 5,
+            "max_words": 40
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O Samidade, como o que o Guiante étal é uma um ajuseses, porém,la. Esque da faberões merja menor que ele. Alquana não tem um dos desafio e, o sintomas. A verão e não ser dar um momento interessada. A história é um preensor. De que pode ser em que",
+              "metrics": {
+                "reference": 0.14285714285714285,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.047619047619047616,
+        "instruction_following": 0.0,
+        "structural_quality": 0.0,
+        "repetition_rate": 0.003115264797507788,
+        "diversity": 1.0,
+        "validation_loss": 4.790413856506348,
+        "validation_note": null,
+        "overall_score": 0.2161993769470405
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_000500.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "general-capital-brasil",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a capital do Brasil?",
+          "reference": "Brasília",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "Brasília"
+            ],
+            "min_words": 1,
+            "max_words": 20
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.0,
+                "ok": false,
+                "empty": true,
+                "word_count": 0,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-agua",
+          "category": "conhecimento_geral",
+          "prompt": "Qual é a fórmula química da água? Responda apenas com a fórmula.",
+          "reference": "H2O",
+          "criteria": {
+            "reference_mode": "exact",
+            "format_regex": "H2O",
+            "min_words": 1,
+            "max_words": 1
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "com.",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 1.0,
+                "repetition": 0.0,
+                "ok": true,
+                "empty": false,
+                "word_count": 1,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 0.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "id": "general-ai",
+          "category": "conhecimento_geral",
+          "prompt": "Em uma frase, explique o que é aprendizado de máquina.",
+          "reference": "método em que modelos aprendem padrões a partir de dados",
+          "criteria": {
+            "reference_mode": "keywords",
+            "must_include": [
+              "dados"
+            ],
+            "min_words": 5,
+            "max_words": 40
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "No dia milhões de um armor, o um desgre, a Linem. O cliente, seja ineterot, ou A com o centrontanonembro de um supazom consérrifferência, mas ela é uma processamento e não compreroericanega, mas, de próprio com 2013, ou da bocidades da",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 1.0,
+                "instruction": 0.0,
+                "structure": 0.0,
+                "repetition": 0.012345679012345678,
+                "ok": false,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 1.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.012345679012345678
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 0.0,
+        "structural_quality": 0.3333333333333333,
+        "repetition_rate": 0.004115226337448559,
+        "diversity": 1.0,
+        "validation_loss": 5.160751461982727,
+        "validation_note": null,
+        "overall_score": 0.2660493827160494
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\test_ckpt.pt",
+      "error": "Checkpoint incompatível: arquitetura incompatível em n_layer: checkpoint=1, atual=8.",
+      "results": [],
+      "metrics": {}
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\best_model_be3f8937c0.pt",
+      "error": "Checkpoint incompatível: fingerprint do tokenizer não confere com o checkpoint.",
+      "results": [],
+      "metrics": {}
+    }
+  ],
+  "recommended_checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_001000.pt"
+}

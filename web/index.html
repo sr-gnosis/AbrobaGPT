@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09090b" />
+    <meta
+      name="description"
+      content="AbrobaGPT — uma LLM feita do zero, treinada em português e que roda local no seu computador."
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cg%20clip-path%3D%22url%28%23a%29%22%3E%3Cpath%20d%3D%22M12%2058%20V30%20A20%2020%200%200%201%2052%2030%20V58%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23b48cff%22%20stroke-width%3D%227%22%20stroke-linejoin%3D%22round%22%20transform%3D%22translate%28-2.5%200%29%22/%3E%3C/g%3E%3Cg%20clip-path%3D%22url%28%23b%29%22%3E%3Cpath%20d%3D%22M12%2058%20V30%20A20%2020%200%200%201%2052%2030%20V58%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23b48cff%22%20stroke-width%3D%227%22%20stroke-linejoin%3D%22round%22%20transform%3D%22translate%282.5%200%29%22/%3E%3C/g%3E%3Cdefs%3E%3CclipPath%20id%3D%22a%22%3E%3Crect%20width%3D%2264%22%20height%3D%2235.5%22/%3E%3C/clipPath%3E%3CclipPath%20id%3D%22b%22%3E%3Crect%20y%3D%2240.5%22%20width%3D%2264%22%20height%3D%2224%22/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E" />
+    <title>AbrobaGPT — Uma IA local, feita do zero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden;pointer-events:none">
+      <defs>
+        <filter id="scroll-directional-filter" x="-10%" y="-15%" width="120%" height="130%" color-interpolation-filters="sRGB">
+          <feGaussianBlur id="scroll-directional-blur" in="SourceGraphic" stdDeviation="0 0" />
+        </filter>
+      </defs>
+    </svg>
+    <div class="site-shell">
+      <canvas id="nebula-canvas" aria-hidden="true"></canvas>
+      <div class="noise" aria-hidden="true"></div>
+      <div class="cursor-glow" aria-hidden="true"></div>
+      <div class="edge-vignette" aria-hidden="true"></div>
+
+      <div class="loading-screen" aria-hidden="true">
+        <div class="loading-logo"><svg class="logo-svg loading-svg" viewBox="0 0 64 64" aria-hidden="true"><defs><clipPath id="lt10"><rect width="64" height="38"><animate attributeName="height" from="38" to="35.5" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1" begin="0.25s" dur="1s" fill="freeze"/></rect></clipPath><clipPath id="lb10"><rect y="38" width="64" height="26.5"><animate attributeName="y" from="38" to="40.5" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1" begin="0.25s" dur="1s" fill="freeze"/><animate attributeName="height" from="26.5" to="24" calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1" begin="0.25s" dur="1s" fill="freeze"/></rect></clipPath></defs><g clip-path="url(#lt10)"><g class="mk-top" transform="translate(-2.5 0)"><path d="M12 58 V30 A20 20 0 0 1 52 30 V58 Z" style="fill:none;stroke:var(--accent);stroke-width:6.5;stroke-linejoin:round"/></g></g><g clip-path="url(#lb10)"><g class="mk-bot" transform="translate(2.5 0)"><path d="M12 58 V30 A20 20 0 0 1 52 30 V58 Z" style="fill:none;stroke:var(--accent);stroke-width:6.5;stroke-linejoin:round"/></g></g></svg><span class="brand-word">ABROBA<b>GPT</b></span></div>
+        <p>Carregando modelo</p>
+      </div>
+
+      <header class="site-header" data-header>
+        <a class="brand" href="#inicio" aria-label="AbrobaGPT — início">
+          <span class="brand-mark" aria-hidden="true"><svg class="logo-svg " viewBox="0 0 64 64" aria-hidden="true"><defs><clipPath id="lt1"><rect width="64" height="35.5"/></clipPath><clipPath id="lb1"><rect y="40.5" width="64" height="24"/></clipPath></defs><g clip-path="url(#lt1)"><g class="mk-top" transform="translate(-2.5 0)"><path d="M12 58 V30 A20 20 0 0 1 52 30 V58 Z" style="fill:none;stroke:var(--accent);stroke-width:6.5;stroke-linejoin:round"/></g></g><g clip-path="url(#lb1)"><g class="mk-bot" transform="translate(2.5 0)"><path d="M12 58 V30 A20 20 0 0 1 52 30 V58 Z" style="fill:none;stroke:var(--accent);stroke-width:6.5;stroke-linejoin:round"/></g></g></svg></span>
+          <span class="brand-word">ABROBA<b>GPT</b></span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          <a href="#visao">Visão</a>
+          <a href="#sistema">Como funciona</a>
+          <a href="#impacto">Números</a>
+          <a href="dev.html">Dev</a>
+        </nav>
+
+        <a class="header-cta" href="dev.html#chat">
+          <span>Experimentar</span>
+          <i aria-hidden="true">↗</i>
+        </a>
+
+        <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-button>
+          <span></span><span></span>
+        </button>
+      </header>
+
+      <div class="mobile-menu" data-mobile-menu aria-hidden="true">
+        <p class="menu-kicker">NAVEGAÇÃO / 01—05</p>
+        <a href="#visao">Visão <span>01</span></a>
+        <a href="#sistema">Como funciona <span>02</span></a>
+        <a href="#impacto">Números <span>03</span></a>
+        <a href="#contato">Contato <span>04</span></a>
+        <a href="dev.html">Dev <span>05</span></a>
+        <div class="menu-foot">Local <em>→</em> PT-BR</div>
+      </div>
+
+      <main>
+        <section class="hero section" id="inicio">
+          <div class="hero-atmosphere" aria-hidden="true">
+            <span class="atmosphere-orb orb-one"></span>
+            <span class="atmosphere-orb orb-two"></span>
+            <span class="atmosphere-line line-one"></span>
+            <span class="atmosphere-line line-two"></span>
+          </div>
+
+          <div class="hero-topline reveal" data-reveal-delay="80">
+            <span class="eyebrow"><i></i> LLM local / 2026</span>
+            <span class="hero-coordinate">PyTorch &nbsp;·&nbsp; PT-BR</span>
+          </div>
+
+          <div class="hero-copy">
+            <p class="hero-intro reveal" data-reveal-delay="180">Uma LLM construída do zero, treinada em português e que roda no seu computador.</p>
+            <h1 class="hero-title" aria-label="Uma IA feita do zero, só sua.">
+              <span class="hero-line"><span class="split-word" data-split>Uma IA</span></span>
+              <span class="hero-line hero-line-shift"><span class="split-word" data-split>feita do zero,</span></span>
+              <span class="hero-line hero-line-accent"><span class="split-word" data-split>só sua.</span></span>
+            </h1>
+          </div>
+
+          <div class="hero-object-wrap" data-parallax="0.12" aria-hidden="true">
+            <div class="object-aura"></div>
+            <canvas class="galaxy" data-galaxy="hero"></canvas>
+            <div class="galaxy-core"></div>
+            <img class="photo photo-round photo-hero" src="imagens/galaxia.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" data-hides=".galaxy,.galaxy-core" />
+            <div class="object-caption caption-left"><span></span> LLM<br />DO ZERO</div>
+            <div class="object-caption caption-right">PT-BR <span></span></div>
+          </div>
+
+          <div class="hero-bottom reveal" data-reveal-delay="480">
+            <a href="#visao" class="scroll-cue magnetic" data-magnetic>
+              <span class="cue-ring"><i>↓</i></span>
+              <span>Conheça o projeto</span>
+            </a>
+            <p class="hero-index">01 <i></i> 09</p>
+          </div>
+        </section>
+
+        <section class="manifesto section" id="visao">
+          <div class="section-grid-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div class="manifesto-label reveal">
+            <span class="eyebrow"><i></i> 01 / A ideia</span>
+            <p>Sua IA, seus dados,<br />seu computador.</p>
+          </div>
+
+          <div class="manifesto-statement">
+            <p class="statement-lead reveal">O AbrobaGPT é uma LLM construída do zero em PyTorch, treinada em português e feita para rodar local.</p>
+            <h2>
+              <span class="statement-line"><span class="split-word" data-split>Sem nuvem.</span></span>
+              <span class="statement-line statement-offset"><span class="split-word" data-split>Sem assinatura.</span></span>
+              <span class="statement-line"><span class="split-word" data-split>Só você e o modelo.</span></span>
+            </h2>
+          </div>
+
+          <div class="manifesto-float float-note reveal" data-parallax="-0.08">
+            <span class="note-dot"></span>
+            <p>Dados, treino e conversa<br />na mesma órbita.</p>
+          </div>
+          <div class="manifesto-scrolltype" aria-hidden="true">01000111 01010000 01010100</div>
+        </section>
+
+        <section class="pulse section" id="sistema">
+          <div class="pulse-head">
+            <div class="reveal">
+              <span class="eyebrow"><i></i> 02 / Como funciona</span>
+              <h2>Do token<br /><em>à conversa.</em></h2>
+            </div>
+            <p class="reveal" data-reveal-delay="120">Dataset, treino e chat: cada etapa acontece no seu computador, do começo ao fim.</p>
+          </div>
+
+          <div class="pulse-stage" data-stage>
+            <div class="stage-copy stage-copy-one reveal">
+              <span>01 — Coletar</span>
+              <p>Um dataset em português, organizado por categorias.</p>
+            </div>
+            <div class="stage-copy stage-copy-two reveal" data-reveal-delay="140">
+              <span>02 — Treinar</span>
+              <p>O modelo aprende do zero em PyTorch e salva checkpoints.</p>
+            </div>
+            <div class="stage-copy stage-copy-three reveal" data-reveal-delay="220">
+              <span>03 — Conversar</span>
+              <p>Chat pelo terminal (TUI) ou pela interface gráfica.</p>
+            </div>
+
+            <div class="pulse-sculpture" data-parallax="0.06" aria-hidden="true">
+              <div class="bh-glow"></div>
+              <div class="bh-disk bh-disk-back"></div>
+              <div class="bh-hole"></div>
+              <div class="bh-ring"></div>
+              <div class="bh-disk bh-disk-front"></div>
+              <img class="photo photo-round photo-bh" src="imagens/buraco-negro.jpg" alt="" loading="lazy" decoding="async" data-hides=".bh-glow,.bh-disk,.bh-hole,.bh-ring" />
+              <div class="sculpture-metrics metric-a">SYNC<br /><b>99.9</b></div>
+              <div class="sculpture-metrics metric-b">SIGNAL<br /><b>∞</b></div>
+            </div>
+
+            <div class="stage-progress" aria-hidden="true"><span></span><span></span><span></span></div>
+          </div>
+        </section>
+
+        <section class="numbers section" id="impacto">
+          <div class="numbers-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="numbers-heading reveal">
+            <span class="eyebrow"><i></i> 03 / Em números</span>
+            <h2>Feito para<br />rodar <em>em casa.</em></h2>
+          </div>
+
+          <div class="numbers-grid">
+            <article class="number-card reveal tilt-card" data-tilt>
+              <span class="number-index">/ 01</span>
+              <p class="number-value"><b data-count="5">0</b><small></small></p>
+              <h3>Categorias<br />de conhecimento</h3>
+              <span class="card-sheen" aria-hidden="true"></span>
+            </article>
+            <article class="number-card number-card-featured reveal tilt-card" data-reveal-delay="110" data-tilt>
+              <span class="number-index">/ 02</span>
+              <p class="number-value"><b data-count="0">0</b><small> bytes</small></p>
+              <h3>Enviados<br />para a nuvem</h3>
+              <div class="card-orbital" aria-hidden="true"><i></i><i></i><i></i></div>
+              <span class="card-sheen" aria-hidden="true"></span>
+            </article>
+            <article class="number-card reveal tilt-card" data-reveal-delay="220" data-tilt>
+              <span class="number-index">/ 03</span>
+              <p class="number-value"><b data-count="100">0</b><small>%</small></p>
+              <h3>Local,<br />no seu computador</h3>
+              <span class="card-sheen" aria-hidden="true"></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="works section">
+          <div class="works-heading reveal">
+            <span class="eyebrow"><i></i> 04 / As peças</span>
+            <h2>O sistema<br />por dentro.</h2>
+            <a class="text-link" href="#contato">Ver o projeto <i>↗</i></a>
+          </div>
+
+          <div class="work-stack">
+            <article class="work-card work-card-nebula tilt-card reveal" data-tilt>
+              <div class="work-visual" aria-hidden="true">
+                <div class="starfield"></div>
+                <div class="neb neb-a"></div><div class="neb neb-b"></div><div class="neb neb-c"></div>
+                <img class="photo " src="imagens/nebulosa.jpg" alt="" loading="lazy" decoding="async" data-hides=".starfield,.neb" />
+                <span class="work-serial">D-01</span>
+              </div>
+              <div class="work-meta">
+                <div><span>Corpus / PT-BR</span><h3>DATASET</h3></div>
+                <span class="work-arrow">↗</span>
+              </div>
+              <span class="card-sheen" aria-hidden="true"></span>
+            </article>
+
+            <article class="work-card work-card-planet tilt-card reveal" data-reveal-delay="100" data-tilt>
+              <div class="work-visual" aria-hidden="true">
+                <div class="starfield"></div>
+                <div class="planet-ring planet-ring-back"></div>
+                <div class="planet"></div>
+                <div class="planet-ring planet-ring-front"></div>
+                <img class="photo " src="imagens/planeta.jpg" alt="" loading="lazy" decoding="async" data-hides=".starfield,.planet,.planet-ring" />
+                <span class="work-serial">C-02</span>
+              </div>
+              <div class="work-meta">
+                <div><span>Interface / TUI + GUI</span><h3>CHAT</h3></div>
+                <span class="work-arrow">↗</span>
+              </div>
+              <span class="card-sheen" aria-hidden="true"></span>
+            </article>
+
+            <article class="work-card work-card-star tilt-card reveal" data-reveal-delay="180" data-tilt>
+              <div class="work-visual" aria-hidden="true">
+                <div class="starfield"></div>
+                <div class="star-corona"></div>
+                <div class="star-rays"></div>
+                <div class="star-core"></div>
+                <img class="photo " src="imagens/estrela.jpg" alt="" loading="lazy" decoding="async" data-hides=".starfield,.star-corona,.star-rays,.star-core" />
+                <span class="work-serial">T-03</span>
+              </div>
+              <div class="work-meta">
+                <div><span>Modelo / PyTorch</span><h3>TREINO</h3></div>
+                <span class="work-arrow">↗</span>
+              </div>
+              <span class="card-sheen" aria-hidden="true"></span>
+            </article>
+          </div>
+        </section>
+
+        <section class="horizon section">
+          <div class="horizon-pane" data-parallax="0.05">
+            <div class="starfield starfield-dense" aria-hidden="true"></div>
+            <div class="hz-galaxy" aria-hidden="true"></div>
+            <div class="hz-planet" aria-hidden="true"></div>
+            <img class="photo " src="imagens/horizonte.jpg" alt="" loading="lazy" decoding="async" data-hides=".starfield,.hz-galaxy,.hz-planet" />
+            <div class="horizon-label label-top">INTELIGÊNCIA QUE RODA EM CASA</div>
+            <div class="horizon-label label-bottom">DADOS&nbsp;&nbsp; + &nbsp;&nbsp;TREINO&nbsp;&nbsp; + &nbsp;&nbsp;CONVERSA</div>
+          </div>
+          <div class="horizon-copy">
+            <p class="reveal">Sem servidor, sem conta, sem enviar nada para fora: um modelo em português que vive na sua máquina.</p>
+            <div class="horizon-scroll reveal" data-reveal-delay="130"><span></span> Continue descendo</div>
+          </div>
+        </section>
+
+        <section class="services section">
+          <div class="services-intro reveal">
+            <span class="eyebrow"><i></i> 05 / O que tem dentro</span>
+            <h2>Tudo que<br />roda <em>por dentro.</em></h2>
+          </div>
+          <div class="services-list">
+            <button class="service-row reveal" type="button" data-service>
+              <span class="service-number">01</span>
+              <span class="service-name">Chat local</span>
+              <span class="service-description">Converse com o modelo sem internet e sem enviar seus dados.</span>
+              <span class="service-symbol">+</span>
+            </button>
+            <button class="service-row reveal" type="button" data-service data-reveal-delay="80">
+              <span class="service-number">02</span>
+              <span class="service-name">Treino do zero</span>
+              <span class="service-description">Arquitetura em PyTorch, com checkpoints e temperatura ajustável.</span>
+              <span class="service-symbol">+</span>
+            </button>
+            <button class="service-row reveal" type="button" data-service data-reveal-delay="160">
+              <span class="service-number">03</span>
+              <span class="service-name">Datasets em português</span>
+              <span class="service-description">Corpus por categorias, QA e streaming de datasets do Hugging Face.</span>
+              <span class="service-symbol">+</span>
+            </button>
+            <button class="service-row reveal" type="button" data-service data-reveal-delay="240">
+              <span class="service-number">04</span>
+              <span class="service-name">TUI e interface gráfica</span>
+              <span class="service-description">Terminal para quem prefere, janela moderna para quem quer.</span>
+              <span class="service-symbol">+</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="contact section" id="contato">
+          <div class="contact-ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="contact-kicker reveal">Rode, treine e converse sem sair do seu computador.</p>
+          <h2 class="contact-title">
+            <span class="contact-line"><span class="split-word" data-split>Converse com</span></span>
+            <span class="contact-line contact-offset"><span class="split-word" data-split>o seu próprio</span></span>
+            <span class="contact-line"><span class="split-word" data-split>modelo.</span></span>
+          </h2>
+          <a href="dev.html#chat" class="contact-button magnetic reveal" data-magnetic data-reveal-delay="170">
+            <span>Abrir o chat local</span>
+            <i>↗</i>
+          </a>
+          <p class="contact-foot reveal" data-reveal-delay="260">AbrobaGPT <span>•</span> 100% local / feito em português</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-line"></div>
+        <div class="footer-top">
+          <a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true"><svg class="logo-svg " viewBox="0 0 64 64" aria-hidden="true"><defs><clipPath id="lt2"><rect width="64" height="35.5"/></clipPath><clipPath id="lb2"><rect y="40.5" width="64" height="24"/></clipPath></defs><g clip-path="url(#lt2)"><g class="mk-top" transform="translate(-2.5 0)"><path d="M12 58 V30 A20 20 0 0 1 52 30 V58 Z" style="fill:none;stroke:var(--accent);stroke-width:6.5;stroke-linejoin:round"/></g></g><g clip-path="url(#lb2)"><g class="mk-bot" transform="translate(2.5 0)"><path d="M12 58 V30 A20 20 0 0 1 52 30 V58 Z" style="fill:none;stroke:var(--accent);stroke-width:6.5;stroke-linejoin:round"/></g></g></svg></span><span class="brand-word">ABROBA<b>GPT</b></span></a>
+          <p>Uma LLM feita do zero,<br />que roda no seu computador.</p>
+          <a href="#inicio" class="back-top magnetic" data-magnetic>Voltar ao início <i>↑</i></a>
+        </div>
+        <div class="footer-giant" aria-label="AbrobaGPT"><svg class="logo-svg giant-svg" viewBox="0 0 64 64" aria-hidden="true"><defs><clipPath id="lt11"><rect width="64" height="35.5"/></clipPath><clipPath id="lb11"><rect y="40.5" width="64" height="24"/></clipPath></defs><g clip-path="url(#lt11)"><g class="mk-top" transform="translate(-2.5 0)"><path d="M12 58 V30 A20 20 0 0 1 52 30 V58 Z" style="fill:none;stroke:var(--accent);stroke-width:6.5;stroke-linejoin:round"/></g></g><g clip-path="url(#lb11)"><g class="mk-bot" transform="translate(2.5 0)"><path d="M12 58 V30 A20 20 0 0 1 52 30 V58 Z" style="fill:none;stroke:var(--accent);stroke-width:6.5;stroke-linejoin:round"/></g></g></svg><span class="brand-word">ABROBA<b>GPT</b></span></div>
+        <div class="footer-bottom">
+          <span>© 2026 ABROBAGPT</span>
+          <span>FEITO DO ZERO</span>
+          <div><a href="#">GitHub</a><a href="#">Hugging Face</a></div>
+        </div>
+      </footer>
+
+      <div class="performance-tools" data-performance-tools>
+        <button class="performance-toggle" type="button" aria-expanded="false" aria-controls="performance-panel">Desempenho <span aria-hidden="true">＋</span></button>
+        <div class="performance-panel" id="performance-panel" hidden>
+          <p>Desative efeitos visuais se o site ficar pesado. Suas escolhas ficam salvas neste navegador.</p>
+          <label><input type="checkbox" data-effect="nebula" checked /> Nebulosa animada</label>
+          <label><input type="checkbox" data-effect="galaxy" checked /> Galáxias animadas</label>
+          <label><input type="checkbox" data-effect="noise" checked /> Textura de ruído</label>
+          <label><input type="checkbox" data-effect="glow" checked /> Brilho do cursor</label>
+          <label><input type="checkbox" data-effect="blur" checked /> Motion blur no scroll</label>
+          <button class="performance-reset" type="button" data-effects-reset>Restaurar padrão</button>
+        </div>
+      </div>
+      <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

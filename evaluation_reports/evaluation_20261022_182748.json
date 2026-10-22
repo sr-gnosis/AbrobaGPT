@@ -1,0 +1,2505 @@
+{
+  "format_version": 1,
+  "created_at": "2026-10-22T21:27:48.193348+00:00",
+  "preset": {
+    "path": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\evaluation_presets\\qualidade_geracao.json",
+    "name": "Qualidade da geração",
+    "category": "qualidade_geracao"
+  },
+  "settings": {
+    "questions": 10,
+    "generations": 5,
+    "max_tokens": 80,
+    "greedy": true,
+    "temperature": 0.5,
+    "top_k": 20,
+    "repetition_penalty": 1.0,
+    "seed": null,
+    "validation_loss": false,
+    "allow_legacy_checkpoint": false
+  },
+  "questions": [
+    "quality-continuity",
+    "quality-instruction",
+    "quality-no-qa-copy"
+  ],
+  "limitations": [
+    "Pontuação geral é configurável e não mede inteligência geral.",
+    "Loss só é comparável quando usa o mesmo tokenizer e dados de validação ativos.",
+    "Referências aceitam regras por teste; não há comparação literal universal."
+  ],
+  "checkpoints": [
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_040000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“A cientista abriu o laboratório e o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7551020408163265,
+                "ok": true,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 74.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7551020408163265
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“A cientista abriu o laboratório e o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7551020408163265,
+                "ok": true,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 74.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7551020408163265
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“A cientista abriu o laboratório e o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7551020408163265,
+                "ok": true,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 74.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7551020408163265
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“A cientista abriu o laboratório e o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7551020408163265,
+                "ok": true,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 74.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7551020408163265
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“A cientista abriu o laboratório e o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório de pesquisa, que é o laboratório",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7551020408163265,
+                "ok": true,
+                "empty": false,
+                "word_count": 50,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 74.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7551020408163265
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A frase é uma floresta que se encontra na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.6413043478260869,
+                "ok": false,
+                "empty": false,
+                "word_count": 47,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6413043478260869
+              }
+            },
+            {
+              "generation": 2,
+              "text": "A frase é uma floresta que se encontra na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.6413043478260869,
+                "ok": false,
+                "empty": false,
+                "word_count": 47,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6413043478260869
+              }
+            },
+            {
+              "generation": 3,
+              "text": "A frase é uma floresta que se encontra na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.6413043478260869,
+                "ok": false,
+                "empty": false,
+                "word_count": 47,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6413043478260869
+              }
+            },
+            {
+              "generation": 4,
+              "text": "A frase é uma floresta que se encontra na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.6413043478260869,
+                "ok": false,
+                "empty": false,
+                "word_count": 47,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6413043478260869
+              }
+            },
+            {
+              "generation": 5,
+              "text": "A frase é uma floresta que se encontra na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se encontrava na região de Belo Horizonte, onde se",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.6413043478260869,
+                "ok": false,
+                "empty": false,
+                "word_count": 47,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6413043478260869
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 2,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 3,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 4,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 5,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.3333333333333333,
+        "repetition_rate": 0.7840341970580197,
+        "diversity": 0.20000000000000004,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.35906153710796374
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_039500.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ainda que a floresta não se encontrava em um lugar de frases curtas, o que se encontrava em um lugar de frases curtas. A floresta é uma floresta que se encontrava em um lugar de frases curtas, sem título, sem título, sem título, sem título, sem título, sem título, sem título,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.49504950495049505,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 50.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.49504950495049505
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ainda que a floresta não se encontrava em um lugar de frases curtas, o que se encontrava em um lugar de frases curtas. A floresta é uma floresta que se encontrava em um lugar de frases curtas, sem título, sem título, sem título, sem título, sem título, sem título, sem título,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.49504950495049505,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 50.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.49504950495049505
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ainda que a floresta não se encontrava em um lugar de frases curtas, o que se encontrava em um lugar de frases curtas. A floresta é uma floresta que se encontrava em um lugar de frases curtas, sem título, sem título, sem título, sem título, sem título, sem título, sem título,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.49504950495049505,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 50.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.49504950495049505
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ainda que a floresta não se encontrava em um lugar de frases curtas, o que se encontrava em um lugar de frases curtas. A floresta é uma floresta que se encontrava em um lugar de frases curtas, sem título, sem título, sem título, sem título, sem título, sem título, sem título,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.49504950495049505,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 50.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.49504950495049505
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ainda que a floresta não se encontrava em um lugar de frases curtas, o que se encontrava em um lugar de frases curtas. A floresta é uma floresta que se encontrava em um lugar de frases curtas, sem título, sem título, sem título, sem título, sem título, sem título, sem título,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.49504950495049505,
+                "ok": false,
+                "empty": false,
+                "word_count": 51,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 50.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.49504950495049505
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 2,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 3,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 4,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 5,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.3333333333333333,
+        "repetition_rate": 0.7234193008680306,
+        "diversity": 0.20000000000000004,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.36815377153646206
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_039000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 2,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 3,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 4,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 5,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Aqui, você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o bre",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.8240740740740741,
+                "ok": true,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8240740740740741
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Aqui, você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o bre",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.8240740740740741,
+                "ok": true,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8240740740740741
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Aqui, você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o bre",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.8240740740740741,
+                "ok": true,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8240740740740741
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Aqui, você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o bre",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.8240740740740741,
+                "ok": true,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8240740740740741
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Aqui, você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o brevemente por que você pode usar o bre",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.8240740740740741,
+                "ok": true,
+                "empty": false,
+                "word_count": 55,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8240740740740741
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.6666666666666666,
+        "repetition_rate": 0.7997851666550854,
+        "diversity": 0.20000000000000004,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.4233655583350705
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_038500.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem no quadro: “A cientista abriu o laboratório e encontrou uma mensagem",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7195121951219512,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 59.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7195121951219512
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 2,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 3,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 4,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 5,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Aqui, você pode usar o brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7875,
+                "ok": true,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 63.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7875
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Aqui, você pode usar o brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7875,
+                "ok": true,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 63.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7875
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Aqui, você pode usar o brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7875,
+                "ok": true,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 63.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7875
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Aqui, você pode usar o brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7875,
+                "ok": true,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 63.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7875
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Aqui, você pode usar o brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7875,
+                "ok": true,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 63.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7875
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.6666666666666666,
+        "repetition_rate": 0.787593808630394,
+        "diversity": 0.20000000000000004,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.42519426203877425
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_038000.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem de que o laboratório é o laboratório e o laboratório é o laboratório.” “A cientista abriu o laboratório e o laboratório é o laboratório e o laboratório é o laboratório.” “A cientista ab",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.5476190476190477,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 46.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5476190476190477
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem de que o laboratório é o laboratório e o laboratório é o laboratório.” “A cientista abriu o laboratório e o laboratório é o laboratório e o laboratório é o laboratório.” “A cientista ab",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.5476190476190477,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 46.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5476190476190477
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem de que o laboratório é o laboratório e o laboratório é o laboratório.” “A cientista abriu o laboratório e o laboratório é o laboratório e o laboratório é o laboratório.” “A cientista ab",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.5476190476190477,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 46.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5476190476190477
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem de que o laboratório é o laboratório e o laboratório é o laboratório.” “A cientista abriu o laboratório e o laboratório é o laboratório e o laboratório é o laboratório.” “A cientista ab",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.5476190476190477,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 46.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5476190476190477
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“A cientista abriu o laboratório e encontrou uma mensagem de que o laboratório é o laboratório e o laboratório é o laboratório.” “A cientista abriu o laboratório e o laboratório é o laboratório e o laboratório é o laboratório.” “A cientista ab",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.5476190476190477,
+                "ok": true,
+                "empty": false,
+                "word_count": 42,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 46.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5476190476190477
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 2,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 3,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 4,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            },
+            {
+              "generation": 5,
+              "text": "A frase é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma floresta que é uma flores",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.8557692307692307,
+                "ok": false,
+                "empty": false,
+                "word_count": 53,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 89.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.8557692307692307
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 2,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 3,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 4,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 5,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.3333333333333333,
+        "repetition_rate": 0.7863614936399747,
+        "diversity": 0.20000000000000004,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.3587124426206705
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\best_model.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "“A cientista abriu o laboratório e o laboratório de cientistas que abriu o laboratório de cientistas que abriu o laboratório de cientistas que abriu o laboratório de cientistas que abriram o laboratório de cientistas que abriram o laboratório de cient",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.6282051282051282,
+                "ok": true,
+                "empty": false,
+                "word_count": 40,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 49.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6282051282051282
+              }
+            },
+            {
+              "generation": 2,
+              "text": "“A cientista abriu o laboratório e o laboratório de cientistas que abriu o laboratório de cientistas que abriu o laboratório de cientistas que abriu o laboratório de cientistas que abriram o laboratório de cientistas que abriram o laboratório de cient",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.6282051282051282,
+                "ok": true,
+                "empty": false,
+                "word_count": 40,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 49.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6282051282051282
+              }
+            },
+            {
+              "generation": 3,
+              "text": "“A cientista abriu o laboratório e o laboratório de cientistas que abriu o laboratório de cientistas que abriu o laboratório de cientistas que abriu o laboratório de cientistas que abriram o laboratório de cientistas que abriram o laboratório de cient",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.6282051282051282,
+                "ok": true,
+                "empty": false,
+                "word_count": 40,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 49.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6282051282051282
+              }
+            },
+            {
+              "generation": 4,
+              "text": "“A cientista abriu o laboratório e o laboratório de cientistas que abriu o laboratório de cientistas que abriu o laboratório de cientistas que abriu o laboratório de cientistas que abriram o laboratório de cientistas que abriram o laboratório de cient",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.6282051282051282,
+                "ok": true,
+                "empty": false,
+                "word_count": 40,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 49.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6282051282051282
+              }
+            },
+            {
+              "generation": 5,
+              "text": "“A cientista abriu o laboratório e o laboratório de cientistas que abriu o laboratório de cientistas que abriu o laboratório de cientistas que abriu o laboratório de cientistas que abriram o laboratório de cientistas que abriram o laboratório de cient",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.6282051282051282,
+                "ok": true,
+                "empty": false,
+                "word_count": 40,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 49.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6282051282051282
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ainda assim, o que se refere ao fato de que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cé",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.5697674418604651,
+                "ok": false,
+                "empty": false,
+                "word_count": 44,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 49.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5697674418604651
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ainda assim, o que se refere ao fato de que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cé",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.5697674418604651,
+                "ok": false,
+                "empty": false,
+                "word_count": 44,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 49.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5697674418604651
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ainda assim, o que se refere ao fato de que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cé",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.5697674418604651,
+                "ok": false,
+                "empty": false,
+                "word_count": 44,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 49.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5697674418604651
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ainda assim, o que se refere ao fato de que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cé",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.5697674418604651,
+                "ok": false,
+                "empty": false,
+                "word_count": 44,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 49.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5697674418604651
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ainda assim, o que se refere ao fato de que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cérebro é um dos maiores cérebros que o cé",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.5697674418604651,
+                "ok": false,
+                "empty": false,
+                "word_count": 44,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 49.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.5697674418604651
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Aqui, você pode usar o brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7875,
+                "ok": true,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 63.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7875
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Aqui, você pode usar o brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7875,
+                "ok": true,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 63.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7875
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Aqui, você pode usar o brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7875,
+                "ok": true,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 63.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7875
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Aqui, você pode usar o brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7875,
+                "ok": true,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 63.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7875
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Aqui, você pode usar o brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um brevemente por um",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.7875,
+                "ok": true,
+                "empty": false,
+                "word_count": 41,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 63.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.7875
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.6666666666666666,
+        "repetition_rate": 0.6618241900218644,
+        "diversity": 0.20000000000000004,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.44405970483005364
+      }
+    },
+    {
+      "checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\ckpt_020700.pt",
+      "iteration": null,
+      "error": null,
+      "results": [
+        {
+          "id": "quality-continuity",
+          "category": "qualidade_geracao",
+          "prompt": "Continue de forma coerente: A cientista abriu o laboratório e encontrou uma mensagem no quadro:",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 100,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "a cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.8,
+                "ok": true,
+                "empty": false,
+                "word_count": 37,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 56.0,
+                "repetition_duplicate_sentences": 2.0,
+                "repetition_rate": 0.8
+              }
+            },
+            {
+              "generation": 2,
+              "text": "a cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.8,
+                "ok": true,
+                "empty": false,
+                "word_count": 37,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 56.0,
+                "repetition_duplicate_sentences": 2.0,
+                "repetition_rate": 0.8
+              }
+            },
+            {
+              "generation": 3,
+              "text": "a cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.8,
+                "ok": true,
+                "empty": false,
+                "word_count": 37,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 56.0,
+                "repetition_duplicate_sentences": 2.0,
+                "repetition_rate": 0.8
+              }
+            },
+            {
+              "generation": 4,
+              "text": "a cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.8,
+                "ok": true,
+                "empty": false,
+                "word_count": 37,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 56.0,
+                "repetition_duplicate_sentences": 2.0,
+                "repetition_rate": 0.8
+              }
+            },
+            {
+              "generation": 5,
+              "text": "a cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o laboratório e a cientista abriu o laboratório. A cientista abriu o",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 1.0,
+                "repetition": 0.8,
+                "ok": true,
+                "empty": false,
+                "word_count": 37,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 56.0,
+                "repetition_duplicate_sentences": 2.0,
+                "repetition_rate": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-instruction",
+          "category": "qualidade_geracao",
+          "prompt": "Escreva duas frases curtas sobre uma floresta, sem título.",
+          "reference": null,
+          "criteria": {
+            "min_words": 6,
+            "max_words": 40,
+            "forbid": [
+              "Título:",
+              "###",
+              "Pergunta:"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "Ainda assim, a partir de um momento, a partir de um momento de que o seu nome é o seu nome. A partir de um momento, a partir de um momento de que o nome é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.6788321167883211,
+                "ok": false,
+                "empty": false,
+                "word_count": 69,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 93.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6788321167883211
+              }
+            },
+            {
+              "generation": 2,
+              "text": "Ainda assim, a partir de um momento, a partir de um momento de que o seu nome é o seu nome. A partir de um momento, a partir de um momento de que o nome é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.6788321167883211,
+                "ok": false,
+                "empty": false,
+                "word_count": 69,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 93.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6788321167883211
+              }
+            },
+            {
+              "generation": 3,
+              "text": "Ainda assim, a partir de um momento, a partir de um momento de que o seu nome é o seu nome. A partir de um momento, a partir de um momento de que o nome é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.6788321167883211,
+                "ok": false,
+                "empty": false,
+                "word_count": 69,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 93.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6788321167883211
+              }
+            },
+            {
+              "generation": 4,
+              "text": "Ainda assim, a partir de um momento, a partir de um momento de que o seu nome é o seu nome. A partir de um momento, a partir de um momento de que o nome é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.6788321167883211,
+                "ok": false,
+                "empty": false,
+                "word_count": 69,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 93.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6788321167883211
+              }
+            },
+            {
+              "generation": 5,
+              "text": "Ainda assim, a partir de um momento, a partir de um momento de que o seu nome é o seu nome. A partir de um momento, a partir de um momento de que o nome é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome, o que é o seu nome,",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.6788321167883211,
+                "ok": false,
+                "empty": false,
+                "word_count": 69,
+                "abrupt": false,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 93.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.6788321167883211
+              }
+            }
+          ]
+        },
+        {
+          "id": "quality-no-qa-copy",
+          "category": "qualidade_geracao",
+          "prompt": "Explique brevemente por que dormir é importante.",
+          "reference": null,
+          "criteria": {
+            "min_words": 8,
+            "max_words": 60,
+            "forbid": [
+              "Pergunta:",
+              "Resposta:",
+              "###PERGUNTA"
+            ]
+          },
+          "generations": [
+            {
+              "generation": 1,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 2,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 3,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 4,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            },
+            {
+              "generation": 5,
+              "text": "O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que",
+              "metrics": {
+                "reference": 0.0,
+                "reference_applicable": 0.0,
+                "instruction": 1.0,
+                "structure": 0.0,
+                "repetition": 0.9556962025316456,
+                "ok": false,
+                "empty": false,
+                "word_count": 80,
+                "abrupt": true,
+                "forbidden_pattern": false,
+                "repetition_repeated_ngrams": 151.0,
+                "repetition_duplicate_sentences": 0.0,
+                "repetition_rate": 0.9556962025316456
+              }
+            }
+          ]
+        }
+      ],
+      "metrics": {
+        "reference_match": 0.0,
+        "instruction_following": 1.0,
+        "structural_quality": 0.3333333333333333,
+        "repetition_rate": 0.8115094397733222,
+        "diversity": 0.20000000000000004,
+        "validation_loss": null,
+        "validation_note": null,
+        "overall_score": 0.3549402507006683
+      }
+    }
+  ],
+  "recommended_checkpoint": "C:\\Users\\thale\\OneDrive\\Desktop\\abrobaGPT_ragqa_corrigido_v3\\abroba_work\\checkpoints\\best_model.pt"
+}

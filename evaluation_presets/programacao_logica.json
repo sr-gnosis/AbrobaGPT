@@ -1,0 +1,8 @@
+{
+  "name": "Programação e lógica", "category": "programacao_logica",
+  "tests": [
+    {"id":"python-len","category":"programacao_logica","prompt":"Em Python, qual é o resultado de len([1, 2, 3])? Responda apenas com o número.","reference":"3","criteria":{"reference_mode":"exact","format_regex":"3","min_words":1,"max_words":1}},
+    {"id":"python-loop","category":"programacao_logica","prompt":"O que este código imprime? for i in range(2): print(i). Responda em duas linhas.","reference":"0\n1","criteria":{"reference_mode":"keywords","must_include":["0","1"],"min_words":2,"max_words":5}},
+    {"id":"logic-even","category":"programacao_logica","prompt":"Se todos os gatos são mamíferos e Mimi é uma gata, Mimi é mamífera? Responda sim ou não.","reference":"sim","criteria":{"reference_mode":"exact","format_regex":"(?i)sim","min_words":1,"max_words":1}}
+  ]
+}

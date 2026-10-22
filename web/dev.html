@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dev — AbrobaGPT</title>
+<link rel="icon" href="logo/simbolo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="dev.css" />
+</head>
+<body class="dev">
+<header class="dev-top">
+  <a class="brand" href="/" aria-label="AbrobaGPT — início">
+          <span class="brand-mark" aria-hidden="true"><svg class="logo-svg " viewBox="0 0 64 64" aria-hidden="true"><defs><clipPath id="dt1"><rect width="64" height="35.5"/></clipPath><clipPath id="db1"><rect y="40.5" width="64" height="24"/></clipPath></defs><g clip-path="url(#dt1)"><g class="mk-top" transform="translate(-2.5 0)"><path d="M12 58 V30 A20 20 0 0 1 52 30 V58 Z" style="fill:none;stroke:var(--accent);stroke-width:6.5;stroke-linejoin:round"/></g></g><g clip-path="url(#db1)"><g class="mk-bot" transform="translate(2.5 0)"><path d="M12 58 V30 A20 20 0 0 1 52 30 V58 Z" style="fill:none;stroke:var(--accent);stroke-width:6.5;stroke-linejoin:round"/></g></g></svg></span>
+          <span class="brand-word">ABROBA<b>GPT</b></span>
+        </a>
+  <span class="dev-badge">DEV · local</span>
+  <nav class="dev-tabs" role="tablist" aria-label="Seções do Dev">
+    <button role="tab" id="tab-btn-chat" aria-controls="tab-chat" aria-selected="false" data-tab="chat">Chat</button>
+    <button role="tab" id="tab-btn-treino" aria-controls="tab-treino" aria-selected="false" data-tab="treino">Treino</button>
+    <button role="tab" id="tab-btn-checkpoints" aria-controls="tab-checkpoints" aria-selected="false" data-tab="checkpoints">Checkpoints</button>
+  </nav>
+  <span class="dev-pill is-wait" id="pill" role="status" aria-live="polite"><i class="dot"></i><span id="pill-text">Verificando servidor local…</span></span>
+</header>
+<main class="dev-main">
+  <p class="dev-note dev-server-hint">Esta área precisa do backend local do AbrobaGPT em execução. Se você abriu o site publicado, o chat e o treino não estarão disponíveis.</p>
+  <section class="dev-panel" id="tab-chat" role="tabpanel" aria-labelledby="tab-btn-chat" hidden>
+    <div class="dev-bar">
+      <label>Checkpoint <select id="chat-ckpt"><option value="">automático (melhor/mais recente)</option></select></label>
+      <label>Temperatura <input id="chat-temp" type="number" step="0.05" min="0.05" max="2" /></label>
+      <label>Máx. tokens <input id="chat-max" type="number" min="1" max="400" value="80" /></label>
+      <label>Top-k <input id="chat-topk" type="number" min="1" placeholder="—" /></label>
+      <button class="dev-btn ghost" id="chat-clear" type="button">Limpar conversa</button>
+    </div>
+    <div class="chat-log" id="chat-log" aria-live="polite"><p class="dev-empty">Converse com o modelo. A primeira resposta demora um pouco mais, porque o checkpoint é carregado.</p></div>
+    <div class="chat-form"><textarea id="chat-input" rows="2" placeholder="Escreva uma pergunta… (Enter envia, Shift+Enter quebra linha)"></textarea><button class="dev-btn" id="chat-send" type="button">Enviar</button></div>
+  </section>
+
+  <section class="dev-panel" id="tab-treino" role="tabpanel" aria-labelledby="tab-btn-treino" hidden>
+    <div class="train-grid">
+      <form class="dev-card" id="train-form" autocomplete="off">
+        <h2>Novo treino</h2>
+        <label>Fonte <select name="source"><option value="local">Local</option><option value="hf">Hugging Face (streaming)</option></select></label>
+        <label>Tipo de dataset <select name="dataset_type" id="tr-dataset"></select></label>
+        <label>Learning rate <select name="lr_preset" id="tr-lr"><option value="">padrão do config</option></select></label>
+        <label>Iterações (milhares) <input name="iterations_thousands" type="number" min="1" placeholder="padrão do config" /></label>
+        <label>Early stopping <select name="early_stopping"><option value="">padrão do config</option><option value="on">ligado</option><option value="off">desligado</option></select></label>
+        <label>Paciência <input name="patience" type="number" min="1" placeholder="padrão" /></label>
+        <label class="check"><input name="resume" type="checkbox" /> Retomar o último checkpoint compatível</label>
+        <label class="check"><input name="use_existing_data" type="checkbox" /> Usar dados já preparados</label>
+        <div class="dev-actions"><button class="dev-btn" id="tr-start" type="submit">Iniciar treino</button><button class="dev-btn danger" id="tr-stop" type="button" disabled>Parar</button></div>
+        <p class="dev-note" id="tr-msg"></p>
+      </form>
+      <div class="dev-card">
+        <h2>Progresso</h2>
+        <p class="tr-progress" id="tr-progress">Nenhum treino em andamento.</p>
+        <canvas id="tr-chart" height="220" aria-label="Gráfico de loss"></canvas>
+        <div class="legend"><span class="lg a"></span> treino <span class="lg b"></span> validação</div>
+        <pre class="tr-log" id="tr-log"></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="dev-panel" id="tab-checkpoints" role="tabpanel" aria-labelledby="tab-btn-checkpoints" hidden>
+    <div class="dev-card"><h2>Checkpoints</h2><table class="ck-table"><thead><tr><th>Arquivo</th><th>Tamanho</th><th>Modificado</th><th></th></tr></thead><tbody id="ck-body"></tbody></table><p class="dev-empty" id="ck-empty" hidden>Nenhum checkpoint ainda. Rode um treino na aba Treino.</p></div>
+  </section>
+</main>
+<script src="dev.js"></script>
+</body>
+</html>
