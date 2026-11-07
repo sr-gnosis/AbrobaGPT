@@ -1,102 +1,88 @@
-# Local LLM Project Documentation
+# AbrobaGPT Documentation
 
-## Overview
-AbrobaGPT is a from-scratch implementation of a small, educational Large Language Model based on the GPT
-(Generative Pre-trained Transformer) architecture. It is a decoder-only Transformer designed to be trained and
-run locally on common hardware. Everything can be driven from the terminal UI (`python main.py`) or from the
-command-line scripts below.
+## 🌟 Overview
+AbrobaGPT is a from-scratch implementation of a Large Language Model (LLM) based on the GPT (Generative Pre-trained Transformer) architecture. It is a decoder-only Transformer designed to be trained and run locally. 
 
-## Project Structure
+The project features a sophisticated Terminal User Interface (TUI) that orchestrates the entire pipeline: from data preparation to training and final evaluation.
+
+## 🛠️ Project Structure
 ```text
 .
-├── config/
-│   └── base_config.json       # Hyperparameters for the model, training and sampling
-├── data/
-│   ├── input*.txt             # Raw training text (general / instruct / alpaca)
-│   ├── prepare.py             # Trains the tokenizer and writes train.bin / val.bin
-│   ├── download_dataset.py    # Streams a Hugging Face dataset to a text file
-│   └── processed/             # tokenizer.json, train.bin, val.bin, metadata.json
-├── checkpoints/               # Saved model weights (.pt files)
-├── src/
-│   ├── model.py               # PyTorch implementation of the Transformer
-│   ├── tokenizer.py           # BPE tokenizer (stdlib only)
-│   ├── data.py                # Dataset download / preparation
-│   ├── prompting.py           # Chat prompt format + stop sequences (no torch)
-│   ├── inference.py           # Safe checkpoint/tokenizer loading for chat & generate
-│   ├── lr_presets.py          # Learning-rate presets used by train.py and the TUI
-│   ├── defaults.py            # Defaults for the optional config keys
-│   └── utils.py               # Config, device and checkpoint helpers
-├── requirements.txt
-├── train.py                   # Train the model
-├── generate.py                # One-shot text generation
-├── chat.py                    # Interactive terminal chat
-├── tui.py / main.py           # Terminal UI
-└── test_*.py                  # Sanity tests
+├── config/                  # Hyperparameters (base_config.json)
+├── data/                   # Dataset scripts and processed binaries
+│   ├── prepare.py          # Tokenizer training and corpus binarization
+│   ├── download_dataset.py   # Hugging Face streaming utilities
+│   └── processed/          # Saved tokenizer.json, train.bin, val.bin
+├── checkpoints/             # Model weights (.pt files)
+├── src/                    # Core logic
+│   ├── model.py            # Transformer architecture (PyTorch)
+│   ├── tokenizer.py        # BPE Tokenizer implementation
+│   ├── data.py             # Data loading and processing
+│   ├── prompting.py        # Chat templates and stop sequences
+│   ├── inference.py        # Model loading and generation logic
+│   ├── evaluation.py       # Quantitative benchmarking and scoring
+│   ├── lr_presets.py       # Learning rate schedules
+│   ├── defaults.py         # Default configuration values
+│   └── utils.py            # General helpers
+├── evaluation_presets/     # JSON files for different test scenarios
+├── training_logs/          # Training metrics (CSV/JSONL) and logs
+├── main.py                 # Entry point for the TUI
+├── tui.py                  # TUI Implementation (Curses)
+├── train.py                # Training loop script
+├── generate.py             # Text generation CLI
+├── evaluate.py             # Model evaluation CLI
+├── chat.py                 # Interactive chat CLI
+└── tests/                  # Unit and regression tests
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
 ### 1. Installation
 ```bash
 pip install -r requirements.txt
 ```
+*Note: Windows users will automatically install `windows-curses` via requirements.*
 
-### 2. Data preparation
-Put the raw text in `data/` (or stream it from Hugging Face) and prepare it:
+### 2. Data Preparation
+Use the TUI (`python main.py` -> Prepare Dataset) or the CLI:
 ```bash
-python data/prepare.py --dataset-type alpaca            # uses data/input_alpaca.txt
-python data/download_dataset.py --dataset-type alpaca --size-mb 20
+python train.py --prepare-only --dataset-type ragqa --source hf
 ```
-Preparation trains the BPE tokenizer and tokenizes the corpus. The processed files are rebuilt automatically
-whenever the raw file **or** any of `tokenizer_vocab_size`, `tokenizer_training_chars`,
-`tokenizer_min_pair_frequency`, `validation_fraction` changes.
+This trains the BPE tokenizer and converts the raw text into binary files for fast loading during training.
 
 ### 3. Training
+Start the training process via the TUI or CLI:
 ```bash
-python train.py                  # interactive menus
-python train.py --resume         # resume the latest compatible checkpoint
+python train.py --resume
 ```
-The training loss shown in the log is the average since the previous evaluation.
-Only the newest `keep_checkpoints` periodic checkpoints created by the current run are kept (0 keeps all);
-`best_model.pt` is never deleted.
+The system supports **AMP (Automatic Mixed Precision)** and **Early Stopping** based on validation loss.
 
-### 4. Text generation
+### 4. Evaluation
+Compare checkpoints using defined presets:
 ```bash
-python generate.py --prompt "Pergunta: O que é um átomo?\nResposta:" --stop "\n\n"
+python evaluate.py --preset evaluation_presets/conhecimento_geral.json --checkpoint checkpoints/best_model.pt
 ```
 
-### 5. Chat
+### 5. Generation & Chat
 ```bash
+# One-shot generation
+python generate.py --prompt "O futuro da IA é" --ckpt checkpoints/model.pt
+
+# Interactive chat
 python chat.py
 ```
-The chat uses the same `Pergunta: ... / Resposta: ...` format the model was trained on and stops generating at the
-end of the answer.
 
-## Configuration (`config/base_config.json`)
-- Architecture: `n_layer`, `n_embd`, `n_head` (must divide `n_embd`), `block_size`, `dropout`.
-- Training: `batch_size`, `max_iters`, `learning_rate`, `min_learning_rate`, `warmup_iters`, `weight_decay`,
-  `grad_clip`, `eval_interval`, `eval_iters`, `save_interval`, early-stopping keys.
-- Tokenizer / data: `tokenizer_vocab_size`, `tokenizer_training_chars`, `tokenizer_min_pair_frequency`,
-  `validation_fraction`, `hf_default_size_mb`.
-- Optional keys (missing = default): `temperature` (0.75) and `keep_checkpoints` (5).
+## ⚙️ Configuration (`config/base_config.json`)
+- **Architecture**: `n_layer`, `n_embd`, `n_head`, `block_size`, `dropout`.
+- **Training**: `batch_size`, `max_iters`, `learning_rate`, `min_learning_rate`, `warmup_iters`, `weight_decay`, `grad_clip`, `eval_interval`, `eval_iters`, `save_interval`.
+- **Early Stopping**: `early_stopping` (bool) and `patience` (int).
+- **Tokenizer**: `tokenizer_vocab_size`, `tokenizer_training_chars`, `tokenizer_min_pair_frequency`.
 
-Changing the architecture or the tokenizer makes older checkpoints incompatible; `--resume` will ignore them and
-start from scratch.
+## 🧠 Architecture Details
+- **Tokenizer**: BPE with GPT-2 style pre-tokenization.
+- **Model**: Decoder-only Transformer with Pre-LayerNorm, Causal Multi-Head Attention, GELU activation, and tied embeddings.
+- **Optimizer**: AdamW with linear warmup and cosine decay.
+- **Sampling**: Temperature scaling and Top-K filtering.
 
-## Architecture Details
-- **Tokenizer**: BPE with a GPT-2 style pre-tokenizer (the leading space is part of the word). `tokenizer.json`
-  files created before this change (no `pretokenizer` field) still load with the old behaviour.
-- **Model**: decoder-only Transformer with Pre-LayerNorm, causal multi-head attention
-  (`scaled_dot_product_attention`), GELU, tied input/output embeddings and GPT-2 style scaled residual init.
-- **Optimizer**: AdamW (no weight decay on LayerNorm, biases and embeddings) with linear warmup and cosine decay.
-- **Sampling**: temperature scaling, optional top-k and optional stop sequences.
-
-## Madras1 RAG QA Fulltext PT-BR na TUI
-
-- Dataset: `Madras1/rag-qa-fulltext-ptbr`.
-- Esquema confirmado: `instruction`, `input` (opcional/vazio) e `output`.
-- Na tela **Preparar Dataset**, selecione **Madras1 RAG QA Fulltext PT-BR** e a fonte Hugging Face. O limite de MB limita o número de exemplos baixados; o último exemplo nunca é truncado. Um JSONL local íntegro é reutilizado.
-- Brutos: `data/raw/rag-qa-fulltext-ptbr/train.jsonl`; processados: `data/processed/{tokenizer.json,train.bin,val.bin,metadata.json}`.
-- A validação é dividida por exemplo completo, com hash determinístico. Metadados registram exemplos válidos/descartados, bytes, tokens e fingerprint do tokenizer.
-- Checkpoints anteriores não são sobrescritos pela preparação. Um checkpoint incompatível com o tokenizer novo não pode ser retomado com segurança.
-- O dataset está indicado como CC BY-NC 4.0 no cartão Hugging Face; uso comercial não é permitido pela licença indicada.
+## 📊 Madras1 RAG QA Fulltext PT-BR
+The project includes native support for the `Madras1/rag-qa-fulltext-ptbr` dataset, utilizing a deterministic hash-based validation split to ensure consistency across different training runs.

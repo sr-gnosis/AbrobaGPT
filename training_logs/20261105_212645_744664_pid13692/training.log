@@ -1,0 +1,6 @@
+[2026-11-05T21:26:45] Execução 20261105_212645_744664_pid13692 iniciada; iteração inicial acumulada=39300.
+[2026-11-05T21:26:45] Início do treinamento; total=150000; resume=True
+[2026-11-05T21:32:08] Avaliação iteração=39450/150000 train_loss=2.8910439 val_loss=3.1285447 lr=0.00043257546 perplexity=22.840714
+[2026-11-05T21:32:08] EARLY STOPPING na iteração 39450: patience=31; melhor val loss=3.0983494
+[2026-11-05T21:32:09] Checkpoint final salvo: ckpt_039450.pt na iteração 39450
+[2026-11-05T21:32:09] Execução encerrada: early_stopping.

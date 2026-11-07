@@ -1,0 +1,2 @@
+timestamp,run_id,iteration,total_iterations,train_loss,validation_loss,learning_rate,perplexity,best_validation_loss,best_iteration,early_stopping
+2026-11-03T10:36:10,20261103_103205_721463_pid19092,30150,150000,3.11564453125,3.1081806898117064,0.0004610152420217084,22.380290649334327,3.1081806898117064,30150,False

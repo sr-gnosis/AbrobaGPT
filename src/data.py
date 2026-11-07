@@ -21,8 +21,9 @@ init(autoreset=True)
 
 DATASET_SPECS: dict[str, dict[str, str]] = {
     "general": {
-        "label": "Corpus PT-BR geral",
-        "dataset": "Madras1/corpus-ptbr-v1",
+        "label": "VeraCruz PT-BR (Geral)",
+        "dataset": "bastao/VeraCruz_PT-BR",
+        "config": "Brazil (BR)",
         "raw_filename": "input.txt",
     },
     "instruct": {
@@ -67,6 +68,9 @@ def normalize_dataset_type(dataset_type: str) -> str:
         options = ", ".join(f"'{name}'" for name in DATASET_TYPES)
         raise DataError(f"Tipo de dataset deve ser um de: {options}.")
     return normalized
+
+def normalize_dataset_types(dataset_types: list[str]) -> list[str]:
+    return [normalize_dataset_type(dt) for dt in dataset_types]
 
 
 def dataset_spec(dataset_type: str) -> dict[str, str]:
@@ -174,6 +178,13 @@ def processed_is_current(
         return False
 
 
+def _read_jsonl_utf8(path: Path):
+    """Lê um arquivo JSONL forçando UTF-8 e substituindo caracteres inválidos."""
+    with path.open("r", encoding="utf-8", errors="replace") as f:
+        for line in f:
+            yield line
+
+
 def prepare_corpus(
     raw_path: str | Path,
     config: Mapping[str, Any],
@@ -199,27 +210,26 @@ def prepare_corpus(
         import hashlib
 
         def rows():
-            with raw.open("r", encoding="utf-8") as handle:
-                for line_number, line in enumerate(handle, 1):
-                    try:
-                        item = json.loads(line)
-                    except json.JSONDecodeError:
-                        continue
-                    if not isinstance(item, dict):
-                        continue
-                    instruction = _clean_ragqa_field(_to_text(item.get("instruction")))
-                    context = _clean_ragqa_field(_to_text(item.get("input")))
-                    answer = _clean_ragqa_field(_to_text(item.get("output")), answer=True)
-                    if context.lower() in _ALPACA_EMPTY_VALUES:
-                        context = ""
-                    if answer == "__FULLTEXT__":
-                        if instruction.strip():
-                            yield instruction.strip() + "\n\n"
-                        continue
-                    if not instruction or not answer:
-                        continue
-                    question = f"{instruction}\n{context}" if context else instruction
-                    yield f"Pergunta: {question}\nResposta: {answer}\n\n"
+              for line in _read_jsonl_utf8(raw):
+                  try:
+                      item = json.loads(line)
+                  except json.JSONDecodeError:
+                      continue
+                  if not isinstance(item, dict):
+                      continue
+                  instruction = _clean_ragqa_field(_to_text(item.get("instruction")))
+                  context = _clean_ragqa_field(_to_text(item.get("input")))
+                  answer = _clean_ragqa_field(_to_text(item.get("output")), answer=True)
+                  if context.lower() in _ALPACA_EMPTY_VALUES:
+                      context = ""
+                  if answer == "__FULLTEXT__":
+                      if instruction.strip():
+                          yield instruction.strip() + "\n\n"
+                      continue
+                  if not instruction or not answer:
+                      continue
+                  question = f"{instruction}\n{context}" if context else instruction
+                  yield f"Pergunta: {question}\nResposta: {answer}\n\n"
 
         def split_for(text: str) -> str:
             digest = hashlib.sha256(text.encode("utf-8")).digest()
@@ -365,14 +375,28 @@ def _to_text(value: Any) -> str:
 
 
 def _clean_ragqa_field(value: str, *, answer: bool = False) -> str:
-    """Remove marcadores de papel sem apagar o conteúdo da amostra RAG QA."""
+    """Remove marcadores de papel e ruídos de extração de web sem apagar o conteúdo da amostra RAG QA."""
     import re
     text = value.strip().replace("\r\n", "\n").replace("\r", "\n")
-    # Alguns espelhos/exportações trazem os delimitadores dentro dos próprios campos.
+
+    # 1. Remove marcadores de papel
     if answer:
         text = re.sub(r"(?im)^\s*#{2,}\s*(?:RESPOSTA|RESPOSTAS|ANSWER)\s*:?\s*", "", text)
     else:
         text = re.sub(r"(?im)^\s*#{2,}\s*(?:PERGUNTA|QUESTÃO|QUESTAO|INSTRUÇÕES?|ENTRADA|QUESTION|INPUT)\s*:?\s*", "", text)
+
+    # 2. REMOVE RUÍDO DE EXTRAÇÃO DE WEB
+    # Remove datas de postagem (ex: 04/05/2020 às 6:03 pm)
+    text = re.sub(r"(?i)\d{2}/\d{2}/\d{4}\s*(?:às|at)\s*\d{1,2}:\d{2}(?::\d{2})?\s*(?:am|pm)?", "", text)
+    # Remove tags de metadados (ex: Tags: Validade do novo extintor)
+    text = re.sub(r"(?im)^\s*Tags?:\s*.*$", "", text, flags=re.MULTILINE)
+    # Remove assinaturas de autor (ex: Por: fslonik, Autor do post: ...)
+    text = re.sub(r"(?im)^\s*(?:Por|Autor|Autoria):\s*.*$", "", text, flags=re.MULTILINE)
+
+    # 3. COLAPSO DE REPETIÇÕES (Evita o Bug do Token 2592)
+    # Substitui 4 ou mais repetições do mesmo caractere por apenas 3
+    text = re.sub(r"(.)\1{3,}", r"\1\1\1", text)
+
     return text.strip()
 
 

@@ -1,0 +1,4 @@
+[2026-11-03T10:32:05] Execução 20261103_103205_721463_pid19092 iniciada; iteração inicial acumulada=30000.
+[2026-11-03T10:32:05] Início do treinamento; total=150000; resume=True
+[2026-11-03T10:36:10] Avaliação iteração=30150/150000 train_loss=3.1156445 val_loss=3.1081807 lr=0.00046101524 perplexity=22.380291
+[2026-11-03T10:36:11] Novo melhor validation loss=3.1081807 na iteração 30150; checkpoint=best_model.pt

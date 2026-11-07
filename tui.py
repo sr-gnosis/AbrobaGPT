@@ -100,14 +100,13 @@ def cp(pair: int, bold: bool = False) -> int:
 
 def draw_box(win: "curses._CursesWindow", y: int, x: int, h: int, w: int,
              title: str = "", color: int = 0) -> None:
-    """Desenha uma caixa com bordas Unicode."""
+    """Desenha uma caixa com bordas Unicode com proteção rigorosa de limites."""
     attr = cp(C_BORDER) if color == 0 else color
     try:
-        # No Windows/curses, hline()/addch() podem tentar converter
-        # caracteres Unicode para um chtype de 1 byte, causando:
-        # OverflowError: byte doesn't fit in chtype.
-        # addstr(), por outro lado, passa pela camada wide-character e
-        # preserva os caracteres Unicode da interface.
+        h_win, w_win = win.getmaxyx()
+        if y < 0 or x < 0 or y + h > h_win or x + w > w_win:
+            return # Não desenha se a caixa for maior que a janela
+
         top = "═" * max(0, w - 2)
         bottom = top
         win.addstr(y, x, "╔" + top + "╗", attr)
@@ -119,19 +118,28 @@ def draw_box(win: "curses._CursesWindow", y: int, x: int, h: int, w: int,
         if title:
             label = f" {title} "
             tx = x + (w - len(label)) // 2
-            win.addstr(y, tx, label, cp(C_TITLE, bold=True))
-    except curses.error:
+            if tx >= 0:
+                win.addstr(y, tx, label, cp(C_TITLE, bold=True))
+    except (curses.error, OverflowError):
         pass
 
 
 def safe_addstr(win: "curses._CursesWindow", y: int, x: int, text: str,
                 attr: int = 0, max_width: int = 0) -> None:
-    """addstr sem explodir no canto inferior direito."""
-    if max_width:
-        text = text[:max_width]
+    """addstr ultra-seguro para evitar Fatal Errors no Windows/curses."""
+    if not text:
+        return
     try:
+        h, w = win.getmaxyx()
+        # Proteção absoluta de limites: não escreve fora da janela
+        if y < 0 or y >= h or x < 0 or x >= w:
+            return
+        if max_width:
+            text = text[:max_width]
+        # Garante que o texto não ultrapassa a borda direita da janela
+        text = text[:w - x - 1]
         win.addstr(y, x, text, attr)
-    except curses.error:
+    except (curses.error, OverflowError):
         pass
 
 
@@ -746,7 +754,8 @@ class TrainScreen(Screen):
     def __init__(self, app: "TUIApp") -> None:
         super().__init__(app)
         self.source_idx  = 0   # 0=local, 1=hf
-        self.dataset_idx = 0   # índice em DATASET_TYPES
+        self.dataset_selection = {0}   # indices of selected datasets in DATASET_TYPES
+        self.dataset_idx = 0   # cursor within the dataset checklist
         self.iters_str   = ""
         self.resume      = False
         self.early_stop    = bool(app.state.config.get("early_stopping", False))
@@ -801,14 +810,26 @@ class TrainScreen(Screen):
         self._draw_field(win, 4, col1, "Fonte de dados", f"[ {src_lbl} ]",
                          sel == "source", w)
 
-        # dataset
-        ds_lbl = DATASET_LABELS[self.dataset_idx]
-        self._draw_field(win, 5, col1, "Dataset        ", f"[ {ds_lbl} ]",
-                         sel == "dataset", w)
+        # dataset - Checklist
+        ds_selected = [DATASET_TYPES[i] for i in range(len(DATASET_TYPES)) if i == self.dataset_idx] # This is placeholder, need a set
+        # Since dataset_idx is still an int in the current class, I should change it to a set.
+        # Let's update the drawing logic first to support a list/set.
+
+        # I'll replace the dataset field with a checklist display
+        safe_addstr(win, 5, col1, "Datasets (Espaço seleciona):", cp(C_PROMPT, bold=True) if sel == "dataset" else cp(C_DIM))
+        for i, label in enumerate(DATASET_LABELS):
+            # We need to check if i is selected. I'll assume self.dataset_selection is a set.
+            is_sel = i in getattr(self, 'dataset_selection', {self.dataset_idx})
+            marker = "[X]" if is_sel else "[ ]"
+            attr = cp(C_SELECTED, bold=True) if sel == "dataset" and i == self.dataset_idx else cp(C_DIM)
+            safe_addstr(win, 6+i, col1 + 2, f"{marker} {label}", attr)
+
+        # Shift other fields down
+        offset = 6 + len(DATASET_LABELS)
 
         # iterações
         iterations_value = self.iters_str or f"(config: {self.app.state.config.get('max_iters', '')})"
-        self._draw_field(win, 6, col1, "Mil iterações  ", iterations_value,
+        self._draw_field(win, offset, col1, "Mil iterações  ", iterations_value,
                          sel == "iters", w)
 
         # learning rate
@@ -818,47 +839,47 @@ class TrainScreen(Screen):
             lr_extra = f"pico {float(cfg.get('learning_rate', 0)):.0e} · warmup {cfg.get('warmup_iters', '')}".replace("e-0", "e-")
         else:
             lr_extra = describe_preset(lr_key)
-        self._draw_field(win, 7, col1, "Learning rate  ", f"[ {LR_LABELS[self.lr_idx]} ]  {lr_extra}",
+        self._draw_field(win, offset + 1, col1, "Learning rate  ", f"[ {LR_LABELS[self.lr_idx]} ]  {lr_extra}",
                          sel == "lr", w)
 
         # retomar
         resume_lbl = "[X] Retomar checkpoint" if self.resume else "[ ] Retomar checkpoint"
-        self._draw_field(win, 8, col1, "               ", resume_lbl,
+        self._draw_field(win, offset + 2, col1, "               ", resume_lbl,
                          sel == "resume", w)
 
         # early stopping
         es_lbl = "[X] Early Stopping" if self.early_stop else "[ ] Early Stopping"
-        self._draw_field(win, 9, col1, "               ", es_lbl,
+        self._draw_field(win, offset + 3, col1, "               ", es_lbl,
                          sel == "early_stop", w)
 
         # paciência
         patience_val = f"[ {self.patience_str} ]" if self.early_stop else "(desativado)"
-        self._draw_field(win, 10, col1, "Paciência       ", patience_val,
+        self._draw_field(win, offset + 4, col1, "Paciência       ", patience_val,
                          sel == "patience", w)
-        if DATASET_TYPES[self.dataset_idx] == "ragqa":
-            safe_addstr(win, 11, col1, "HF: Madras1/rag-qa-fulltext-ptbr"[:w-col1-2], cp(C_DIM))
+
+        # removed the ragqa specific line as it's now part of the checklist
 
         nerd_label = "[X] Para nerds: métricas detalhadas" if self.nerd_mode else "[ ] Para nerds: métricas detalhadas"
-        self._draw_field(win, 12, col1, "               ", nerd_label, sel == "nerds", w)
+        self._draw_field(win, offset + 5, col1, "               ", nerd_label, sel == "nerds", w)
         # Menu retrátil de parâmetros avançados
-        self._draw_field(win, 13, col1, "               ", "▶ Avançado (abrir parâmetros)", sel == "advanced", w)
+        self._draw_field(win, offset + 6, col1, "               ", "▶ Avançado (abrir parâmetros)", sel == "advanced", w)
 
         # botão TREINAR
         btn_attr = cp(C_SELECTED, bold=True) if sel == "run" else cp(C_SUCCESS, bold=True)
         busy = self.app.state.is_busy()
         btn_text = "  [PROCESSO EM ANDAMENTO...]  " if busy else "  [INICIAR TREINAMENTO]  "
-        safe_addstr(win, 14, col1, btn_text, btn_attr)
+        safe_addstr(win, offset + 7, col1, btn_text, btn_attr)
 
         if busy:
-            draw_box(win, 15, 2, 5, w-4, "PROGRESSO")
-            self.app.state.progress.draw(win, 16, 4, w-8)
+            draw_box(win, offset + 8, 2, 5, w-4, "PROGRESSO")
+            self.app.state.progress.draw(win, offset + 9, 4, w-8)
         else:
-            safe_addstr(win, 15, col1,
+            safe_addstr(win, offset + 8, col1,
                         "ESC voltar  ↑↓ campos  ←→/Espaço mudar valor  Enter confirmar",
                         cp(C_DIM))
 
         # Log
-        log_y = 20
+        log_y = offset + 12
         log_h = h - log_y - 2
         if log_h > 2:
             draw_box(win, log_y-1, 1, log_h+2, w-2, "LOG DE SAÍDA")
@@ -923,7 +944,15 @@ class TrainScreen(Screen):
             if name == "source":
                 self.source_idx = 1 - self.source_idx
             elif name == "dataset":
-                self.dataset_idx = cycle_index(self.dataset_idx, key, len(DATASET_TYPES))
+                if key == ord(" "):
+                    # Alternar seleção do item sob o cursor
+                    if self.dataset_idx in self.dataset_selection:
+                        self.dataset_selection.remove(self.dataset_idx)
+                    else:
+                        self.dataset_selection.add(self.dataset_idx)
+                else:
+                    # Navegar entre as opções do checklist
+                    self.dataset_idx = cycle_index(self.dataset_idx, key, len(DATASET_TYPES))
             elif name == "lr":
                 self.lr_idx = cycle_index(self.lr_idx, key, len(LR_KEYS))
             elif name == "resume":
@@ -960,7 +989,12 @@ class TrainScreen(Screen):
         cmd = [sys.executable, "train.py"]
         source = ["local", "hf"][self.source_idx]
         cmd += ["--source", source]
-        cmd += ["--dataset-type", DATASET_TYPES[self.dataset_idx]]
+
+        # Mix de datasets: passa múltiplos --dataset-type
+        selected_types = [DATASET_TYPES[i] for i in self.dataset_selection]
+        for dt in selected_types:
+            cmd += ["--dataset-type", dt]
+
         if LR_KEYS[self.lr_idx]:
             cmd += ["--lr-preset", LR_KEYS[self.lr_idx]]
         if self.iters_str:
@@ -1073,6 +1107,7 @@ class GenerateScreen(Screen):
     def handle_key(self, key: int) -> Optional[str]:
         if key == 27:
             return "home"
+
         ckpts = self._checkpoints()
         busy = self.app.state.is_busy()
         if busy:
@@ -1113,61 +1148,74 @@ class GenerateScreen(Screen):
         if not ckpts:
             self.app.state.set_status("Nenhum checkpoint disponível", "err")
             return
-        cmd = [sys.executable, "generate.py",
-               "--prompt", self.prompt or "Era uma vez",
-               "--ckpt", str(ckpts[self.ckpt_idx]), "--stream"]
-        if self.nerd_mode:
-            cmd.append("--nerd-mode")
-        try:
-            cmd += ["--max-tokens", str(int(self.max_tokens))]
-        except ValueError:
-            pass
-        try:
-            cmd += ["--temp", str(float(self.temperature))]
-        except ValueError:
-            pass
-        if self.top_k.strip():
+
+        # Em vez de subprocesso, vamos usar a mesma lógica de carregamento do Chat
+        # para manter o modelo em memória.
+        # Para evitar duplicar código, vamos delegar a lógica de inferência.
+
+        def _do_inference():
             try:
-                cmd += ["--top-k", str(int(self.top_k))]
-            except ValueError:
-                pass
-        self.output = ""
-        self.nerd_details = ""
-        self.nerd_top5 = ""
-        output_acc: list[str] = []
+                import torch
+                from src.inference import load_inference_components
 
-        def on_line(line: str) -> None:
-            if line.startswith("@@ABROBA_TOKEN@@"):
-                try:
-                    output_acc.append(json.loads(line[len("@@ABROBA_TOKEN@@"):]))
+                # Verifica se já temos um modelo carregado no AppState ou similar
+                # Para simplificar agora, vamos carregar localmente na tela de geração
+                # mas em uma thread separada.
+
+                self.app.state.set_status("Carregando modelo...", "warn")
+                model, tokenizer, device, checkpoint = load_inference_components(
+                    checkpoint_path=str(ckpts[self.ckpt_idx])
+                )
+
+                # Agora geramos o texto
+                max_tokens = 80
+                try: max_tokens = int(self.max_tokens)
+                except: pass
+
+                temp = 0.7
+                try: temp = float(self.temperature)
+                except: pass
+
+                top_k = None
+                try: top_k = int(self.top_k) if self.top_k.strip() else None
+                except: pass
+
+                self.output = ""
+                self.nerd_details = ""
+                output_acc = []
+
+                def on_token(generated_ids):
+                    piece = tokenizer.decode([generated_ids[-1]])
+                    output_acc.append(piece)
                     self.output = "".join(output_acc)
-                except (ValueError, TypeError):
-                    pass
-            elif line.startswith("@@ABROBA_NERD@@"):
-                try:
-                    info = json.loads(line[len("@@ABROBA_NERD@@"):])
-                    def fmt(key):
-                        entries = info.get(key, [])
-                        return ", ".join(f"{x.get('text', '?')!r} {x.get('probability', 0):.1%}" for x in entries)
-                    self.nerd_top5 = "Raw: " + fmt("top5_raw_logits") + " · Temp: " + fmt("top5_after_temperature") + " · Top-K: " + fmt("top5_after_top_k")
-                    self.nerd_details = (f"Escolhido: {info.get('sampled_token_id')} ({info.get('sampled_probability', 0):.1%}) · "
-                                         f"repetições n-gramas: {info.get('repeated_ngram_counts', {})} · " + self.nerd_top5)
-                except (ValueError, TypeError):
-                    pass
-            elif line.startswith("@@ABROBA_DONE@@"):
-                try:
-                    info = json.loads(line[len("@@ABROBA_DONE@@"):])
-                    if self.nerd_mode:
-                        summary = f"{info.get('generated_tokens', 0)} tokens · prompt={info.get('prompt_tokens')} · temp={info.get('temperature')} · top_k={info.get('top_k')} · device={info.get('device')}"
-                        self.nerd_details = summary + (" · " + self.nerd_top5 if self.nerd_top5 else "")
-                except (ValueError, TypeError):
-                    pass
-            else:
-                output_acc.append(line)
-                self.output = "\n".join(output_acc)
 
-        self.app.state.log.add(f"$ {' '.join(cmd[:4])}…", cp(C_PROMPT, bold=True))
-        self.app.state.launch(cmd, PROJECT_ROOT, on_line=on_line)
+                with torch.no_grad():
+                    # Simplificando a chamada de generate para a TUI
+                    # Note: precisamos do prompt formatado
+                    from src.prompting import build_prompt
+                    prompt = build_prompt([], self.prompt, lambda t: len(tokenizer.encode(t)), 192)
+                    enc = tokenizer.encode(prompt)
+                    tokens = torch.tensor([enc], dtype=torch.long, device=device)
+
+                    generated = model.generate(
+                        tokens,
+                        max_new_tokens=max_tokens,
+                        temperature=temp,
+                        top_k=top_k,
+                        token_callback=on_token
+                    )
+
+                    ids = generated[0, len(enc):].tolist()
+                    from src.prompting import clean_response
+                    self.output = clean_response(tokenizer.decode(ids))
+
+                self.app.state.set_status("Geração concluída ✓", "ok")
+            except Exception as e:
+                self.output = f"Erro: {e}"
+                self.app.state.set_status("Erro na geração", "err")
+
+        t = threading.Thread(target=_do_inference, daemon=True)
+        t.start()
 
 
 # ──────────────────────────── tela de chat ───────────────────────────────────
@@ -1191,16 +1239,61 @@ class ChatScreen(Screen):
         self._generation_started = 0.0
         self._generated_token_count = 0
 
+        # Menu de Configurações Iniciais
+        self.in_config_menu = True
+        self.config_cursor = 0
+        self.repeat_punishment_enabled = False
+        self.punishment_force = 1.0
+        self.config_options = [
+            {"label": "Modelo", "key": "model"},
+            {"label": "Para nerds", "key": "nerd_mode"},
+            {"label": "Repeat Punishment", "key": "repeat_punishment"},
+            {"label": "Punishment Force", "key": "punishment_force"},
+            {"label": "Conversar", "key": "start_chat"},
+            {"label": "Sair", "key": "quit"},
+        ]
+
+
     def _checkpoints(self) -> list[Path]:
         return list_checkpoints()
 
     def draw(self, win: "curses._CursesWindow") -> None:
         h, w = win.getmaxyx()
         win.clear()
-        draw_box(win, 0, 0, h-1, w, "CHAT INTERATIVO · AbrobaGPT")
+
+        if self.in_config_menu:
+            draw_box(win, 0, 0, h-1, w, "CONFIGURAÇÕES DO CHAT")
+            col = (w - 40) // 2
+            row = (h - len(self.config_options)) // 2
+
+            safe_addstr(win, row - 2, col, "Ajuste as configurações antes de começar:", cp(C_DIM))
+
+            for i, opt in enumerate(self.config_options):
+                label = opt["label"]
+                val = ""
+                if opt["key"] == "nerd_mode":
+                    val = " [ON]" if self.nerd_mode else " [OFF]"
+                elif opt["key"] == "repeat_punishment":
+                    val = " [ON]" if self.repeat_punishment_enabled else " [OFF]"
+                elif opt["key"] == "punishment_force":
+                    val = f" [{self.punishment_force:.2f}]"
+                elif opt["key"] == "model":
+                    ckpts = self._checkpoints()
+                    val = f" [{ckpts[self.ckpt_idx].name if ckpts else 'n/a'}]"
+
+                text = f"  {label}{val}"
+                if i == self.config_cursor:
+                    safe_addstr(win, row + i, col, f"▶ {text}", cp(C_SELECTED, bold=True))
+                else:
+                    safe_addstr(win, row + i, col, f"  {text}", cp(C_DIM))
+
+            safe_addstr(win, h-2, 2, "↑↓ navegar  Enter selecionar  ←→ ajustar valores  ESC sair", cp(C_DIM))
+            return
 
         # Header
         ckpts = self._checkpoints()
+
+
         ckpt_name = ckpts[self.ckpt_idx].name if ckpts else "(nenhum)"
         status = ("⏳ Gerando resposta…" if self.generating else
                   "✓ Modelo carregado" if self.loaded else
@@ -1249,24 +1342,52 @@ class ChatScreen(Screen):
 
     def handle_key(self, key: int) -> Optional[str]:
         if key == 27:
+            if self.in_config_menu:
+                return "home" # Ou "quit" se preferir sair do app todo
             return "home"
+
+        if self.in_config_menu:
+            if key == curses.KEY_UP:
+                self.config_cursor = (self.config_cursor - 1) % len(self.config_options)
+            elif key == curses.KEY_DOWN:
+                self.config_cursor = (self.config_cursor + 1) % len(self.config_options)
+            elif key in (curses.KEY_LEFT, curses.KEY_RIGHT):
+                opt = self.config_options[self.config_cursor]
+                step = 0.1 if key == curses.KEY_RIGHT else -0.1
+                if opt["key"] == "repeat_punishment":
+                    self.repeat_punishment_enabled = not self.repeat_punishment_enabled
+                elif opt["key"] == "punishment_force":
+                    self.punishment_force = max(0.0, self.punishment_force + step)
+                elif opt["key"] == "nerd_mode":
+                    self.nerd_mode = not self.nerd_mode
+                elif opt["key"] == "model":
+                    ckpts = self._checkpoints()
+                    if ckpts:
+                        self.ckpt_idx = (self.ckpt_idx + (1 if key == curses.KEY_RIGHT else -1)) % len(ckpts)
+                return None
+            elif key in (curses.KEY_ENTER, 10, 13):
+                opt = self.config_options[self.config_cursor]
+                if opt["key"] == "start_chat":
+                    self.in_config_menu = False
+                elif opt["key"] == "quit":
+                    return "quit"
+                elif opt["key"] == "nerd_mode":
+                    self.nerd_mode = not self.nerd_mode
+                elif opt["key"] == "model":
+                    ckpts = self._checkpoints()
+                    if ckpts: self.ckpt_idx = (self.ckpt_idx + 1) % len(ckpts)
+                return None
+            return None
+
         ckpts = self._checkpoints()
         if key == curses.KEY_LEFT and ckpts and not self.generating:
             self.ckpt_idx = (self.ckpt_idx - 1) % len(ckpts)
             self.loaded = False
             self.model_obj = None
-            import gc, torch
-            gc.collect()
-            if torch.cuda.is_available():
-                torch.cuda.empty_cache()
         elif key == curses.KEY_RIGHT and ckpts and not self.generating:
             self.ckpt_idx = (self.ckpt_idx + 1) % len(ckpts)
             self.loaded = False
             self.model_obj = None
-            import gc, torch
-            gc.collect()
-            if torch.cuda.is_available():
-                torch.cuda.empty_cache()
         elif key == curses.KEY_F2 and not self.generating:
             self.nerd_mode = not self.nerd_mode
             self.nerd_details = "Modo nerd ativado: top-5 probabilidades do próximo token." if self.nerd_mode else ""
@@ -1290,6 +1411,13 @@ class ChatScreen(Screen):
                 import importlib, sys as _sys
                 _sys.path.insert(0, str(PROJECT_ROOT))
                 from src.inference import load_inference_components
+
+                # Move memory cleanup inside the loading thread to prevent UI stutters
+                import gc, torch
+                gc.collect()
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+
                 model, tok, dev, ckpt = load_inference_components(
                     checkpoint_path=str(ckpts[self.ckpt_idx])
                 )
@@ -1440,6 +1568,7 @@ class PrepareScreen(Screen):
         self.dataset_idx = 0
         self.source_idx  = 0
         self.size_mb     = "10"
+        self.download_all = False
         self.field       = 0
 
     def draw(self, win: "curses._CursesWindow") -> None:
@@ -1457,7 +1586,11 @@ class PrepareScreen(Screen):
         self._draw_field(win, 5, col, "Fonte    ", f"[ {src_lbl} ]",  self.field == 1, w)
         self._draw_field(win, 6, col, "Limite MB", self.size_mb,       self.field == 2, w)
 
-        btn_attr = cp(C_SELECTED, bold=True) if self.field == 3 else cp(C_SUCCESS, bold=True)
+        # Botão Baixar Tudo
+        btn_all_attr = cp(C_SELECTED, bold=True) if self.field == 3 else cp(C_SUCCESS, bold=True)
+        safe_addstr(win, 7, col, "  [BAIXAR TODOS OS DATASETS]  ", btn_all_attr)
+
+        btn_attr = cp(C_SELECTED, bold=True) if self.field == 4 else cp(C_SUCCESS, bold=True)
         busy = self.app.state.is_busy()
         safe_addstr(win, 8, col,
                     "  [BAIXANDO / PREPARANDO...]  " if busy else "  [PREPARAR DADOS]  ",
@@ -1509,9 +1642,9 @@ class PrepareScreen(Screen):
         if busy:
             return None
         if key == curses.KEY_UP:
-            self.field = (self.field - 1) % 4
+            self.field = (self.field - 1) % 5
         elif key == curses.KEY_DOWN:
-            self.field = (self.field + 1) % 4
+            self.field = (self.field + 1) % 5
         elif key in (curses.KEY_LEFT, curses.KEY_RIGHT, ord(" ")):
             if self.field == 0:
                 self.dataset_idx = cycle_index(self.dataset_idx, key, len(DATASET_TYPES))
@@ -1519,9 +1652,11 @@ class PrepareScreen(Screen):
                 self.source_idx = 1 - self.source_idx
         elif key in (curses.KEY_ENTER, 10, 13):
             if self.field == 3:
+                self._start_all()
+            elif self.field == 4:
                 self._start()
             else:
-                self.field = (self.field + 1) % 4
+                self.field = (self.field + 1) % 5
         elif self.field == 2:
             if key in (curses.KEY_BACKSPACE, 127, 8):
                 self.size_mb = self.size_mb[:-1]
@@ -1537,6 +1672,48 @@ class PrepareScreen(Screen):
             cmd += ["--size-mb", self.size_mb or "10"]
         self.app.state.log.add(f"$ {' '.join(cmd)}", cp(C_PROMPT, bold=True))
         self.app.state.launch(cmd, PROJECT_ROOT)
+
+    def _start_all(self) -> None:
+        """Baixa todos os datasets sequencialmente para evitar truncamento de comando."""
+        def _run_sequential():
+            for dt in DATASET_TYPES:
+                cmd = [sys.executable, "train.py", "--prepare-only",
+                       "--dataset-type", dt,
+                       "--source", ["local", "hf"][self.source_idx]]
+                if self.source_idx == 1:
+                    cmd += ["--size-mb", self.size_mb or "10"]
+
+                self.app.state.log.add(f"$ {' '.join(cmd)}", cp(C_PROMPT, bold=True))
+
+                # Inicia o processo e espera ele terminar antes de ir para o próximo
+                proc = subprocess.Popen(
+                    [sys.executable, "-u", *cmd[1:]] if cmd[0] == sys.executable else cmd,
+                    cwd=str(PROJECT_ROOT),
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    bufsize=0,
+                    env={**os.environ, "PYTHONUNBUFFERED": "1", "PYTHONIOENCODING": "utf-8"},
+                    creationflags=getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0) if os.name == "nt" else 0
+                )
+
+                import codecs
+                decoder = codecs.getincrementaldecoder("utf-8")(errors="replace")
+                pending = ""
+                while True:
+                    chunk = proc.stdout.read(4096)
+                    if not chunk: break
+                    pending += decoder.decode(chunk)
+                    parts = re.split(r"[\r\n]", pending)
+                    pending = parts.pop()
+                    for part in parts:
+                        if part.strip(): self.app.state.log.add(part)
+
+                proc.wait()
+
+            self.app.state.set_status("Todos os datasets processados ✓", "ok")
+
+        self.app.state.set_status("Baixando todos os datasets...", "warn")
+        threading.Thread(target=_run_sequential, daemon=True).start()
 
 
 # ───────────────────── tela de avaliação de checkpoints ──────────────────────
@@ -2035,6 +2212,7 @@ class TUIApp:
         init_colors()
         self._build_screens()
 
+        last_key = -1
         while self._running:
             h, w = stdscr.getmaxyx()
             if h < 24 or w < 80:
@@ -2055,21 +2233,27 @@ class TUIApp:
             if screen is None:
                 break
 
-            # Only clear if we are not on the home screen, or the home screen
-            # handles its own clear (which it does for the initial logo draw).
-            if self.current_screen != "home":
-                stdscr.clear()
-
-            screen.draw(stdscr)
-            stdscr.refresh()
+            if last_key != -1 or self.state.is_busy():
+                if self.current_screen != "home":
+                    stdscr.clear()
+                screen.draw(stdscr)
+                stdscr.refresh()
+            else:
+                # Forçar redraw ocasionalmente ou quando houver atualização de estado
+                # para evitar que a tela fique "estática" enquanto processos em background terminam
+                screen.draw(stdscr)
+                stdscr.refresh()
 
             key = stdscr.getch()
             if key != -1:
+                last_key = key
                 next_screen = screen.handle_key(key)
                 if next_screen == "quit":
                     break
                 if next_screen and next_screen in self.screens:
                     self.current_screen = next_screen
+            else:
+                last_key = -1
 
             time.sleep(0.033)   # ~30 fps
 

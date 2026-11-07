@@ -1,0 +1,15 @@
+[2026-11-02T10:14:47] Execução 20261102_101447_414008_pid17272 iniciada; iteração inicial acumulada=0.
+[2026-11-02T10:14:47] Início do treinamento; total=150000; resume=False
+[2026-11-02T10:15:02] Avaliação iteração=1/150000 train_loss=8.4030352 val_loss=8.4278961 lr=2.5e-07 perplexity=4572.8689
+[2026-11-02T10:15:03] Novo melhor validation loss=8.4278961 na iteração 1; checkpoint=best_model.pt
+[2026-11-02T10:18:44] Avaliação iteração=150/150000 train_loss=7.5807262 val_loss=6.9832526 lr=3.75e-05 perplexity=1078.4204
+[2026-11-02T10:18:45] Novo melhor validation loss=6.9832526 na iteração 150; checkpoint=best_model.pt
+[2026-11-02T10:22:55] Avaliação iteração=300/150000 train_loss=6.6898124 val_loss=6.3570662 lr=7.5e-05 perplexity=576.55241
+[2026-11-02T10:22:56] Novo melhor validation loss=6.3570662 na iteração 300; checkpoint=best_model.pt
+[2026-11-02T10:28:06] Avaliação iteração=450/150000 train_loss=6.1535388 val_loss=5.8914515 lr=0.0001125 perplexity=361.93025
+[2026-11-02T10:28:07] Novo melhor validation loss=5.8914515 na iteração 450; checkpoint=best_model.pt
+[2026-11-02T10:29:56] Checkpoint periódico salvo: ckpt_000500.pt na iteração 500
+[2026-11-02T10:33:54] Avaliação iteração=600/150000 train_loss=5.7910567 val_loss=5.5855228 lr=0.00015 perplexity=266.5396
+[2026-11-02T10:33:54] Novo melhor validation loss=5.5855228 na iteração 600; checkpoint=best_model.pt
+[2026-11-02T10:39:32] Avaliação iteração=750/150000 train_loss=5.5273657 val_loss=5.3589747 lr=0.0001875 perplexity=212.50694
+[2026-11-02T10:39:33] Novo melhor validation loss=5.3589747 na iteração 750; checkpoint=best_model.pt

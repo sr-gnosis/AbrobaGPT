@@ -23,6 +23,7 @@ from src.data import (
     DATASET_TYPES,
     dataset_spec,
     normalize_dataset_type,
+    normalize_dataset_types,
     load_processed_data,
     prepare_if_needed,
     raw_path_for,
@@ -127,22 +128,36 @@ def _menu_choice(title: str, options: Mapping[str, str], default: str) -> str:
     return raw
 
 
-def _choose_dataset_type(provided: Optional[str]) -> str:
+def _choose_dataset_types(provided: Optional[str]) -> list[str]:
     if provided:
-        return normalize_dataset_type(provided)
+        # Se vier da TUI como string separada por vírgula (ex: "general,ragqa")
+        return normalize_dataset_types(provided.split(","))
     if not sys.stdin.isatty():
-        return "general"
-    choice = _menu_choice(
-        "Tipo de corpus:",
-        {
-            "1": "Corpus PT-BR geral (Madras1/corpus-ptbr-v1)",
-            "2": "Q&A / Instruct (emdemor/ptbr-question-and-answer)",
-            "3": "Alpaca PT-BR (dominguesm/alpaca-data-pt-br)",
-            "4": "Madras1 RAG QA Fulltext PT-BR (Madras1/rag-qa-fulltext-ptbr)",
-        },
-        "1",
-    )
-    return {"1": "general", "2": "instruct", "3": "alpaca", "4": "ragqa"}[choice]
+        return ["general"]
+
+    # Modo interativo: checklist simples
+    options = {
+        "1": ("general", "Corpus PT-BR geral (Madras1/corpus-ptbr-v1)"),
+        "2": ("instruct", "Q&A / Instruct (emdemor/ptbr-question-and-answer)"),
+        "3": ("alpaca", "Alpaca PT-BR (dominguesm/alpaca-data-pt-br)"),
+        "4": ("ragqa", "Madras1 RAG QA Fulltext PT-BR (Madras1/rag-qa-fulltext-ptbr)"),
+    }
+
+    print(f"\n{Fore.YELLOW}Selecione os datasets para mixar (separados por vírgula, ex: 1,4):{Style.RESET_ALL}")
+    for key, (val, label) in options.items():
+        print(f"  [{key}] {label}")
+
+    raw = input(f"Escolha [padrão 1]: ").strip()
+    if not raw:
+        return ["general"]
+
+    selected = []
+    for choice in raw.split(","):
+        choice = choice.strip()
+        if choice in options:
+            selected.append(options[choice][0])
+
+    return selected if selected else ["general"]
 
 
 def _choose_iterations(args: argparse.Namespace, config: Mapping[str, Any]) -> int:
@@ -182,62 +197,54 @@ def _select_and_prepare_data(args: argparse.Namespace, config: Mapping[str, Any]
             "Fonte de dados:", {"1": "Arquivo local", "2": "Streaming do Hugging Face"}, "1"
         )
         source = "local" if choice == "1" else "hf"
-    dataset_type = _choose_dataset_type(args.dataset_type)
-    spec = dataset_spec(dataset_type)
 
-    if source == "local":
-        raw_path = project_path(args.local_file) if args.local_file else raw_path_for(dataset_type)
-        log(f"Fonte local: {raw_path} ({spec['label']})", Fore.CYAN, callback=log_callback)
-        rebuilt, metadata = prepare_if_needed(raw_path, config, dataset_type=dataset_type)
-    else:
-        size_mb = args.size_mb
-        if size_mb is None and sys.stdin.isatty():
-            raw_size = input(f"Limite de download em MB [padrão {config['hf_default_size_mb']}]: ").strip()
-            if raw_size:
-                try:
-                    size_mb = float(raw_size.replace(",", "."))
-                except ValueError:
-                    log("Tamanho inválido; usando o padrão da configuração.", Fore.YELLOW, callback=log_callback)
-        size_mb = float(config["hf_default_size_mb"]) if size_mb is None else float(size_mb)
-        raw_path = raw_path_for(dataset_type)
-        dataset_id = args.dataset or spec["dataset"]
-        # A configuração explícita vence; o perfil oficial RAG QA usa qa_pairs.
-        # Não aplicamos esse padrão quando o usuário troca o id do dataset.
-        dataset_config = args.dataset_config if args.dataset_config is not None else (
-            spec.get("config") if dataset_id == spec["dataset"] else None
-        )
-        config_detail = f" (configuração: {dataset_config})" if dataset_config else ""
-        log(f"Streaming de {dataset_id}{config_detail} até {size_mb:g} MB...", Fore.CYAN, callback=log_callback)
-        result = stream_dataset_to_file(
-            dataset_id,
-            raw_path,
-            dataset_type=dataset_type,
-            size_mb=size_mb,
-            split=args.split,
-            dataset_config=dataset_config,
-        )
-        cache_label = " (reutilizado do disco)" if result.get("cached") else ""
-        detail = f", {result.get('duplicates', 0)} duplicatas removidas, {result.get('skipped', 0)} inválidos ignorados" if dataset_type == "ragqa" else ""
-        log(
-            f"Download concluído{cache_label}: {result['records']} exemplos, "
-            f"{result['size_bytes'] / (1024 * 1024):.2f} MB{detail}.",
-            Fore.GREEN, callback=log_callback
-        )
-        rebuilt, metadata = prepare_if_needed(raw_path, config, dataset_type=dataset_type, force=True)
+    dataset_types = _choose_dataset_types(args.dataset_type)
 
-    action = "preparado" if rebuilt else "já estava atualizado"
-    log(
-        f"Corpus {action}: vocab={metadata['vocab_size']}, "
-        f"treino={metadata['train_tokens']} tokens, validação={metadata['val_tokens']} tokens.",
-        Fore.GREEN, callback=log_callback,
-    )
-    if dataset_type == "ragqa":
-        log(
-            f"Madras1 RAG QA: {metadata.get('valid_examples', result.get('records', 0) if source == 'hf' else '—')} exemplos válidos; "
-            f"{metadata.get('discarded_examples', 0)} descartados; "
-            f"{metadata.get('raw_bytes', 0):,} bytes brutos.",
-            Fore.CYAN, callback=log_callback,
-        )
+    for dtype in dataset_types:
+        try:
+            spec = dataset_spec(dtype)
+            if source == "local":
+                raw_path = project_path(args.local_file) if args.local_file else raw_path_for(dtype)
+                log(f"Fonte local: {raw_path} ({spec['label']})", Fore.CYAN, callback=log_callback)
+                prepare_if_needed(raw_path, config, dataset_type=dtype)
+            else:
+                size_mb = args.size_mb
+                if size_mb is None and sys.stdin.isatty():
+                    raw_size = input(f"Limite de download para {dtype} em MB [padrão {config['hf_default_size_mb']}]: ").strip()
+                    if raw_size:
+                        try:
+                            size_mb = float(raw_size.replace(",", "."))
+                        except ValueError:
+                            log("Tamanho inválido; usando o padrão da configuração.", Fore.YELLOW, callback=log_callback)
+                size_mb = float(config["hf_default_size_mb"]) if size_mb is None else float(size_mb)
+                raw_path = raw_path_for(dtype)
+                dataset_id = args.dataset or spec["dataset"]
+                dataset_config = args.dataset_config if args.dataset_config is not None else (
+                    spec.get("config") if dataset_id == spec["dataset"] else None
+                )
+                config_detail = f" (configuração: {dataset_config})" if dataset_config else ""
+                log(f"Streaming de {dataset_id}{config_detail} até {size_mb:g} MB...", Fore.CYAN, callback=log_callback)
+                result = stream_dataset_to_file(
+                    dataset_id,
+                    raw_path,
+                    dataset_type=dtype,
+                    size_mb=size_mb,
+                    split=args.split,
+                    dataset_config=dataset_config,
+                )
+                cache_label = " (reutilizado do disco)" if result.get("cached") else ""
+                detail = f", {result.get('duplicates', 0)} duplicatas removidas, {result.get('skipped', 0)} inválidos ignorados" if dtype == "ragqa" else ""
+                log(
+                    f"Download concluído{cache_label}: {result['records']} exemplos, "
+                    f"{result['size_bytes'] / (1024 * 1024):.2f} MB{detail}.",
+                    Fore.GREEN, callback=log_callback
+                )
+                prepare_if_needed(raw_path, config, dataset_type=dtype, force=True)
+        except Exception as e:
+            log(f"Erro ao processar dataset {dtype}: {e}. Pulando para o próximo...", Fore.RED, callback=log_callback)
+            continue
+
+    log(f"Todos os datasets {dataset_types} foram preparados.", Fore.GREEN, callback=log_callback)
 
 
 def _make_batch(data: torch.Tensor, sequence_length: int, batch_size: int, device: torch.device) -> tuple[torch.Tensor, torch.Tensor]:
@@ -452,28 +459,35 @@ def train(log_callback: Optional[Callable[[str], None]] = None) -> int:
                 tokenizer,
                 allow_legacy=args.allow_legacy_checkpoint,
             )
-            for reason in rejected:
-                log(f"Checkpoint ignorado: {reason}", Fore.YELLOW)
             if latest is None:
-                log("Nenhum checkpoint compatível encontrado; iniciando do zero.", Fore.YELLOW)
+                # Fallback: tenta pegar o arquivo mais recente independente de compatibilidade total
+                # mas avisa que pode haver instabilidade.
+                all_ckpts = sorted(Path(checkpoint_dir).glob("ckpt_*.pt"), key=lambda p: p.stat().st_mtime, reverse=True)
+                if all_ckpts:
+                    latest = all_ckpts[0]
+                    log(f"Aviso: Checkpoint {latest.name} pode ser incompatível com a config atual. Tentando carregar...", Fore.WARNING)
+                else:
+                    log("Nenhum checkpoint encontrado; iniciando do zero.", Fore.YELLOW)
             else:
-                summary = inspect_checkpoint(latest)
-                compatible, reason = checkpoint_compatibility(
-                    summary,
-                    config,
-                    tokenizer,
-                    allow_legacy=args.allow_legacy_checkpoint,
-                )
-                if not compatible:
-                    raise CheckpointError(reason)
-                start_iter = load_checkpoint(
-                    model, optimizer, latest, scheduler=scheduler, scaler=scaler, map_location=device
-                )
-                payload = summary["payload"]
-                best_val_loss = float(payload.get("best_val_loss", best_val_loss))
-                best_val_iteration = start_iter if math.isfinite(best_val_loss) else 0
-                patience_counter = int(payload.get("patience_counter", 0))
-                log(f"Retomado de {latest.name} na iteração {start_iter:,}. {reason}", Fore.GREEN)
+                log(f"Checkpoint compatível encontrado: {latest.name}", Fore.CYAN)
+
+            if latest:
+                try:
+                    summary = inspect_checkpoint(latest)
+                    start_iter = load_checkpoint(
+                        model, optimizer, latest, scheduler=scheduler, scaler=scaler, map_location=device
+                    )
+                    payload = summary["payload"]
+                    best_val_loss = float(payload.get("best_val_loss", best_val_loss))
+                    best_val_iteration = start_iter if math.isfinite(best_val_loss) else 0
+                    patience_counter = int(payload.get("patience_counter", 0))
+                    log(f"Retomado de {latest.name} na iteração {start_iter:,}.", Fore.GREEN)
+                except Exception as exc:
+                    log(f"Falha ao carregar checkpoint {latest.name}: {exc}. Iniciando do zero.", Fore.ERROR)
+                    start_iter = 0
+            else:
+                start_iter = 0
+
 
         if start_iter >= max_iters:
             log("O checkpoint já atingiu o total solicitado; nada a treinar.", Fore.YELLOW)

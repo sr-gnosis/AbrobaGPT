@@ -1,0 +1,1 @@
+{"timestamp": "2026-11-03T10:36:10", "run_id": "20261103_103205_721463_pid19092", "iteration": 30150, "total_iterations": 150000, "train_loss": 3.11564453125, "validation_loss": 3.1081806898117064, "learning_rate": 0.0004610152420217084, "perplexity": 22.380290649334327, "best_validation_loss": 3.1081806898117064, "best_iteration": 30150, "early_stopping": false}

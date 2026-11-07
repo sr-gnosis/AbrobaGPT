@@ -1,0 +1,46 @@
+[2026-11-04T12:22:40] Execução 20261104_122240_019840_pid17432 iniciada; iteração inicial acumulada=34650.
+[2026-11-04T12:22:40] Início do treinamento; total=150000; resume=True
+[2026-11-04T12:27:44] Avaliação iteração=34800/150000 train_loss=3.0030471 val_loss=3.0983494 lr=0.00044763564 perplexity=22.161341
+[2026-11-04T12:27:46] Novo melhor validation loss=3.0983494 na iteração 34800; checkpoint=best_model.pt
+[2026-11-04T12:32:53] Avaliação iteração=34950/150000 train_loss=3.0027846 val_loss=3.165648 lr=0.00044717532 perplexity=23.704099
+[2026-11-04T12:34:30] Checkpoint periódico salvo: ckpt_035000.pt na iteração 35000
+[2026-11-04T12:38:01] Avaliação iteração=35100/150000 train_loss=2.998111 val_loss=3.2099505 lr=0.00044671325 perplexity=24.77786
+[2026-11-04T12:43:08] Avaliação iteração=35250/150000 train_loss=3.0035048 val_loss=3.139499 lr=0.00044624943 perplexity=23.092296
+[2026-11-04T12:48:15] Avaliação iteração=35400/150000 train_loss=3.004196 val_loss=3.1196545 lr=0.00044578389 perplexity=22.638556
+[2026-11-04T12:51:28] Checkpoint periódico salvo: ckpt_035500.pt na iteração 35500
+[2026-11-04T12:53:23] Avaliação iteração=35550/150000 train_loss=2.9841437 val_loss=3.1285102 lr=0.00044531661 perplexity=22.839928
+[2026-11-04T12:58:30] Avaliação iteração=35700/150000 train_loss=3.011945 val_loss=3.1743472 lr=0.0004448476 perplexity=23.911206
+[2026-11-04T13:03:37] Avaliação iteração=35850/150000 train_loss=2.9839156 val_loss=3.1700846 lr=0.00044437687 perplexity=23.809499
+[2026-11-04T13:08:44] Avaliação iteração=36000/150000 train_loss=2.972026 val_loss=3.1360919 lr=0.00044390442 perplexity=23.01375
+[2026-11-04T13:08:44] Checkpoint periódico salvo: ckpt_036000.pt na iteração 36000
+[2026-11-04T13:13:51] Avaliação iteração=36150/150000 train_loss=2.9771 val_loss=3.1632795 lr=0.00044343027 perplexity=23.648022
+[2026-11-04T13:18:58] Avaliação iteração=36300/150000 train_loss=2.9764937 val_loss=3.128212 lr=0.0004429544 perplexity=22.833117
+[2026-11-04T13:24:05] Avaliação iteração=36450/150000 train_loss=2.96645 val_loss=3.1548825 lr=0.00044247683 perplexity=23.450281
+[2026-11-04T13:25:42] Checkpoint periódico salvo: ckpt_036500.pt na iteração 36500
+[2026-11-04T13:29:13] Avaliação iteração=36600/150000 train_loss=2.9894812 val_loss=3.1730845 lr=0.00044199756 perplexity=23.881031
+[2026-11-04T13:34:20] Avaliação iteração=36750/150000 train_loss=2.9499188 val_loss=3.1935593 lr=0.00044151661 perplexity=24.375032
+[2026-11-04T13:39:27] Avaliação iteração=36900/150000 train_loss=2.9776807 val_loss=3.135579 lr=0.00044103396 perplexity=23.00195
+[2026-11-04T13:42:40] Checkpoint periódico salvo: ckpt_037000.pt na iteração 37000
+[2026-11-04T13:44:35] Avaliação iteração=37050/150000 train_loss=2.9747479 val_loss=3.1875206 lr=0.00044054963 perplexity=24.228282
+[2026-11-04T13:49:42] Avaliação iteração=37200/150000 train_loss=2.9767788 val_loss=3.1811921 lr=0.00044006362 perplexity=24.075436
+[2026-11-04T13:54:49] Avaliação iteração=37350/150000 train_loss=2.9815938 val_loss=3.1722407 lr=0.00043957593 perplexity=23.860889
+[2026-11-04T13:59:56] Avaliação iteração=37500/150000 train_loss=2.980012 val_loss=3.2271822 lr=0.00043908658 perplexity=25.208524
+[2026-11-04T13:59:57] Checkpoint periódico salvo: ckpt_037500.pt na iteração 37500
+[2026-11-04T14:05:04] Avaliação iteração=37650/150000 train_loss=2.9684444 val_loss=3.1455213 lr=0.00043859557 perplexity=23.231782
+[2026-11-04T14:10:11] Avaliação iteração=37800/150000 train_loss=2.9745723 val_loss=3.1647759 lr=0.0004381029 perplexity=23.683437
+[2026-11-04T14:15:18] Avaliação iteração=37950/150000 train_loss=2.9628914 val_loss=3.1527397 lr=0.00043760857 perplexity=23.400087
+[2026-11-04T14:16:55] Checkpoint periódico salvo: ckpt_038000.pt na iteração 38000
+[2026-11-04T14:20:26] Avaliação iteração=38100/150000 train_loss=2.9914612 val_loss=3.1527632 lr=0.00043711259 perplexity=23.400636
+[2026-11-04T14:25:33] Avaliação iteração=38250/150000 train_loss=2.9787771 val_loss=3.1769497 lr=0.00043661497 perplexity=23.973516
+[2026-11-04T14:30:40] Avaliação iteração=38400/150000 train_loss=2.9533063 val_loss=3.1742797 lr=0.00043611572 perplexity=23.909591
+[2026-11-04T14:33:53] Checkpoint periódico salvo: ckpt_038500.pt na iteração 38500
+[2026-11-04T14:35:48] Avaliação iteração=38550/150000 train_loss=2.9626178 val_loss=3.1766709 lr=0.00043561483 perplexity=23.966832
+[2026-11-04T14:40:54] Avaliação iteração=38700/150000 train_loss=2.9669989 val_loss=3.1471461 lr=0.00043511231 perplexity=23.269562
+[2026-11-04T14:46:02] Avaliação iteração=38850/150000 train_loss=2.9815597 val_loss=3.1892923 lr=0.00043460816 perplexity=24.271244
+[2026-11-04T14:51:09] Avaliação iteração=39000/150000 train_loss=2.9541103 val_loss=3.1639027 lr=0.0004341024 perplexity=23.662764
+[2026-11-04T14:51:09] Checkpoint periódico salvo: ckpt_039000.pt na iteração 39000
+[2026-11-04T14:56:16] Avaliação iteração=39150/150000 train_loss=2.9851538 val_loss=3.1906456 lr=0.00043359503 perplexity=24.304112
+[2026-11-04T15:01:23] Avaliação iteração=39300/150000 train_loss=2.961214 val_loss=3.1554737 lr=0.00043308605 perplexity=23.464148
+[2026-11-04T15:01:23] EARLY STOPPING na iteração 39300: patience=30; melhor val loss=3.0983494
+[2026-11-04T15:01:24] Checkpoint final salvo: ckpt_039300.pt na iteração 39300
+[2026-11-04T15:01:24] Execução encerrada: early_stopping.
